@@ -1,6 +1,6 @@
 import axios from "axios"
 
-class DataServiceClass {
+class DataServiceClass {  
     $data: any
 
     load(): Promise<any>
