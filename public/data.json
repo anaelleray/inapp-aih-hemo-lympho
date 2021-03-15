@@ -38,7 +38,7 @@
           "slug": "cll-ball-3",
           "submenu": false,
           "children": []
-        }
+        },
         {
           "id": 4,
           "name": "CLL-IPI",
@@ -50,7 +50,8 @@
           "slug": "cll-ipi-4",
           "submenu": false,
           "children": []
-        }        {
+        },
+        {
           "id": 5,
           "name": "Matutes RMH",
           "subtitle": "",
