@@ -9,7 +9,9 @@ class DataServiceClass {
             axios.get("./data.json")
                 .then(response => {
                     this.$data = response.data
-                    resolve()
+                    //Just add "resopnse" to delete error message
+                    resolve(response)
+                    
             }).catch(e => {
                 console.log(e)
                 reject(e)
