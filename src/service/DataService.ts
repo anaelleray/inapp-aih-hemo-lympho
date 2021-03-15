@@ -10,7 +10,7 @@ class DataServiceClass {
                 .then(response => {
                     this.$data = response.data
                     //Just add "resopnse" to delete error message
-                    resolve(response)
+                    resolve(response.data)
                     
             }).catch(e => {
                 console.log(e)
@@ -21,6 +21,9 @@ class DataServiceClass {
     
     getList(slug: string){
         // boucle
+    }
+    getSubList(slug: string){
+        //boucle forEach List => get children if (results)
     }
 }
 
