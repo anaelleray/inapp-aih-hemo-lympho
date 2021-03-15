@@ -1,82 +1,274 @@
 {
   "appData": {
     "id": 1,
-    "name": "Application d'exemple"
+    "name": "AIH Scoring - Hémopathie Lymphoïde"
   },
   "tree": [
     {
       "id": 1,
-      "name": "Première section",
+      "name": "Leucémie lymphoïde chronique",
       "subtitle": "Sous-titre facultatif",
       "appId": 1,
       "parentId": null,
       "type": "list",
       "content": "",
-      "slug": "premiere-section-1",
-      "submenu": false,
+      "slug": "leucemie-lymphoide-chronique-1",
+      "submenu": true,
       "children": [
         {
           "id": 2,
-          "name": "Titre",
+          "name": "Binet",
           "subtitle": "Sous-titre",
           "appId": 1,
           "parentId": 1,
           "type": "html",
-          "content": "Contenu à afficher",
-          "slug": "titre-2",
+          "content": "",
+          "slug": "binet-2",
           "submenu": false,
           "children": []
         },
         {
           "id": 3,
-          "name": "Titre",
+          "name": "CLL-BALL",
           "subtitle": "",
           "appId": 1,
           "parentId": 1,
           "type": "html",
-          "content": "<h1>The standard Lorem Ipsum</h1>",
-          "slug": "titre-3",
+          "content": "",
+          "slug": "cll-ball-3",
+          "submenu": false,
+          "children": []
+        }
+        {
+          "id": 4,
+          "name": "CLL-IPI",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 1,
+          "type": "html",
+          "content": "",
+          "slug": "cll-ipi-4",
+          "submenu": false,
+          "children": []
+        }        {
+          "id": 5,
+          "name": "Matutes RMH",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 1,
+          "type": "html",
+          "content": "",
+          "slug": "matutes-rmh-5",
           "submenu": false,
           "children": []
         }
       ]
     },
     {
-      "id": 4,
-      "name": "Deuxième section",
+      "id": 6,
+      "name": "Lymphome à cellules du manteau",
       "subtitle": "",
       "appId": 1,
       "parentId": null,
       "type": "list",
       "content": "",
-      "slug": "deuxieme-section-4",
-      "submenu": false,
+      "slug": "lymphome-cellules-manteau-6",
+      "submenu": true,
       "children": [
         {
-          "id": 5,
-          "name": "Titre",
+          "id": 7,
+          "name": "MIPI",
           "subtitle": "",
           "appId": 1,
-          "parentId": 4,
+          "parentId": 6,
           "type": "html",
-          "content": "Contenu à afficher",
-          "slug": "titre-5",
-          "submenu": false,
-          "children": []
-        },
-        {
-          "id": 6,
-          "name": "Titre",
-          "subtitle": "",
-          "appId": 1,
-          "parentId": 4,
-          "type": "html",
-          "content": "<h1>The standard Lorem Ipsum</h1>",
-          "slug": "titre-6",
+          "content": "",
+          "slug": "mipi-5",
           "submenu": false,
           "children": []
         }
       ]
+    },
+    {
+      "id": 8,
+      "name": "Lymphome B diffus à grandes cellules",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "lymphome-B-diffus-grandes-cellules-8",
+      "submenu": true,
+      "children": [
+        {
+          "id": 9,
+          "name": "R-IPI",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 8,
+          "type": "html",
+          "content": "",
+          "slug": "r-ipi-9",
+          "submenu": false,
+          "children": []
+        },
+        {
+          "id": 10,
+          "name": "CNS-IPI",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 8,
+          "type": "html",
+          "content": "",
+          "slug": "cns-ipi-10",
+          "submenu": false,
+          "children": []
+        },
+        {
+          "id": 11,
+          "name": "IPI-24",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 8,
+          "type": "html",
+          "content": "",
+          "slug": "ipi-24-11",
+          "submenu": false,
+          "children": []
+        },
+        {
+          "id": 12,
+          "name": "NCCN-IPI",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 8,
+          "type": "html",
+          "content": "",
+          "slug": "nccn-ipi-12",
+          "submenu": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Lymphome folliculaire",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "lymphome-folliculaire-13",
+      "submenu": true,
+      "children": [
+        {
+          "id": 14,
+          "name": "Critères Gelf",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 13,
+          "type": "html",
+          "content": "",
+          "slug": "criteres-gelf-14",
+          "submenu": false,
+          "children": []
+        },
+        {
+          "id": 15,
+          "name": "FLIPI",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 13,
+          "type": "html",
+          "content": "",
+          "slug": "flipi-15",
+          "submenu": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Myélome multiple",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "myélome-multiple-16",
+      "submenu": true,
+      "children": [
+        {
+          "id": 17,
+          "name": "R-ISS",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 16,
+          "type": "html",
+          "content": "",
+          "slug": "r-iss-17",
+          "submenu": false,
+          "children": []
+        },        {
+          "id": 18,
+          "name": "ISS",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 16,
+          "type": "html",
+          "content": "",
+          "slug": "iss-18",
+          "submenu": false,
+          "children": []
+        },        {
+          "id": 19,
+          "name": "Smoldering Prognosis",
+          "subtitle": "",
+          "appId": 1,
+          "parentId": 16,
+          "type": "html",
+          "content": "",
+          "slug": "smoldering-prognosis-19",
+          "submenu": false,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Lymphome de Hodgkin",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "lymphome-hodgkin-20",
+      "submenu": true,
+      "children": []
+    },    
+    {
+      "id": 21,
+      "name": "Maladie de Waldenstrom",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "maladie-waldenstrom-21",
+      "submenu": true,
+      "children": []
+    },
+    {
+      "id": 22,
+      "name": "Lymphome du MALT",
+      "subtitle": "",
+      "appId": 1,
+      "parentId": null,
+      "type": "list",
+      "content": "",
+      "slug": "lymphome-malt-22",
+      "submenu": true,
+      "children": []
     }
   ]
 }
