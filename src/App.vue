@@ -14,7 +14,6 @@ export default Vue.extend({
     components: { Header },
     data() {
         return {
-           
         }
     },
     methods: {

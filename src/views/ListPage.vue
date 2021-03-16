@@ -1,3 +1,4 @@
+//
 <template>
   <div class="list-page">
       Hello list page
@@ -20,7 +21,7 @@ export default Vue.extend({
   {
       DataService.load()
             .then(() => {
-                console.log(DataService.$data)
+                console.log("LISTPAGE ->",DataService.$data)
             }).catch(e => {
                 console.log(e)
             })
