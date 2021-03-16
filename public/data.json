@@ -19,6 +19,7 @@
           "id": 2,
           "name": "Binet",
           "subtitle": "Sous-titre",
+          "component": "BinetScore",
           "appId": 1,
           "parentId": 1,
           "type": "html",
@@ -30,6 +31,7 @@
         {
           "id": 3,
           "name": "CLL-BALL",
+          "component": "CllBallScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 1,
@@ -42,6 +44,7 @@
         {
           "id": 4,
           "name": "CLL-IPI",
+          "component": "CllIpiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 1,
@@ -54,6 +57,7 @@
         {
           "id": 5,
           "name": "Matutes RMH",
+          "component": "MatutesRmhScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 1,
@@ -79,6 +83,7 @@
         {
           "id": 7,
           "name": "MIPI",
+          "component": "MipiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 6,
@@ -104,6 +109,7 @@
         {
           "id": 9,
           "name": "R-IPI",
+          "component": "RIpiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 8,
@@ -116,6 +122,7 @@
         {
           "id": 10,
           "name": "CNS-IPI",
+          "component": "CnsIpiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 8,
@@ -128,6 +135,7 @@
         {
           "id": 11,
           "name": "IPI-24",
+          "component": "Ipi24Score",
           "subtitle": "",
           "appId": 1,
           "parentId": 8,
@@ -140,6 +148,7 @@
         {
           "id": 12,
           "name": "NCCN-IPI",
+          "component": "NccnIpiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 8,
@@ -165,6 +174,7 @@
         {
           "id": 14,
           "name": "Critères Gelf",
+          "component": "CriteresGelfScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 13,
@@ -177,6 +187,7 @@
         {
           "id": 15,
           "name": "FLIPI",
+          "component": "FlipiScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 13,
@@ -202,6 +213,7 @@
         {
           "id": 17,
           "name": "R-ISS",
+          "component": "RIssScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 16,
@@ -213,6 +225,7 @@
         },        {
           "id": 18,
           "name": "ISS",
+          "component": "IssScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 16,
@@ -224,6 +237,7 @@
         },        {
           "id": 19,
           "name": "Smoldering Prognosis",
+          "component": "SmolderingPrognosisScore",
           "subtitle": "",
           "appId": 1,
           "parentId": 16,
@@ -238,6 +252,7 @@
     {
       "id": 20,
       "name": "Lymphome de Hodgkin",
+      "component": "LymphomeDeHodgkinScore",
       "subtitle": "",
       "appId": 1,
       "parentId": null,
@@ -250,6 +265,7 @@
     {
       "id": 21,
       "name": "Maladie de Waldenstrom",
+      "component": "MaladieDeWaldenstromScore",
       "subtitle": "",
       "appId": 1,
       "parentId": null,
@@ -262,6 +278,8 @@
     {
       "id": 22,
       "name": "Lymphome du MALT",
+      
+      "component": "LymphomeDuMaltScore",
       "subtitle": "",
       "appId": 1,
       "parentId": null,
