@@ -1,6 +1,6 @@
 import axios from "axios"
 
-class DataServiceClass {
+class DataServiceClass { 
     $data: any
 
     load(): Promise<any>
@@ -9,7 +9,9 @@ class DataServiceClass {
             axios.get("./data.json")
                 .then(response => {
                     this.$data = response.data
-                    resolve()
+                    //Just add "resopnse" to delete error message
+                    resolve(response.data)
+                    
             }).catch(e => {
                 console.log(e)
                 reject(e)
@@ -19,6 +21,9 @@ class DataServiceClass {
     
     getList(slug: string){
         // boucle
+    }
+    getSubList(slug: string){
+        //boucle forEach List => get children if (results)
     }
 }
 
