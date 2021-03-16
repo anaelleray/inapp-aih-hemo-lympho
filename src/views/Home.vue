@@ -33,7 +33,7 @@
 
         methods:{
             select: function(id){
-                let b = document.getElementsByClassName('selected');
+                let b = document.getElementsByClassName('selected')  as HTMLCollectionOf<HTMLElement>;
                 let a = document.getElementById('item-' + id);
                 let r = document.getElementById('arrow-' + id);
                 let ro = document.getElementsByClassName('arrow-rotate');
