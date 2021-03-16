@@ -8,16 +8,44 @@
 
 <script lang="ts">
 import Vue from "vue"
+
 import DataService from "@/service/DataService"
 import CriteresGelfScore from "@/components/scores/CriteresGelfScore.vue"
 import FlipiScore from "@/components/scores/FlipiScore.vue"
 import MipiScore from "@/components/scores/MipiScore.vue"
+import CllBallScore from "@/components/scores/CllBallScore.vue"
+import BinetScore from "@/components/scores/BinetScore.vue"
+import MaladieDeWaldenstromScore from "@/components/scores/MaladieDeWaldenstromScore.vue"
+import MatutesRmhScore from "@/components/scores/MatutesRmhScore.vue"
+import NccnIpiScore from "@/components/scores/NccnIpiScore.vue"
+import SmolderingPrognosisScore from "@/components/scores/SmolderingPrognosisScore.vue"
+import CllIpiScore from "@/components/scores/CllIpiScore.vue"
+import CnsIpiScore from "@/components/scores/CnsIpiScore.vue"
+import RIpiScore from "@/components/scores/RIpiScore.vue"
+import RIssScore from "@/components/scores/RIssScore.vue"
+import Ipi24Score from "@/components/scores/Ipi24Score.vue"
+import IssScore from "@/components/scores/IssScore.vue"
+import LymphomeDeHodgkinScore from "@/components/scores/LymphomeDeHodgkinScore.vue"
+
 export default Vue.extend({
 
     components: {
         CriteresGelfScore,
         FlipiScore,
-        MipiScore
+        MipiScore,
+        CllBallScore,
+        BinetScore,
+        MaladieDeWaldenstromScore,
+        MatutesRmhScore,
+        NccnIpiScore,
+        SmolderingPrognosisScore,
+        CllIpiScore,
+        CnsIpiScore,
+        RIpiScore,
+        RIssScore,
+        Ipi24Score,
+        IssScore,
+        LymphomeDeHodgkinScore
     },
 
     data()

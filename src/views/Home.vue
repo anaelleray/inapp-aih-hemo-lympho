@@ -46,6 +46,7 @@
                                 ro[0].classList.remove("arrow-rotate");
                             }
                         }
+
                         a.style.maxHeight = a.scrollHeight + "px";
                         a.classList.add("selected");
                         r.classList.add("arrow-rotate");
