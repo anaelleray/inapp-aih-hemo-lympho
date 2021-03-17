@@ -11,7 +11,7 @@
                 <button>Yes</button>
             </div>
             <div class="gelfInput2">
-                <p>Involvement of at least 3 nodal sites, each with diameter >3 cm
+                <p>Involvement of at least 3 nodal sites, each with diameter > 3 cm
                     // View more nodal site information in the More Info section. //</p>
                 <button>No</button>
                 <button>Yes</button>
@@ -42,7 +42,7 @@
                 <button>Yes</button>
             </div>
             <div class="gelfInput8">
-                <p>Cytopenia (granulocyte count < 1.0x10⁹/L and/or platelets < 100x10⁹/L)</p>
+                <p>Cytopenia (granulocyte count &lsaquo; 1.0x10⁹/L and/or platelets &lsaquo; 100x10⁹/L)</p>
                 <button>No</button>
                 <button>Yes</button>
             </div>
