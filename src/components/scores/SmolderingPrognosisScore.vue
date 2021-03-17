@@ -62,7 +62,6 @@ export default Vue.extend({
             if(event.type == "click" && event.target.id == "ie10"){
                 ie10.classList.add("is-selected")
                 s10.classList.remove("is-selected")
-            
             } else if(event.type == "click" && event.target.id == "s10"){
                 s10.classList.add("is-selected")
                 ie10.classList.remove("is-selected")
@@ -70,7 +69,6 @@ export default Vue.extend({
             } else if(event.type == "click" && event.target.id == "ie3"){
                 ie3.classList.add("is-selected")
                 s3.classList.remove("is-selected")
-
             } else if(event.type == "click" && event.target.id == "s3"){
                 s3.classList.add("is-selected")
                 ie3.classList.remove("is-selected")

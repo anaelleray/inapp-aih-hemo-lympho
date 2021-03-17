@@ -7,24 +7,24 @@
         <div class="flipiForm">
             <div class="flipiInput1">
                 <p>Age &gt;	 60 years</p>
-                <button>No 0</button>
-                <button>Yes +1</button>
+                <button id="ageNo" @click="counter">No 0</button>
+                <button id="ageYes" @click="counter">Yes +1</button>
             </div>
             <div class="flipiInput2">
                 <p>&gt;4 nodal sites
                     See Evidence for nodal diagram.</p>
-                <button>No 0</button>
-                <button>Yes +1</button>
+                <button id="nodalNo" @click="counter">No 0</button>
+                <button id="nodalYes" @click="counter">Yes +1</button>
             </div>
             <div class="flipiInput3">
                 <p>LDH elevated</p>
-                <button>No 0</button>
-                <button>Yes +1</button>
+                <button id="ldhNo" @click="counter">No 0</button>
+                <button id="ldhYes" @click="counter">Yes +1</button>
             </div>
             <div class="flipiInput4">
                 <p>Hemoglobin &lt;120 g/L or 12 g/dL</p>
-                <button>No 0</button>
-                <button>Yes +1</button>
+                <button id="hemoNo" @click="counter">No 0</button>
+                <button id="hemoYes" @click="counter">Yes +1</button>
             </div>
             <div class="flipiInput5">
                 <p>Stage III-IV
@@ -33,13 +33,13 @@
                     Stage III: disease involves both sides of the diaphragm, including one organ or area near the lymph nodes or the spleen.
                     Stage IV: diffuse or disseminated involvement of one or more extranodal organs, with or without associated lymph node involvement.
                     See Evidence for stage diagram.</p>
-                <button>No 0</button>
-                <button>Yes +1</button>
+                <button id="stageNo" @click="counter">No 0</button>
+                <button id="stageYes" @click="counter">Yes +1</button>
             </div>
             <div class="flipiWindowResult">
-            <div>Dynamique text </div>
-            <div>Dynamique text </div>
-            <div>Dynamique text </div>
+            <div>{{this.points}} points</div>
+            <div>{{this.risk}}</div>
+            <div>{{this.survival}}</div>
         </div>
         </div>
     </div>
@@ -54,7 +54,49 @@ export default Vue.extend({
     data()
     {
         return {
-            result: null,
+            points : 0,
+            risk : "Low risk",
+            survival : "10-year overall survival is approximately 70%"
+        }
+    },
+    methods: {
+        counter:function(event, id){
+
+            let ageN = document.getElementById('ageNo');
+            let ageY = document.getElementById('ageY');
+            let nodalN = document.getElementById('nodalNo');
+            let nodalY = document.getElementById('nodalY');
+            let ldhN = document.getElementById('ldhNo');
+            let ldhY = document.getElementById('ldhY');
+            let hemoN = document.getElementById('hemoNo');
+            let hemoY = document.getElementById('hemoY');
+            let stageN = document.getElementById('stageNo');
+            let stageY = document.getElementById('stageY');
+
+            console.log(event.type, event.target.id)
+            
+            
+
+            if(this.points === 1){
+                this.risk = "Low risk"
+                this.survival = "10-year overall survival is approximately 70%"
+            }
+            if(this.points === 2) {
+                this.risk = "Intermediate Risk"
+                this.survival = "10-year overall survival is approximately 50%"
+            }
+            if(this.points === 3) {
+                this.risk = "High Risk"
+                this.survival = "10-year overall survival is approximately 35%"
+            }
+            if(this.points === 4) {
+                this.risk = "Low risk"
+                this.survival = "10-year overall survival is approximately 35%"
+            }
+            if(this.points === 5) {
+                this.risk = "Low risk"
+                this.survival = "10-year overall survival is approximately 35%"
+            }
         }
     },
     mounted()
