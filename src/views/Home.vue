@@ -1,5 +1,9 @@
 <template>
     <div class="home">
+         <div>
+             <h1>Score hémopathie lymphoïde</h1>
+             <div>List des principaux scores hémopathie lymphoïde</div>
+        </div>
         <div class="main-categories">
             <div v-for="item in categories" :key="item.id">
                 <div v-if="item.children.length > 0">
