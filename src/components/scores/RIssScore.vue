@@ -3,7 +3,7 @@
         <div class="input1">
             <div>Serum β2 microglobulin</div>
             <div>
-                <div id="microglobulin-1" class="microglobulin selected" v-on:click="select(1,'microglobulin')">&lsaquo;3.5 mg/L3.5 mg/L</div>
+                <div id="microglobulin-1" class="microglobulin selected-riss" v-on:click="select(1,'microglobulin')">&lsaquo;3.5 mg/L3.5 mg/L</div>
                 <div id="microglobulin-2" class="microglobulin" v-on:click="select(2,'microglobulin')">3.5-5.4 mg/L</div>
                 <div id="microglobulin-3" class="microglobulin" v-on:click="select(3,'microglobulin')">>5.4 mg/L</div>
             </div>
@@ -84,15 +84,35 @@ export default Vue.extend({
                     }
                 }
             }
-            this.result = this.microglobulin + this.albumin + this.ifish +this.ldh
+            this.calcul()
         },
 
         calcul: function (){
             if(this.microglobulin == 2 && this.albumin == 2){
                 this.result = 2
-            }
-            else{
+            }else{
                 this.result = this.microglobulin 
+            }
+
+            switch(this.result)
+            {
+                case 1:
+                    if(this.ifish == 1  && this.ldh == 1){
+                        this.result = 1
+                    }else{
+                        this.result = 2
+                    }
+                    break
+                case 2:
+                    this.result = 2
+                    break
+                case 3:
+                    if(this.ifish == 1  && this.ldh == 1){
+                        this.result = 2
+                    }else{
+                        this.result = 3
+                    }
+                    break
             }
         },
     }
