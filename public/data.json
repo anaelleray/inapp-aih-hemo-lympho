@@ -56,7 +56,7 @@
         },
         {
           "id": 5,
-          "name": "Matutes RMH",
+          "name": "Matutes/RMH",
           "component": "MatutesRmhScore",
           "subtitle": "",
           "appId": 1,
