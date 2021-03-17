@@ -8,7 +8,7 @@
 
           <td>1. Age?</td>
           <td>
-            <button style="background: green"><70 years</button>
+            <button style="background: green">Need Change 70 years</button>
           </td>
           <td>
             <button style="background: green">≥70 years</button>
@@ -41,7 +41,7 @@
 <script lang="ts" >
 import Vue from "vue";
 export default Vue.extend({
-  name: "Maladie de Waldenstrom",
+  name: "Maladie de WaldenstromAAA",
   data() {
     return {
       result: null,
