@@ -5,20 +5,20 @@
             <p class="smoldDescription">Predicts risk of progression of asymptomatic (smoldering) multiple myeloma to active myeloma or amyloidosis.</p>
         </div>
         <div class="smoldForm">
-            <div class="smoldInput1">
+            <div class="input1">
                 <p>Bone marrow plasmacytosis
                 Average % from bone marrow aspirate and core biopsy</p>
-                <button id="ie10" @click="clicked = !clicked" v-on:click="displayText">&ge;10%</button>
-                <button id="s10" @click="clicked = !clicked" v-on:click="displayText" >&lt;10%</button>
+                <button class="btn" id="ie10" v-on:click="switchValue">&ge;10%</button>
+                <button class="btn" id="s10" v-on:click="switchValue">&lt;10%</button>
             </div>
-            <div class="smoldInput2">
+            <div class="input2">
                 <p>Serum monoclonal protein, g/dL
                     On serum protein electrophoresis</p>
-                <button id="ie3" @click="clicked = !clicked" v-on:click="displayText">&ge;3</button>
-                <button id="s3" @click="clicked = !clicked" v-on:click="displayText">&lt;3</button>
+                <button class="btn" id="ie3" v-on:click="switchValue">&ge;3</button>
+                <button class="btn" id="s3" v-on:click="switchValue">&lt;3</button>
             </div>
             <div class="smoldWindowResult">
-                <div>{{this.diagnostic}}</div>
+                <div>tt</div>
                 <div>{{this.pourcentage}}</div>
                 <div>{{this.months}}</div>
             </div>
@@ -33,31 +33,38 @@ export default Vue.extend({
     name: "Smoldering Prognosis",
     data(){
         return {
-            diagnostic : "null",
+            diagnostic : ["High risk","Intermediate risk","Low risk"],
             pourcentage: "null",
             months: "null",
-            clicked : false
+            singleView : "Patient does not meet criteria for asymptomatic myeloma (see Pearls/Pitfalls for criteria)"
         } 
     },
 
     methods: {
-        displayText: function() {
+        switchValue:function(event){
+            console.log(event.type, event.target.id)
 
             let ie10 = document.getElementById("ie10");
             let s10 = document.getElementById("s10");
             let ie3 = document.getElementById("ie3");
             let s3 = document.getElementById("s3");
 
-            // if(this.clicked === true && ie10) {
-                
-            // } else {
-                
-            // }
-            console.log(ie10, s10)
+            if(event.type == "click" && event.target.id == "ie10"){
+                ie10.classList.add("is-selected")
+                s10.classList.remove("is-selected")
+            
+            } else if(event.type == "click" && event.target.id == "s10"){
+                s10.classList.add("is-selected")
+                ie10.classList.remove("is-selected")
 
-            
-            
-            
+            } else if(event.type == "click" && event.target.id == "ie3"){
+                ie3.classList.add("is-selected")
+                s3.classList.remove("is-selected")
+
+            } else if(event.type == "click" && event.target.id == "s3"){
+                s3.classList.add("is-selected")
+                ie3.classList.remove("is-selected")
+            }
         }
     },
 
