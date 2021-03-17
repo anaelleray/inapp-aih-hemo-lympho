@@ -5,17 +5,30 @@
              <div>List des principaux scores hémopathie lymphoïde</div>
         </div>
         <div class="main-categories">
-            <div :id="item.id" class="item" v-for="item in categories" :key="item.id" v-on:click="select(item.id)">
-                <div class="title-item">
-                    <div>{{item.name}}</div> 
-                    <div :id="'arrow-'+item.id" class="block-arrow">
-                        <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
+            <div v-for="item in categories" :key="item.id">
+                <div v-if="item.children.length > 0">
+                    <div :id="item.id" class="item" v-on:click="select(item.id)">
+                        <div class="title-item">
+                            <div>{{item.name}}</div> 
+                            <div :id="'arrow-'+item.id" class="block-arrow">
+                                <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
+                            </div>
+                        </div>
+                        <div :id="'item-'+item.id" class="section-content">
+                            <div v-for="subItem in item.children" :key="subItem.id" class="sous-item">
+                                <router-link class="title-item" :to="'/score/'+subItem.slug"><div>{{subItem.name}}</div> <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/></router-link>
+                            </div>
+                        </div>
                     </div>
                 </div>
-               
-                <div :id="'item-'+item.id" class="section-content">
-                    <div v-for="subItem in item.children" :key="subItem.id" class="sous-item">
-                        <router-link class="title-item" :to="'/score/'+subItem.slug"><div>{{subItem.name}}</div> <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/></router-link>
+                <div v-else>
+                    <div :id="item.id" class="item">
+                        <router-link class="title-item" :to="'/score/'+item.slug">
+                            <div>{{item.name}}</div> 
+                            <div :id="'arrow-'+item.id" class="block-arrow">
+                                <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
+                            </div>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -126,8 +139,12 @@
         border-radius: 10px 10px 10px 10px;
     }
 
-    .sous-item a {
+    a{
+        color: #69669b;
         text-decoration: none;
+    }
+
+    .sous-item a {
         color: white; /*par exemple*/
     }
 

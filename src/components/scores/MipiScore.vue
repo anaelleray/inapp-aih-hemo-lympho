@@ -149,6 +149,11 @@ export default Vue.extend({
         justify-content: space-around;
         align-items: center;
     }
+    
+    .ecog-selected
+    {
+        background-color: brown;
+    }
 
     .input2{
         display: flex;

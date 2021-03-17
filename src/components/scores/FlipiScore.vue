@@ -21,7 +21,7 @@
                 <button>Yes ::+1</button>
             </div>
             <div class="flipiInput4">
-                <p>Hemoglobin < 120 g/L or 12 g/dL</p>
+                <p>Hemoglobin &lsaquo; 120 g/L or 12 g/dL</p>
                 <button>No ::0</button>
                 <button>Yes ::+1</button>
             </div>
