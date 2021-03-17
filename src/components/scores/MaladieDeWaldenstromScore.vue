@@ -1,6 +1,6 @@
 <template>
   <div class="score-1">
-    <h2>MALT Lymphoma prognosis (MALT-IPI)</h2>
+    <h2>MALT Lymphoma prognosisAAA (MALT-IPI)</h2>
     <div>
       <table>
         <tr>
