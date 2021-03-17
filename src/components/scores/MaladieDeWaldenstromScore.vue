@@ -5,41 +5,43 @@
       <table>
         <tr>
           <td>Estimate prognosis in MALT lymphoma</td>
+
+          <td>1. Age?</td>
           <td>
-            <button style="background: green">>3</button>
+            <button style="background: green"><70 years</button>
           </td>
           <td>
-            <button style="background: green">inf3</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Anemia, Hgb inf10 g/dL</td>
-          <td>
-            <button style="background: green">No</button>
-          </td>
-          <td>
-            <button style="background: green">Yes</button>
+            <button style="background: green">≥70 years</button>
           </td>
         </tr>
-        <tr>
-          <td>Thrombocytopenia, Platelets inf100,000/mm³</td>
-          <td>
-            <button style="background: green">No</button>
-          </td>
-          <td>
-            <button style="background: green">Yes</button>
-          </td>
-        </tr>
+
+        <td>2. LDH?</td>
+        <td>
+          <button style="background: green">Normal</button>
+        </td>
+        <td>
+          <button style="background: green">Elevated</button>
+        </td>
+
+        <td>3. Stage?</td>
+        <td>
+          <button style="background: green">Stage I/II</button>
+        </td>
+        <td>
+          <button style="background: green">Stage III/IV</button>
+        </td>
       </table>
     </div>
     <input type="text" value="0" />
   </div>
+
+
 </template>
 
 <script lang="ts" >
 import Vue from "vue";
 export default Vue.extend({
-  name: "AAAAAA",
+  name: "Maladie de Waldenstrom",
   data() {
     return {
       result: null,
