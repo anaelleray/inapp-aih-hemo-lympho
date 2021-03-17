@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-  <template>
-    <div class="score-binet-1">
-=======
 <template>
     <div class="score-binet">
 
->>>>>>> feature-critereGelt
         <h2>Binet Staging System for Chronic Lymphocytic Leukemia (CLL)</h2>
 
         <div class="score-form">
@@ -114,14 +109,4 @@ export default Vue.extend({
         
     },
 })
-<<<<<<< HEAD
 </script>
-<style >
-button[class~="on"]{
-    background-color: green; 
-}
-
-</style>
-=======
-</script>
->>>>>>> feature-critereGelt
