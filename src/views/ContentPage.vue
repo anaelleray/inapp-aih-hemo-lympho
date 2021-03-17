@@ -58,7 +58,6 @@ export default Vue.extend({
     DataService.load()
       .then(() => {
         const cat = this.searchBySlug(DataService.$data.tree, slug);
-        
         if (cat === null) {
           this.notFound = true;
         } else {
