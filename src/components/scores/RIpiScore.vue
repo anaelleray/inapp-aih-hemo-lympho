@@ -59,7 +59,7 @@
             <div>
                 <p id="pourcentageIpi"> 94% </p>
                 <p id="progSurIpi">Progression-free survival (R-IPI)</p>
-                <p id="prosurIpi2">85% progression-free survival (IPI)</p>
+                <p id="progSurIpi2">85% progression-free survival (IPI)</p>
                 <button> Next Steps </button>
             </div>
         </section>
@@ -103,62 +103,66 @@ export default {
             const pourcentageIpi = document.getElementById("pourcentageIpi");
             const progSurIpi = document.getElementById("progSurIpi");
             const progSurIpi2 = document.getElementById("progSurIpi2");
-        
-            switch(this.counter){
-                case 0: 
-                    rIpi.innerText = "Very good prognosis (R-IPI)";
-                    ipi.innerText = "Low risk group (IPI)";
-                    pourcentageRipi.innerText = "94 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "82% overall survival (IPI)";
-                    pourcentageIpi.innerText = "94 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "85% progression-free survival (IPI)";
-                case 1:
-                    rIpi.innerText = "Good prognosis (R-IPI)";
-                    ipi.innerText = "Low risk group (IPI)";
-                    pourcentageRipi.innerText = "79 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "82% overall survival (IPI)";
-                    pourcentageIpi.innerText = "80 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "85% progression-free survival (IPI)";
-                case 2:
-                    rIpi.innerText = "Good prognosis (R-IPI)";
-                    ipi.innerText = "Low-intermediate risk group (IPI)";
-                    pourcentageRipi.innerText = "79 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "81% overall survival (IPI)";
-                    pourcentageIpi.innerText = "80 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "80% progression-free survival (IPI)";
-                case 3:
-                    rIpi.innerText = "Poor prognosis (R-IPI)";
-                    ipi.innerText = "High-intermediate risk group (IPI)";
-                    pourcentageRipi.innerText = "55 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "49% overall survival (IPI)";
-                    pourcentageIpi.innerText = "53 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "57% progression-free survival (IPI)";
-                case 4:
-                    rIpi.innerText = "Poor prognosis (R-IPI)";
-                    ipi.innerText = "High risk group (IPI)";
-                    pourcentageRipi.innerText = "94 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "59% overall survival (IPI)";
-                    pourcentageIpi.innerText = "94 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "51% progression-free survival (IPI)";
-                case 5:
-                    rIpi.innerText = "Poor prognosis (R-IPI)";
-                    ipi.innerText = "High risk group (IPI)";
-                    pourcentageRipi.innerText = "55 %";
-                    overSurIpi.innerText = "Overall survival (R-IPI)";
-                    overSurIpi2.innerText = "59% overall survival (IPI)";
-                    pourcentageIpi.innerText = "53 %";
-                    progSurIpi.innerText = "Progression-free survival (R-IPI)";
-                    progSurIpi2.innerText = "51% progression-free survival (IPI)";
+
+            if( this.counter === 0 ){
+                rIpi.innerText = "Very good prognosis (R-IPI)";
+                ipi.innerText = "Low risk group (IPI)";
+                pourcentageRipi.innerText = "94 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "82% overall survival (IPI)";
+                pourcentageIpi.innerText = "94 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "85% progression-free survival (IPI)";
+            }
+            if( this.counter === 1) {
+                rIpi.innerText = "Good prognosis (R-IPI)";
+                ipi.innerText = "Low risk group (IPI)";
+                pourcentageRipi.innerText = "79 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "82% overall survival (IPI)";
+                pourcentageIpi.innerText = "80 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "85% progression-free survival (IPI)";
+            }
+            if( this.counter === 2) {
+                rIpi.innerText = "Good prognosis (R-IPI)";
+                ipi.innerText = "Low-intermediate risk group (IPI)";
+                pourcentageRipi.innerText = "79 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "81% overall survival (IPI)";
+                pourcentageIpi.innerText = "80 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "80% progression-free survival (IPI)";
+            }
+            if( this.counter === 3) {
+                rIpi.innerText = "Poor prognosis (R-IPI)";
+                ipi.innerText = "High-intermediate risk group (IPI)";
+                pourcentageRipi.innerText = "55 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "49% overall survival (IPI)";
+                pourcentageIpi.innerText = "53 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "57% progression-free survival (IPI)";
+            }
+            if( this.counter === 4) {
+                rIpi.innerText = "Poor prognosis (R-IPI)";
+                ipi.innerText = "High risk group (IPI)";
+                pourcentageRipi.innerText = "55 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "59% overall survival (IPI)";
+                pourcentageIpi.innerText = "93 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "51% progression-free survival (IPI)";
+            }
+            if( this.counter === 5) {
+                rIpi.innerText = "Poor prognosis (R-IPI)";
+                ipi.innerText = "High risk group (IPI)";
+                pourcentageRipi.innerText = "55 %";
+                overSurIpi.innerText = "Overall survival (R-IPI)";
+                overSurIpi2.innerText = "59% overall survival (IPI)";
+                pourcentageIpi.innerText = "53 %";
+                progSurIpi.innerText = "Progression-free survival (R-IPI)";
+                progSurIpi2.innerText = "51% progression-free survival (IPI)";
             }
         },
     }
