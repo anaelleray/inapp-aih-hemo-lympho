@@ -1,6 +1,5 @@
   <template>
-    <div class="score-binet">
-
+    <div class="score-binet-1">
         <h2>Binet Staging System for Chronic Lymphocytic Leukemia (CLL)</h2>
 
         <div class="score-form">
@@ -8,40 +7,36 @@
                 <div class="col1">
                     <div class="title">Areas of lymphadenopathy</div>
                     <div class="info">Cervical, axillary, inguinal, spleen, and liver</div>
-
-
                 </div>
                 <div class="col2">
-                    <button @click="changeInput({ inputA: 'inf3' })">&le; 3</button>
-                    <button @click="changeInput({ inputA: 'inf3' })">&#8804; 3</button>
+                    <button :class="changeClassIf('inputA', 'inf3')" @click="changeInput({ inputA: 'inf3' })">&lsaquo; 3</button>
+                    <button :class="changeClassIf('inputA', 'supEgal3')" @click="changeInput({ inputA: 'supEgal3' })">≥ 3</button>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col1">
-                    Anemia Hgb <10 g/dL
+                    Anemia Hgb &lsaquo;10 g/dL
                 </div>
                 <div class="col2">
-                    <button :class="changeClassIf('inputB', 'Yes')" @click="changeInput({ inputB: 'Yes'})">Yes</button>
                     <button :class="changeClassIf('inputB', 'No')" @click="changeInput({ inputB: 'No'})">No</button>
+                    <button :class="changeClassIf('inputB', 'Yes')" @click="changeInput({ inputB: 'Yes'})">Yes</button>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col1">
-                    ThrombocytopeniaPlatelets <100,000/mm
+                    ThrombocytopeniaPlatelets &lsaquo;100,000/mm
                 </div>
                 <div class="col2">
-                    <button @click="changeInput({ inputC: 'Yes'})">Yes</button>
-                    <button @click="changeInput({ inputC: 'No'})">No</button>
+                    <button :class="changeClassIf('inputC', 'No')" @click="changeInput({ inputC: 'No'})">No</button>
+                    <button :class="changeClassIf('inputC', 'Yes')" @click="changeInput({ inputC: 'Yes'})">Yes</button>
                 </div>
             </div>
 
             <h3>Résultat</h3>
             <div class="score-result">
-                <div class="r1">{{result.stage}}</div>
-                <div class="r2">{{result.risk}}</div>
-                <div class="r2">{{result.survival}}</div>
+                <div class="r1">Binet Stage : {{result.stage}}</div>
+                <div class="r2">Risk : {{result.risk}}</div>
+                <div class="r2">Overall survival : {{result.survival}}</div>
             </div>
 
         </div>
@@ -72,15 +67,32 @@ export default Vue.extend({
     },
     methods: {
         calculateResult() {
-            // 
-            this.result = {
-                stage: "Stage C",
-                risk: "HIGHT",
-                survival: "Not likely"
+            if(this.input.inputA=="inf3" && this.input.inputB=="No" && this.input.inputC=="No"){
+                this.result = {
+                    stage: "Stage A",
+                    risk: "Low",
+                    survival: "12 years"
+                }
+            }
+            if(this.input.inputA=="supEgal3" && this.input.inputB=="No" && this.input.inputC=="No"){
+                this.result = {
+                    stage: "Stage B",
+                    risk: "Intermediate",
+                    survival: "7 years"
+                }
+            }
+            if(this.input.inputC=="Yes" || this.input.inputB=="Yes"){
+                this.result = {
+                    stage: "Stage C",
+                    risk: "High",
+                    survival: "2-4 years"
+                }
             }
         },
         changeInput(value: any) {
             this.input = {...this.input, ...value}
+            this.calculateResult()
+
         },
         changeClassIf(whichInput: string, value: string) {
             if (value === this.input[whichInput]) {
@@ -88,19 +100,16 @@ export default Vue.extend({
             } else {
                 return "off"
             }
-        }
+        }       
+        
     },
     mounted()
     {
         
     },
-    //computed: {
-    //    name2() {
-    //        return "Test"
-    //    }
-    //},
 })
 </script>
-
 <style >
-</style> 
+
+
+</style>
