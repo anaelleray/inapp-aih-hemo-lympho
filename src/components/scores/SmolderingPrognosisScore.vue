@@ -48,17 +48,11 @@ export default Vue.extend({
             let ie3 = document.getElementById("ie3");
             let s3 = document.getElementById("s3");
 
-            if(this.clicked === true) {
-                ie10.classList.add("true")
-                ie10.classList.remove("false")
-                s10.classList.add("true")
-                s10.classList.remove("false")
-            } else {
-                ie10.classList.remove("true")
-                ie10.classList.add("false")
-                s10.classList.remove("true")
-                s10.classList.add("false")
-            }
+            // if(this.clicked === true && ie10) {
+                
+            // } else {
+                
+            // }
             console.log(ie10, s10)
 
             
