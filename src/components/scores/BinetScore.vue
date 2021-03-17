@@ -110,6 +110,8 @@ export default Vue.extend({
 })
 </script>
 <style >
-
+button[class~="on"]{
+    background-color: green; 
+}
 
 </style>
