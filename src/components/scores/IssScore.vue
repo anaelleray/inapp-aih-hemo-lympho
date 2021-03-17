@@ -15,7 +15,8 @@
                 <div id="albumin-2"  class="albumin" v-on:click="select(2,'albumin')" >&lsaquo;3.5 g/dL</div>
             </div>
         </div>
-        <div>Result:{{result}}</div>
+        <div>STAGE {{result}}</div>
+        <div>Median survival is {{mounth[result-1]}} months</div>
   </div>
 </template>
 <script lang="ts">
@@ -25,7 +26,8 @@ export default Vue.extend({
     data()
     {
         return {
-            result: null,
+            mounth: [66,42,29],
+            result: 1,
             microglobulin: 1,
             albumin: 1,
         }
@@ -33,7 +35,6 @@ export default Vue.extend({
 
     mounted()
     {
-
     },
 
     methods: {

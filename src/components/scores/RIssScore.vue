@@ -32,7 +32,8 @@
                 <div id="ldh-2" class="ldh" v-on:click="select(2,'ldh')">High (> upper limit of normal)</div>
             </div>
         </div>
-        <div>Result:{{result}}</div>
+        <div>R-ISS STAGE {{result}}</div>
+        <div>{{mounth[result-1]}} months median progression-free survival</div>
   </div>
 </template>
 
@@ -43,7 +44,8 @@ export default Vue.extend({
     data()
     {
         return {
-            result: null,
+            mounth: [66,42,29],
+            result: 1,
             microglobulin: 1,
             albumin: 1,
             ifish: 1,
@@ -53,7 +55,6 @@ export default Vue.extend({
 
     mounted()
     {
-
     },
 
     methods: {
