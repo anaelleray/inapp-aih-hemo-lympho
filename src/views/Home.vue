@@ -136,6 +136,7 @@
     }
 
     a{
+        color: #69669b;
         text-decoration: none;
     }
 

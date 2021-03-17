@@ -11,8 +11,8 @@
         <div class="input1">
             <div>Serum albumin</div>
             <div>
-                <div id="albumin-1" class="albumin selected-riss" v-on:click="select(1,'albumin')">&lsaquo;3.5 g/dL</div>
-                <div id="albumin-2"  class="albumin" v-on:click="select(2,'albumin')" >≥3.5 g/dL</div>
+                <div id="albumin-1" class="albumin selected-riss" v-on:click="select(1,'albumin')">≥3.5 g/dL</div>
+                <div id="albumin-2"  class="albumin" v-on:click="select(2,'albumin')" >&lsaquo;3.5 g/dL</div>
             </div>
         </div>
         <div class="input1">
@@ -88,7 +88,7 @@ export default Vue.extend({
         },
 
         calcul: function (){
-            if(this.microglobulin == 2 && this.albumin == 2){
+            if(this.microglobulin == 1 && this.albumin == 2){
                 this.result = 2
             }else{
                 this.result = this.microglobulin 
