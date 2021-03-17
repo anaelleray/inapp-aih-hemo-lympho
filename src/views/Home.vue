@@ -135,8 +135,12 @@
         border-radius: 10px 10px 10px 10px;
     }
 
-    .sous-item a {
+    a{
+        color: #69669b;
         text-decoration: none;
+    }
+
+    .sous-item a {
         color: white; /*par exemple*/
     }
 

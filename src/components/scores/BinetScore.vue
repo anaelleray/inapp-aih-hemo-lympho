@@ -9,8 +9,8 @@
                     <div class="info">Cervical, axillary, inguinal, spleen, and liver</div>
                 </div>
                 <div class="col2">
-                    <button @click="changeInput({ inputA: 'inf3' })">&lsaquo; 3</button>
-                    <button @click="changeInput({ inputA: 'supEgal3' })">≥ 3</button>
+                    <button :class="changeClassIf('inputA', 'inf3')" @click="changeInput({ inputA: 'inf3' })">&lsaquo; 3</button>
+                    <button :class="changeClassIf('inputA', 'supEgal3')" @click="changeInput({ inputA: 'supEgal3' })">≥ 3</button>
                 </div>
             </div>
             <div class="row">
@@ -18,8 +18,8 @@
                     Anemia Hgb &lsaquo;10 g/dL
                 </div>
                 <div class="col2">
-                    <button @click="changeInput({ inputB: 'No'})">No</button>
-                    <button @click="changeInput({ inputB: 'Yes'})">Yes</button>
+                    <button :class="changeClassIf('inputB', 'No')" @click="changeInput({ inputB: 'No'})">No</button>
+                    <button :class="changeClassIf('inputB', 'Yes')" @click="changeInput({ inputB: 'Yes'})">Yes</button>
                 </div>
             </div>
             <div class="row">
@@ -27,8 +27,8 @@
                     ThrombocytopeniaPlatelets &lsaquo;100,000/mm
                 </div>
                 <div class="col2">
-                    <button @click="changeInput({ inputC: 'No'})">No</button>
-                    <button @click="changeInput({ inputC: 'Yes'})">Yes</button>
+                    <button :class="changeClassIf('inputC', 'No')" @click="changeInput({ inputC: 'No'})">No</button>
+                    <button :class="changeClassIf('inputC', 'Yes')" @click="changeInput({ inputC: 'Yes'})">Yes</button>
                 </div>
             </div>
 
@@ -94,6 +94,13 @@ export default Vue.extend({
             this.calculateResult()
 
         },
+        changeClassIf(whichInput: string, value: string) {
+            if (value === this.input[whichInput]) {
+                return "on"
+            } else {
+                return "off"
+            }
+        }       
         
     },
     mounted()
@@ -102,3 +109,7 @@ export default Vue.extend({
     },
 })
 </script>
+<style >
+
+
+</style>

@@ -11,8 +11,8 @@
         <div class="input1">
             <div>Serum albumin</div>
             <div>
-                <div id="albumin-1" class="albumin selected-riss" v-on:click="select(1,'albumin')">&lsaquo;3.5 g/dL</div>
-                <div id="albumin-2"  class="albumin" v-on:click="select(2,'albumin')" >≥3.5 g/dL</div>
+                <div id="albumin-1" class="albumin selected-riss" v-on:click="select(1,'albumin')">≥3.5 g/dL</div>
+                <div id="albumin-2"  class="albumin" v-on:click="select(2,'albumin')" >&lsaquo;3.5 g/dL</div>
             </div>
         </div>
         <div class="input1">
@@ -32,7 +32,8 @@
                 <div id="ldh-2" class="ldh" v-on:click="select(2,'ldh')">High (> upper limit of normal)</div>
             </div>
         </div>
-        <div>Result:{{result}}</div>
+        <div>R-ISS STAGE {{result}}</div>
+        <div>{{mounth[result-1]}} months median progression-free survival</div>
   </div>
 </template>
 
@@ -43,7 +44,8 @@ export default Vue.extend({
     data()
     {
         return {
-            result: null,
+            mounth: [66,42,29],
+            result: 1,
             microglobulin: 1,
             albumin: 1,
             ifish: 1,
@@ -53,7 +55,6 @@ export default Vue.extend({
 
     mounted()
     {
-
     },
 
     methods: {
@@ -88,7 +89,7 @@ export default Vue.extend({
         },
 
         calcul: function (){
-            if(this.microglobulin == 2 && this.albumin == 2){
+            if(this.microglobulin == 1 && this.albumin == 2){
                 this.result = 2
             }else{
                 this.result = this.microglobulin 
