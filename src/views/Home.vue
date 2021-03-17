@@ -1,5 +1,9 @@
 <template>
     <div class="home">
+         <div>
+             <h1>Score hémopathie lymphoïde</h1>
+             <div>List des principaux scores hémopathie lymphoïde</div>
+        </div>
         <div class="main-categories">
             <div :id="item.id" class="item" v-for="item in categories" :key="item.id" v-on:click="select(item.id)">
                 <div class="title-item">
@@ -8,6 +12,7 @@
                         <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
                     </div>
                 </div>
+               
                 <div :id="'item-'+item.id" class="section-content">
                     <div v-for="subItem in item.children" :key="subItem.id" class="sous-item">
                         <router-link class="title-item" :to="'/score/'+subItem.slug"><div>{{subItem.name}}</div> <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/></router-link>
