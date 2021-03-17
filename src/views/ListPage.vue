@@ -21,7 +21,6 @@ export default Vue.extend({
   {
       DataService.load()
             .then(() => {
-                console.log("LISTPAGE ->",DataService.$data)
             }).catch(e => {
                 console.log(e)
             })

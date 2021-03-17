@@ -12,12 +12,14 @@ import DataService from "@/service/DataService"
 import CriteresGelfScore from "@/components/scores/CriteresGelfScore.vue"
 import FlipiScore from "@/components/scores/FlipiScore.vue"
 import MipiScore from "@/components/scores/MipiScore.vue"
+import SmolderingPrognosisScore from "@/components/scores/SmolderingPrognosisScore.vue"
 export default Vue.extend({
 
     components: {
         CriteresGelfScore,
         FlipiScore,
-        MipiScore
+        MipiScore,
+        SmolderingPrognosisScore
     },
 
     data()
