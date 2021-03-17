@@ -1,8 +1,9 @@
 <template>
     <div class="home">
          <div>
-             <h1>Score hémopathie lymphoïde</h1>
-             <div>List des principaux scores hémopathie lymphoïde</div>
+             <h1 style="color: #69669b; font-size: 40px;">Score hémopathie lymphoïde</h1>
+             <br>
+             <h2 style="font-size: 20px;">List des principaux scores hémopathie lymphoïde</h2>
         </div>
         <div class="main-categories">
             <div :id="item.id" class="item" v-for="item in categories" :key="item.id" v-on:click="select(item.id)">
