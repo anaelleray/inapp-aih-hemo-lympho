@@ -102,47 +102,5 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
-.score-binet {
-    margin: 16px;
-    padding: 16px;
-    border: 1px solid gray;
-    .score-form {
-        display: flex;
-        flex-direction: column;
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
-        .col1 {
-            display: flex;
-            flex-direction: column;
-            width: 290px;
-            .title {
-                font-size: bold;
-            }
-            .info {
-                color: gray;
-            }
-        }
-        .col2 {
-            width: 66px;
-            display: flex;
-            flex-direction: row;
-            button {
-                width: 50px;
-                padding: 4px;
-                flex-grow: 0;
-                height: 24px;
-                &.off {
-                    // nothing
-                    //background-color: red;
-                }
-                &.on {
-                    background-color: green;
-                }
-            }
-        }
-    }
-}
+<style >
 </style> 
