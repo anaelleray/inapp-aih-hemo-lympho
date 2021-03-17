@@ -41,7 +41,7 @@
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  name: "LymphomeDuMaltScore",
+  name: "Lymphome du MALT",
   data() {
     return {};
   },
