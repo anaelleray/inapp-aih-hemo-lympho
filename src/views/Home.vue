@@ -10,20 +10,6 @@
         List des principaux scores hémopathie lymphoïde
       </h2>
     </div>
-    <div class="main-categories">
-      <div
-        :id="item.id"
-        class="item"
-        v-for="item in categories"
-        :key="item.id"
-        v-on:click="select(item.id)"
-      >
-        <div class="title-item">
-          <div>{{ item.name }}</div>
-          <div :id="'arrow-' + item.id" class="block-arrow">
-            <font-awsome-icon class="arrow" :icon="['fas', 'chevron-right']" />
-          </div>
-        </div>
         <div class="main-categories">
             <div v-for="item in categories" :key="item.id">
                 <div v-if="item.children.length > 0">
@@ -51,11 +37,9 @@
                         </router-link>
                     </div>
                 </div>
-            </div>
+              </div>
         </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script lang="ts">

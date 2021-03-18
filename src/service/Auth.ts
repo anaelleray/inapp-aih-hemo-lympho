@@ -27,7 +27,6 @@ class AuthService
     getApiKeyFromUrl()
     {
         this.$apiKey = this.getQueryParam("api_key")
-        console.log("Got API key from URL: " + this.$apiKey)
         return this.$apiKey
     }
 }
