@@ -58,7 +58,6 @@ export default Vue.extend({
     DataService.load()
       .then(() => {
         const cat = this.searchBySlug(DataService.$data.tree, slug);
-
         if (cat === null) {
           this.notFound = true;
         } else {
@@ -93,3 +92,125 @@ export default Vue.extend({
   },
 });
 </script>
+<style>
+
+.content-page{
+    overflow-y: scroll;
+    position: absolute;
+    height: 100%;
+    width: 100%; 
+    margin-bottom: 100px; 
+}
+
+.button-selected{
+    color:#fff  !important;
+    background-color: #ee3343 !important;
+  }
+
+  .title-red{
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom:  30px ;
+    font-size:25px;
+    color: #ee3343
+  }
+
+  .title-about{
+    font-size:20px;
+    margin-bottom:  30px ;
+    color:#69669b;
+  }
+
+  .about{
+    margin: 20px;
+    font-size:10px;
+    text-align: left;
+    color:#8b8b8e;
+    background-color:#f4f4fd;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
+    padding:20px;    
+  }
+
+  .button-info{
+    color:#aaa2a2 !important; 
+    font-size:10px !important;
+  }
+
+  .consequence{ 
+    text-align: left;
+    color: #fff;
+    background-color:#ee3343;
+    margin:20px;
+    border-bottom: 0px solid #1C6EA4;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
+    padding:20px;    
+  }
+
+  .sous-title{
+    margin: 10px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom:  30px ;
+  }
+
+  .title-purple{
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom:  30px ;
+    font-size:20px;
+    color: #69669b
+  }
+
+  .question{
+    text-align: left;
+    margin:20px;
+    margin-top:40px;
+  }
+  
+  .response{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    margin: 10px;
+  }
+  .button-selected .button-info{
+    color : #f1f1f6 !important;
+  }
+
+  .button{
+    text-align: center;
+    color: #707070;
+    background-color:#f1f1f6;
+    margin:20px;
+    border-bottom: 0px solid #1C6EA4;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
+    padding:20px;    
+  }
+
+  .question-title{
+    font-size:15px;
+  }
+
+  .score{
+    font-weight: bold;
+    margin: 20px;
+    margin-bottom: 100px;
+  }
+
+</style>
+

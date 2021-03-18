@@ -128,7 +128,8 @@
         justify-content: space-between;
         font-weight: bold;
         align-items: center;
-        font-size: 10px;
+        font-size: 15px;
+        text-align: left;
     }
 
     .sous-item{
@@ -153,5 +154,13 @@
         height: auto;
         max-height: 0px;
         transition: max-height 0.5s ease-in;
+    }
+
+    .main-categories{
+        overflow-y: scroll;
+        position: absolute;
+        height: 100%;
+        width: 100%; 
+        margin-bottom: 100px; 
     }
 </style>
