@@ -24,20 +24,6 @@
             <font-awsome-icon class="arrow" :icon="['fas', 'chevron-right']" />
           </div>
         </div>
-<<<<<<< HEAD
-
-        <div :id="'item-' + item.id" class="section-content">
-          <div
-            v-for="subItem in item.children"
-            :key="subItem.id"
-            class="sous-item"
-          >
-            <router-link class="title-item" :to="'/score/' + subItem.slug"
-              ><div>{{ subItem.name }}</div>
-              <font-awsome-icon class="arrow" :icon="['fas', 'chevron-right']"
-            /></router-link>
-          </div>
-=======
         <div class="main-categories">
             <div v-for="item in categories" :key="item.id">
                 <div v-if="item.children.length > 0">
@@ -66,7 +52,6 @@
                     </div>
                 </div>
             </div>
->>>>>>> 590554c31576253eb195225361f67d4dc90d9995
         </div>
       </div>
     </div>
@@ -160,13 +145,14 @@ export default Vue.extend({
   transition: transform 0.5s ease-in-out;
 }
 
-.title-item {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  align-items: center;
-  font-size: 10px;
-}
+    .title-item{
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        align-items: center;
+        font-size: 15px;
+        text-align: left;
+    }
 
 .sous-item {
   background-color: #69669b;
@@ -176,12 +162,6 @@ export default Vue.extend({
   border-radius: 10px 10px 10px 10px;
 }
 
-<<<<<<< HEAD
-.sous-item a {
-  text-decoration: none;
-  color: white; /*par exemple*/
-}
-=======
     a{
         color: #69669b;
         text-decoration: none;
@@ -190,12 +170,19 @@ export default Vue.extend({
     .sous-item a {
         color: white; /*par exemple*/
     }
->>>>>>> 590554c31576253eb195225361f67d4dc90d9995
 
-.section-content {
-  overflow: hidden;
-  height: auto;
-  max-height: 0px;
-  transition: max-height 0.5s ease-in;
-}
+    .section-content {
+        overflow :hidden;
+        height: auto;
+        max-height: 0px;
+        transition: max-height 0.5s ease-in;
+    }
+
+    .main-categories{
+        overflow-y: scroll;
+        position: absolute;
+        height: 100%;
+        width: 100%; 
+        margin-bottom: 100px; 
+    }
 </style>

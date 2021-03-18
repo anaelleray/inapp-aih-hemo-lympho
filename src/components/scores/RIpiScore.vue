@@ -82,6 +82,8 @@ export default {
 
             const triggerBtn = event.target;
             const otherBtn = document.getElementById(id);
+            triggerBtn.style.backgroundColor  = "red";
+            otherBtn.style.backgroundColor = "#e1e1e1";
             let clickedState = triggerBtn.getAttribute("clicked");
 
             if( clickedState === "false" ) { 
@@ -90,7 +92,7 @@ export default {
                     } else { 
                         if(this.counter > 0) this.counter-- 
                     }
-            };
+            }
 
             triggerBtn.setAttribute("clicked", "true");
             otherBtn.setAttribute("clicked", "false");
