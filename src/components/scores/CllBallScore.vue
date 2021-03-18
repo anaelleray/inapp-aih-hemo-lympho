@@ -1,5 +1,5 @@
 <template>
-  <div class="score-2">
+  <div class="cll-ball-score">
       <h2>CLL BALL Score for Relapsed/Refractory CLL</h2>
       <p>The Relapsed CLL BALL Score risk model was derived in a population of previously treated CLL patients who received protocol-based therapy in ibrutinib phase 3 trials, and was externally validated in three independent cohorts including a pooled dataset from idelalisib phase 3 trials, a venetoclax phase 3 trial, and the Mayo Clinic CLL Database.</p>
       <p>The Relapsed CLL BALL Score consists of four factors, each assigned 1 point:<br/>

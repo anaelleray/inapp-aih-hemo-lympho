@@ -45,7 +45,7 @@
                 <h3>Résultat</h3>           
                 <div class="r1">{{result.points}} points</div>
                 <div class="r2">{{result.risk}}</div>
-                <div class="r2">{{result.rate}}</div>
+                <div class="r3">{{result.rate}}</div>
             </div>
 
         </div>
@@ -60,11 +60,11 @@ export default Vue.extend({
     {
         return {
             input: {
-                inputA: "infEg65",
-                inputB: "BinetA",
-                inputC: "infEg3.5",
-                inputD: "Mutated",
-                inputE: "Tp53No",
+                inputA: "",
+                inputB: "",
+                inputC: "",
+                inputD: "",
+                inputE: "",
             },
             reponse1:0,
             reponse2:0,
