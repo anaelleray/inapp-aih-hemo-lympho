@@ -1,17 +1,69 @@
 <template>
-  <div class="score-1">
+  <div class="score-2">
     <h2>Hodgkin's Disease | Prognosis</h2>
     <h3>Estimate prognosis in Hodgkin's disease.</h3>
     <br />
     <div>
-      <table>
+      <div class="question1">
+        <div>1. Age ?</div>
+        <button @click="calculateScore(1, 1)">>45 years</button>
+        <button @click="calculateScore(0, 1)">&lsaquo; ≥45 Years</button>
+      </div>
+      <div class="question2">
+        <div>2. Gender?</div>
+        <button @click="calculateScore(1, 2)">Male</button>
+        <button @click="calculateScore(0, 2)">Female</button>
+      </div>
+      <div class="question3">
+        <div>3. Albumin?</div>
+        <button @click="calculateScore(1, 3)">Normal</button>
+        <button @click="calculateScore(0, 3)"><40 g/L</button>
+      </div>
+      <div class="question4">
+        <div>4. Hemoglobin?</div>
+        <button @click="calculateScore(1, 4)">≥105 g/L</button>
+        <button @click="calculateScore(0, 4)"><105 g/L</button>
+      </div>
+      <div class="question5">
+        <div>5. Stage?</div>
+        <button @click="calculateScore(1, 4)">Stage III</button>
+        <button @click="calculateScore(0, 4)">Stage IV</button>
+      </div>
+      <div class="question6">
+        <div>6. Leukocytosis: WBC = 15,000mm³ or more?</div>
+        <button @click="calculateScore(1, 4)">No</button>
+        <button @click="calculateScore(0, 4)">Oui</button>
+      </div>
+      <div class="question7">
+        <div>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</div>
+        <button @click="calculateScore(1, 4)">No</button>
+        <button @click="calculateScore(0, 4)">Oui</button>
+      </div>
+      <button @click="calculateResult()">View results</button>
+      <div class="result" id="result">
+        <h3>Result</h3>
+        <div>Risk</div>
+        <div>{{ result }}</div>
+        <div>
+          <h3>Interpretation</h3>
+          <div>
+            AAAAAAAAA
+          </div>
+        </div>
+      </div>
+
+      <!-- <table>
         <tr>
           <td>1. Age ?</td>
           <td>
-            <button style="background: #c2f0c2">>45 years</button>
+            <button style="background: #c2f0c2">
+              >45 years
+            </button>
           </td>
           <td>
-            <button style="background: #c2f0c2">≥45 Years</button>
+            <button style="background: #c2f0c2">
+              ≥45 Years
+            </button>
           </td>
         </tr>
         <tr>
@@ -74,7 +126,7 @@
             <button style="background: #c2f0c2">Oui</button>
           </td>
         </tr>
-      </table>
+      </table> -->
     </div>
     <input type="text" value="0" />
   </div>
@@ -85,12 +137,44 @@ import Vue from "vue";
 export default Vue.extend({
   name: "Lymphome de Hodgkin",
   data() {
-    return {};
+    return {
+      result: "",
+      score: 0,
+      question1: 0,
+      question2: 0,
+      question3: 0,
+      question4: 0,
+      question5: 0,
+      question6: 0,
+      question7: 0,
+    };
   },
-
-  mounted() {},
+    methods: {
+   calculateScore(value, question){
+       switch(question){
+           case 1 : this.question1 = value;break
+           case 2 : this.question2 = value;break
+           case 3 : this.question3 = value;break
+           case 4 : this.question4 = value;break
+           case 5 : this.question4 = value;break
+           case 6 : this.question4 = value;break
+           case 7 : this.question4 = value;break
+       }
+        this.score = this.question1 + this.question2 + this.question3 + this.question4 + this.question5 + this.question6 + this.question7
+    },
+    calculateResult (){
+        var res = document.getElementById("result")
+        res.style.display = "block"
+        if (this.score <= 1)  this.result ="Low Risk"
+        if (this.score >= 2 && this.score <=3 ) this.result = "Intermediate Risk"
+        if (this.score == 4) this.result = "High Risk"
+    }
+  }
 });
 </script>
 
 <style>
+.result {
+  display: none;
+}
 </style>
