@@ -26,18 +26,18 @@
       </div>
       <div class="question5">
         <div>5. Stage?</div>
-        <button @click="calculateScore(1, 4)">Stage III</button>
-        <button @click="calculateScore(0, 4)">Stage IV</button>
+        <button @click="calculateScore(1, 5)">Stage III</button>
+        <button @click="calculateScore(0, 5)">Stage IV</button>
       </div>
       <div class="question6">
         <div>6. Leukocytosis: WBC = 15,000mm³ or more?</div>
-        <button @click="calculateScore(1, 4)">No</button>
-        <button @click="calculateScore(0, 4)">Oui</button>
+        <button @click="calculateScore(1, 6)">No</button>
+        <button @click="calculateScore(0, 6)">Oui</button>
       </div>
       <div class="question7">
         <div>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</div>
-        <button @click="calculateScore(1, 4)">No</button>
-        <button @click="calculateScore(0, 4)">Oui</button>
+        <button @click="calculateScore(1, 7)">No</button>
+        <button @click="calculateScore(0, 7)">Oui</button>
       </div>
       <button @click="calculateResult()">View results</button>
       <div class="result" id="result">
@@ -128,7 +128,7 @@
         </tr>
       </table> -->
     </div>
-    <input type="text" value="0" />
+    <input type="text" :value="result" />
   </div>
 </template>
 
@@ -138,8 +138,7 @@ export default Vue.extend({
   name: "Lymphome de Hodgkin",
   data() {
     return {
-      result: "",
-      score: 0,
+      result: 0,
       question1: 0,
       question2: 0,
       question3: 0,
@@ -156,18 +155,18 @@ export default Vue.extend({
            case 2 : this.question2 = value;break
            case 3 : this.question3 = value;break
            case 4 : this.question4 = value;break
-           case 5 : this.question4 = value;break
-           case 6 : this.question4 = value;break
-           case 7 : this.question4 = value;break
+           case 5 : this.question5 = value;break
+           case 6 : this.question6 = value;break
+           case 7 : this.question7 = value;break
        }
-        this.score = this.question1 + this.question2 + this.question3 + this.question4 + this.question5 + this.question6 + this.question7
+        this.result = this.question1 + this.question2 + this.question3 + this.question4 + this.question5 + this.question6 + this.question7
     },
     calculateResult (){
         var res = document.getElementById("result")
         res.style.display = "block"
-        if (this.score <= 1)  this.result ="Low Risk"
-        if (this.score >= 2 && this.score <=3 ) this.result = "Intermediate Risk"
-        if (this.score == 4) this.result = "High Risk"
+        if (this.result <= 1)  this.result ="Low Risk"
+        if (this.result >= 2 && this.result <=3 ) this.result = "Intermediate Risk"
+        if (this.result == 4) this.result = "High Risk"
     }
   }
 });
