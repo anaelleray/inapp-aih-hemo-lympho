@@ -99,7 +99,7 @@ export default Vue.extend({
             
             this.noSelect = document.getElementsByClassName('no-selected')
             this.yesSelect = document.getElementsByClassName('yes-selected')
-
+ 
             for (var childNo in this.noSelect) {
                 if ( this.noSelect.hasOwnProperty(childNo) ) {
                 let children = this.noSelect[childNo].children
