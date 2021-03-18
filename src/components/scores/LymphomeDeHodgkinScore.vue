@@ -49,8 +49,7 @@
           <br />
 
           <div>
-            Predicted 5-year Rate of Freedom from Progression of Disease:
-            {{predicted[resultPred]}} %
+            Predicted 5-year Rate of Freedom from Progression of Disease: {{predicted[resultPred]}} %
           </div>
           <div>---</div>
         </div>
