@@ -1,45 +1,57 @@
 <template>
-    <div class="score-binet">
+    <div class="score">
 
-        <h2>Binet Staging System for Chronic Lymphocytic Leukemia (CLL)</h2>
-
-        <div class="score-form">
-            <div class="row">
-                <div class="col1">
-                    <div class="title">Areas of lymphadenopathy</div>
+        <div class="title-red">
+            Binet Staging System for Chronic Lymphocytic Leukemia (CLL)
+        </div>
+        <div class ="sous-title">
+            Système de stadification Binet pour la leucémie lymphoïde chronique
+        </div>
+        <hr style="background-color:#000;">
+        <div class ="title-purple">
+            Stades de la leucémie lymphoïde chronique, similaire au système de stadification Rai .
+        </div>
+        <div>
+            <div class="question">
+                <div >
+                    <div class="question-title">Areas of lymphadenopathy</div>
                     <div class="info">Cervical, axillary, inguinal, spleen, and liver</div>
                 </div>
-                <div class="col2">
-                    <button :class="changeClassIf('inputA', 'inf3')" @click="changeInput({ inputA: 'inf3' })">&lsaquo; 3</button>
-                    <button :class="changeClassIf('inputA', 'supEgal3')" @click="changeInput({ inputA: 'supEgal3' })">≥ 3</button>
+                <div class="response">
+                    <div :class="changeClassIf('inputA', 'inf3')" @click="changeInput({ inputA: 'inf3' })">&lsaquo; 3</div>
+                    <div :class="changeClassIf('inputA', 'supEgal3')" @click="changeInput({ inputA: 'supEgal3' })">≥ 3</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col1">
+            <div class="question">
+                <div class="question-title">
                     Anemia Hgb &lsaquo;10 g/dL
                 </div>
-                <div class="col2">
-                    <button :class="changeClassIf('inputB', 'No')" @click="changeInput({ inputB: 'No'})">No</button>
-                    <button :class="changeClassIf('inputB', 'Yes')" @click="changeInput({ inputB: 'Yes'})">Yes</button>
+                <div class="response">
+                    <div :class="changeClassIf('inputB', 'No')" @click="changeInput({ inputB: 'No'})">No</div>
+                    <div :class="changeClassIf('inputB', 'Yes')" @click="changeInput({ inputB: 'Yes'})">Yes</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col1">
+            <div class="question">
+                <div class="question-title">
                     ThrombocytopeniaPlatelets &lsaquo;100,000/mm
                 </div>
-                <div class="col2">
-                    <button :class="changeClassIf('inputC', 'No')" @click="changeInput({ inputC: 'No'})">No</button>
-                    <button :class="changeClassIf('inputC', 'Yes')" @click="changeInput({ inputC: 'Yes'})">Yes</button>
+                <div class="response">
+                    <div :class="changeClassIf('inputC', 'No')" @click="changeInput({ inputC: 'No'})">No</div>
+                    <div :class="changeClassIf('inputC', 'Yes')" @click="changeInput({ inputC: 'Yes'})">Yes</div>
                 </div>
             </div>
 
-            <h3>Résultat</h3>
-            <div class="score-result">
-                <div class="r1">Binet Stage : {{result.stage}}</div>
-                <div class="r2">Risk : {{result.risk}}</div>
-                <div class="r2">Overall survival : {{result.survival}}</div>
+            <div v-if="input.inputA != null && input.inputB != null && input.inputC != null " >
+                <div class="consequence">
+                    Prognosis
+                    <br><br>
+                    <div>
+                        <div class="r1">Binet Stage : {{result.stage}}</div>
+                        <div class="r2">Risk : {{result.risk}}</div>
+                        <div class="r2">Overall survival : {{result.survival}}</div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -55,9 +67,9 @@ export default Vue.extend({
     {
         return {
             input: {
-                inputA: "inf3",
-                inputB: "No",
-                inputC: "No",
+                inputA: null,
+                inputB: null,
+                inputC: null,
             },
             result: {
                 stage: "",
@@ -68,7 +80,7 @@ export default Vue.extend({
     },
     methods: {
         calculateResult() {
-            if(this.input.inputA=="inf3" && this.input.inputB=="No" && this.input.inputC=="No"){
+            if(this.input.inputA == "inf3" && this.input.inputB=="No" && this.input.inputC=="No"){
                 this.result = {
                     stage: "Stage A",
                     risk: "Low",
@@ -93,13 +105,12 @@ export default Vue.extend({
         changeInput(value: any) {
             this.input = {...this.input, ...value}
             this.calculateResult()
-
         },
         changeClassIf(whichInput: string, value: string) {
             if (value === this.input[whichInput]) {
-                return "on"
+                return "button button-selected"
             } else {
-                return "off"
+                return "button "
             }
         }       
         
