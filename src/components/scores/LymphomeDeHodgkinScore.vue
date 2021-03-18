@@ -56,84 +56,8 @@
         </div>
       </div>
 
-      <!-- old code -->
-      <!-- <table>
-        <tr>
-          <td>1. Age ?</td>
-          <td>
-            <button style="background: #c2f0c2">
-              >45 years
-            </button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">
-              ≥45 Years
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>2. Gender?</td>
-          <td>
-            <button style="background: #c2f0c2">Male</button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">Female</button>
-          </td>
-        </tr>
-        <tr>
-          <td>3. Albumin?</td>
-          <td>
-            <button style="background: #c2f0c2">Normal</button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2"><40 g/L</button>
-          </td>
-        </tr>
-        <tr>
-          <td>4. Hemoglobin?</td>
-          <td>
-            <button style="background: #c2f0c2">
-              <span>≥105 g/L</span><br />
-              <span>≥105 g/dL</span>
-            </button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">
-              <span><105 g/L</span> <br />
-              <span><105 g/dL</span>
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>5. Stage?</td>
-          <td>
-            <button style="background: #c2f0c2">Stage III</button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">Stage IV</button>
-          </td>
-        </tr>
-        <tr>
-          <td>6. Leukocytosis: WBC = 15,000mm³ or more?</td>
-          <td>
-            <button style="background: #c2f0c2">No</button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">Oui</button>
-          </td>
-        </tr>
-        <tr>
-          <td>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</td>
-          <td>
-            <button style="background: #c2f0c2">No</button>
-          </td>
-          <td>
-            <button style="background: #c2f0c2">Oui</button>
-          </td>
-        </tr>
-      </table> -->
     </div>
-    <!-- <input type="text" :value="result" /> -->
+ 
   </div>
 </template>
 
@@ -197,32 +121,9 @@ export default Vue.extend({
     calculateResult() {
       var res = document.getElementById("result");
       res.style.display = "block";
-      // if (this.result <= 1) this.result = "Low Risk";
-      // if (this.result >= 2 && this.result <= 3)
-      //   this.result = "Intermediate Risk";
-      // if (this.result == 4) this.result = "High Risk";
     },
 
-    // resultFinal() {
-    //   if (this.result = 0) {
-    //     alert('0');
-    //   }
-    //   if (this.result = 1) {
-    //     alert('1');
-    //   }
-    //   if (this.result = 2) {
-    //     alert('2');
-    //   }
-    //   if (this.result = 3) {
-    //     alert('3');
-    //   }
-    //   if (this.result = 4) {
-    //     alert('4');
-    //   }
-    //   if (this.result >= 5) {
-    //     alert('5');
-    //   }
-    // },
+    
   },
 });
 </script>
