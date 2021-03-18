@@ -6,7 +6,7 @@
     <div>
       <div class="question1">
         <div>1. Age ?</div>
-        <button @click="calculateScore(1, 1)">&lsaquo; ≥45 Years</button>
+        <button @click="calculateScore(1, 1)">≥45 Years</button>
         <button @click="calculateScore(0, 1)">>45 years</button>
       </div>
       <div class="question2">
@@ -16,12 +16,12 @@
       </div>
       <div class="question3">
         <div>3. Albumin?</div>
-        <button @click="calculateScore(1, 3)"><40 g/L</button>
+        <button @click="calculateScore(1, 3)">&lsaquo;40 g/L</button>
         <button @click="calculateScore(0, 3)">Normal</button>
       </div>
       <div class="question4">
         <div>4. Hemoglobin?</div>
-        <button @click="calculateScore(1, 4)"><105 g/L</button>
+        <button @click="calculateScore(1, 4)">&lsaquo;105 g/L</button>
         <button @click="calculateScore(0, 4)">≥105 g/L</button>
       </div>
       <div class="question5">
@@ -35,26 +35,24 @@
         <button @click="calculateScore(0, 6)">No</button>
       </div>
       <div class="question7">
-        <div>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</div>
+        <div>7. Lymphopenia: Lymphs &lsaquo;600/mm³ OR &lsaquo;8% of WBC count?</div>
         <button @click="calculateScore(1, 7)">Oui</button>
         <button @click="calculateScore(0, 7)">No</button>
       </div>
-      <button @click="calculateResult()">View results</button>
+      <button @click="calculateResult(), resultFinal()">View results</button>
       <div class="result" id="result">
         <h3>Result: {{ result }}</h3>
         <br />
 
         <div>
-          <div @click="resultFinal()">Hassenclever IPS Score:</div>
+          <div>Hassenclever IPS Score: {{ hassenclever }}</div>
           <br />
 
           <div>
             Predicted 5-year Rate of Freedom from Progression of Disease:
-            {{ hassenclever }}
+            {{ predicted }}
           </div>
           <div>---</div>
-
-          <script lang="ts"></script>
         </div>
       </div>
 
@@ -201,23 +199,23 @@ export default Vue.extend({
     },
 
     resultFinal() {
-      if (this.result == 0) {
-        console.log("qqqqqqq");
+      if (this.result = 0) {
+        alert('0');
       }
-      if (this.result == 1) {
-        console.log("qqqqqqq");
+      if (this.result = 1) {
+        alert('1');
       }
-      if (this.result == 2) {
-        console.log("qqqqqqq");
+      if (this.result = 2) {
+        alert('2');
       }
-      if (this.result == 3) {
-        console.log("qqqqqqq");
+      if (this.result = 3) {
+        alert('3');
       }
-      if (this.result == 4) {
-        console.log("qqqqqqq");
+      if (this.result = 4) {
+        alert('4');
       }
       if (this.result >= 5) {
-        console.log("qqqqqqq");
+        alert('5');
       }
     },
   },
