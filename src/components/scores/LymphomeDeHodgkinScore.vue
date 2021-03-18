@@ -6,8 +6,8 @@
     <div>
       <div class="question1">
         <div>1. Age ?</div>
-        <button @click="calculateScore(0, 1)">>45 years</button>
         <button @click="calculateScore(1, 1)">&lsaquo; ≥45 Years</button>
+        <button @click="calculateScore(0, 1)">>45 years</button>
       </div>
       <div class="question2">
         <div>2. Gender?</div>
@@ -16,44 +16,49 @@
       </div>
       <div class="question3">
         <div>3. Albumin?</div>
-        <button @click="calculateScore(0, 3)">Normal</button>
         <button @click="calculateScore(1, 3)"><40 g/L</button>
+        <button @click="calculateScore(0, 3)">Normal</button>
       </div>
       <div class="question4">
         <div>4. Hemoglobin?</div>
-        <button @click="calculateScore(0, 4)">≥105 g/L</button>
         <button @click="calculateScore(1, 4)"><105 g/L</button>
+        <button @click="calculateScore(0, 4)">≥105 g/L</button>
       </div>
       <div class="question5">
         <div>5. Stage?</div>
-        <button @click="calculateScore(0, 5)">Stage III</button>
         <button @click="calculateScore(1, 5)">Stage IV</button>
+        <button @click="calculateScore(0, 5)">Stage III</button>
       </div>
       <div class="question6">
         <div>6. Leukocytosis: WBC = 15,000mm³ or more?</div>
-        <button @click="calculateScore(0, 6)">No</button>
         <button @click="calculateScore(1, 6)">Oui</button>
+        <button @click="calculateScore(0, 6)">No</button>
       </div>
       <div class="question7">
         <div>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</div>
-        <button @click="calculateScore(0, 7)">No</button>
         <button @click="calculateScore(1, 7)">Oui</button>
+        <button @click="calculateScore(0, 7)">No</button>
       </div>
       <button @click="calculateResult()">View results</button>
       <div class="result" id="result">
-        <h3>Result</h3><br>
-     
-        <div>{{ result }}</div><br>
-        <div>
-          <div>Hassenclever IPS Score <br>a</div><br>
+        <h3>Result: {{ result }}</h3>
+        <br />
 
-          <div>Predicted 5-year Rate of Freedom from Progression of Disease <br>d</div>
+        <div>
+          <div @click="resultFinal()">Hassenclever IPS Score:</div>
+          <br />
+
+          <div>
+            Predicted 5-year Rate of Freedom from Progression of Disease:
+            {{ hassenclever }}
+          </div>
           <div>---</div>
-          
-     
+
+          <script lang="ts"></script>
         </div>
       </div>
 
+      <!-- old code -->
       <!-- <table>
         <tr>
           <td>1. Age ?</td>
@@ -141,7 +146,8 @@ export default Vue.extend({
   data() {
     return {
       result: 0,
-
+      hassenclever: [0, 1, 2, 3, 4, 5],
+      predicted: [84, 77, 67, 60, 51, 42],
       question1: 0,
       question2: 0,
       question3: 0,
@@ -151,27 +157,70 @@ export default Vue.extend({
       question7: 0,
     };
   },
-    methods: {
-   calculateScore(value, question){
-       switch(question){
-           case 1 : this.question1 = value;break
-           case 2 : this.question2 = value;break
-           case 3 : this.question3 = value;break
-           case 4 : this.question4 = value;break
-           case 5 : this.question5 = value;break
-           case 6 : this.question6 = value;break
-           case 7 : this.question7 = value;break
-       }
-        this.result = this.question1 + this.question2 + this.question3 + this.question4 + this.question5 + this.question6 + this.question7
+  methods: {
+    calculateScore(value, question) {
+      switch (question) {
+        case 1:
+          this.question1 = value;
+          break;
+        case 2:
+          this.question2 = value;
+          break;
+        case 3:
+          this.question3 = value;
+          break;
+        case 4:
+          this.question4 = value;
+          break;
+        case 5:
+          this.question5 = value;
+          break;
+        case 6:
+          this.question6 = value;
+          break;
+        case 7:
+          this.question7 = value;
+          break;
+      }
+      this.result =
+        this.question1 +
+        this.question2 +
+        this.question3 +
+        this.question4 +
+        this.question5 +
+        this.question6 +
+        this.question7;
     },
-    calculateResult (){
-        var res = document.getElementById("result")
-        res.style.display = "block"
-        if (this.result <= 1)  this.result ="Low Risk"
-        if (this.result >= 2 && this.result <=3 ) this.result = "Intermediate Risk"
-        if (this.result == 4) this.result = "High Risk"
-    }
-  }
+    calculateResult() {
+      var res = document.getElementById("result");
+      res.style.display = "block";
+      if (this.result <= 1) this.result = "Low Risk";
+      if (this.result >= 2 && this.result <= 3)
+        this.result = "Intermediate Risk";
+      if (this.result == 4) this.result = "High Risk";
+    },
+
+    resultFinal() {
+      if (this.result == 0) {
+        console.log("qqqqqqq");
+      }
+      if (this.result == 1) {
+        console.log("qqqqqqq");
+      }
+      if (this.result == 2) {
+        console.log("qqqqqqq");
+      }
+      if (this.result == 3) {
+        console.log("qqqqqqq");
+      }
+      if (this.result == 4) {
+        console.log("qqqqqqq");
+      }
+      if (this.result >= 5) {
+        console.log("qqqqqqq");
+      }
+    },
+  },
 });
 </script>
 
