@@ -5,7 +5,7 @@
         <section>
             <label for="age"> Age </label>
             <div>
-                <button id="ageOne" clicked="true" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </button>
+                <button id="ageOne" clicked="false" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </button>
                 <button id="ageTwo" clicked="false" @click="incrementOnClick($event, '+', 'ageOne')"> >60 years </button>
             </div>
         </section>

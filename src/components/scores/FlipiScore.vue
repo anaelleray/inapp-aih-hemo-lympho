@@ -8,38 +8,38 @@
             <div class="flipiInput1">
                 <p>Age &gt;	 60 years</p>
                 <div class="no-selected">
-                    <button id="ageNo" @click="counter">No 0</button>
+                    <button id="ageNo" clicked="false" @click="counter($event, '-', 'ageYes')">No 0</button>
                 </div>
                 <div class="yes-selected">
-                    <button id="ageYes" @click="counter">Yes +1</button>
+                    <button id="ageYes" clicked="false" @click="counter($event, '+', 'ageNo')">Yes +1</button>
                 </div>
             </div>
             <div class="flipiInput2">
                 <p>&gt;4 nodal sites
                     See Evidence for nodal diagram.</p>
                     <div class="no-selected">
-                    <button id="nodalNo" @click="counter">No 0</button>
+                    <button id="nodalNo" clicked="false" @click="counter($event, '-', 'nodalYes')">No 0</button>
                 </div>
                 <div class="yes-selected">
-                    <button id="nodalYes" @click="counter">Yes +1</button>
+                    <button id="nodalYes" clicked="false" @click="counter($event, '+', 'nodalNo')">Yes +1</button>
                 </div>
             </div>
             <div class="flipiInput3">
                 <p>LDH elevated</p>
                 <div class="no-selected">
-                    <button id="ldhNo" @click="counter">No 0</button>
+                    <button id="ldhNo" clicked="false" @click="counter($event, '-', 'ldhYes')">No 0</button>
                 </div>
                 <div class="yes-selected">
-                    <button id="ldhYes" @click="counter">Yes +1</button>
+                    <button id="ldhYes" clicked="false"  @click="counter($event, '+', 'ldhNo')">Yes +1</button>
                 </div>
             </div>
             <div class="flipiInput4">
                 <p>Hemoglobin &lt;120 g/L or 12 g/dL</p>
                 <div class="no-selected">
-                    <button id="hemoNo" @click="counter">No 0</button>
+                    <button id="hemoNo" clicked="false" @click="counter($event, '-', 'hemoYes')">No 0</button>
                 </div>
                 <div class="yes-selected">
-                    <button id="hemoYes" @click="counter">Yes +1</button>
+                    <button id="hemoYes" clicked="false" @click="counter($event, '+', 'hemoNo')">Yes +1</button>
                 </div>
             </div>
             <div class="flipiInput5">
@@ -51,10 +51,10 @@
                     See Evidence for stage diagram.
                 </p>
                 <div class="no-selected">
-                    <button id="stageNo" @click="counter">No 0</button>
+                    <button id="stageNo" clicked="false" @click="counter($event, '-', 'stageYes')">No 0</button>
                 </div>
                 <div class="yes-selected">
-                    <button id="stageYes" @click="counter">Yes +1</button>
+                    <button id="stageYes" clicked="false" @click="counter($event, '+', 'stageNo')">Yes +1</button>
                 </div>
             </div>
             <div class="flipiWindowResult">
@@ -78,110 +78,27 @@ export default Vue.extend({
             points : 0,
             risk : "Low risk",
             survival : "10-year overall survival is approximately 70%",
-            noSelect : [],
-            yesSelect: []
         }
     },
     methods: {
-        counter:function(event){
+        counter:function(event, inc, id){
 
-            let ageN = document.getElementById('ageNo');
-            let ageY = document.getElementById('ageYes');
-            let nodalN = document.getElementById('nodalNo');
-            let nodalY = document.getElementById('nodalYes');
-            let ldhN = document.getElementById('ldhNo');
-            let ldhY = document.getElementById('ldhYes');
-            let hemoN = document.getElementById('hemoNo');
-            let hemoY = document.getElementById('hemoYes');
-            let stageN = document.getElementById('stageNo');
-            let stageY = document.getElementById('stageYes');
+            const triggerBtn = event.target;
+            const otherBtn = document.getElementById(id);
+            triggerBtn.style.backgroundColor  = "red";
+            otherBtn.style.backgroundColor = "#e1e1e1";
+            let clickedState = triggerBtn.getAttribute("clicked");
 
-            //Assignation d'une classe déterminante du clique 
-            if(event.type == "click" && event.target.id == "ageNo"){
-                ageN.classList.add("is-selected")
-                ageY.classList.remove("is-selected")
-            } else if(event.type == "click" && event.target.id == "ageYes"){
-                ageY.classList.add("is-selected")
-                ageN.classList.remove("is-selected")
-            }
-
-            if(event.type == "click" && event.target.id == "nodalNo"){
-                nodalN.classList.add("is-selected")
-                nodalY.classList.remove("is-selected")
-            } else if(event.type == "click" && event.target.id == "nodalYes"){
-                nodalY.classList.add("is-selected")
-                nodalN.classList.remove("is-selected")
-            }
-
-            if(event.type == "click" && event.target.id == "ldhNo"){
-                ldhN.classList.add("is-selected")
-                ldhY.classList.remove("is-selected")
-            } else if(event.type == "click" && event.target.id == "ldhYes"){
-                ldhY.classList.add("is-selected")
-                ldhN.classList.remove("is-selected")
-            }
-
-            if(event.type == "click" && event.target.id == "hemoNo"){
-                hemoN.classList.add("is-selected")
-                hemoY.classList.remove("is-selected")
-            } else if(event.type == "click" && event.target.id == "hemoYes"){
-                hemoY.classList.add("is-selected")
-                hemoN.classList.remove("is-selected")
-            }
-
-            if(event.type == "click" && event.target.id == "stageNo"){
-                stageN.classList.add("is-selected")
-                stageY.classList.remove("is-selected")
-            } else if(event.type == "click" && event.target.id == "stageYes"){
-                stageY.classList.add("is-selected")
-                stageN.classList.remove("is-selected")
-            }
-            ////////////////////////////////
-
-            this.noSelect = document.getElementsByClassName('no-selected')
-            this.yesSelect = document.getElementsByClassName('yes-selected')
-
-            // Boucle de sélection de tous les boutons "Non" via la div parente
-            for (var childNo in this.noSelect) {
-                if ( this.noSelect.hasOwnProperty(childNo) ) {
-                    let children = this.noSelect[childNo].children
-                    let childId = children[0].id
-                    let childClass = children[0].className
-
-                    if(childId === event.target.id) {
-                        if(childClass !== "is-selected"){
-                            if(this.points != 0){
-                                this.points--
-                            } else {
-                                this.points = 0
-                            }
-                        } else {
-                            this.points = this.points
-                        }
+            if( clickedState === "false" ) { 
+                if (inc === "+"){ 
+                        this.points++ 
+                    } else { 
+                        if(this.points > 0) this.points-- 
                     }
-                }
             }
-            ////////////////////////////////
-            // Boucle de sélection de tous les boutons "Oui" via la div parente
-            for (var childYes in this.yesSelect) {
-                if ( this.yesSelect.hasOwnProperty(childYes) ) {
-                    let children = this.yesSelect[childYes].children
-                    let childId = children[0].id
-                    let childClass = children[0].className
 
-                    if(childId === event.target.id) {
-                        if(childClass !== "is-selected"){
-                            if(this.points != 5){
-                                this.points++
-                            } else {
-                                this.points = 5
-                            }
-                        } else {
-                            this.points = this.points
-                        }
-                    }
-                }
-            }
+            triggerBtn.setAttribute("clicked", "true");
+            otherBtn.setAttribute("clicked", "false");
             ////////////////////////////////
             //Détermination des paramètres d'adaptation des données textuelles
             if(this.points === 1){
@@ -204,8 +121,9 @@ export default Vue.extend({
                 this.risk = "Low risk"
                 this.survival = "10-year overall survival is approximately 35%"
             }
+
+            console.log(this.points);
         }
-        ////////////////////////////////
     },
     mounted()
     {
