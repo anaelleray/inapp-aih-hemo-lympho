@@ -1,7 +1,8 @@
 <template>
     <div class="header">
         <div>
-        <a href="cmd://webview-close"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a>
+            <a v-if="testIcon(false)" href="cmd://webview-close"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a>
+            <a v-if="testIcon(true)" href=""><font-awsome-icon class="close" :icon="['fas','chevron-left']"/></a>
         </div>
         <div>
             <img class="AIH-logo" src="../assets/AIH-logo.png"  alt="Association des Internes en Hématologie">
@@ -15,14 +16,21 @@ import Vue from "vue"
 export default Vue.extend({
 
     data: () => ({
-
+        url: window.location.href
     }),
+
+    methods:{
+        testIcon(test){
+            return String(this.url).includes('score') === test;
+        }
+    },
 
     mounted()
     {
-        //
+
     }
 })
+
 </script>
 
 <style>
