@@ -92,7 +92,7 @@ export default {
                     } else { 
                         if(this.counter > 0) this.counter-- 
                     }
-            };
+            }
 
             triggerBtn.setAttribute("clicked", "true");
             otherBtn.setAttribute("clicked", "false");
