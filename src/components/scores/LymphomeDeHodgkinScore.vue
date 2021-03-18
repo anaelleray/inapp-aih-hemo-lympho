@@ -6,8 +6,8 @@
     <div>
       <div class="question1">
         <div>1. Age ?</div>
-        <button @click="calculateScore(1, 1)">>45 years</button>
-        <button @click="calculateScore(0, 1)">&lsaquo; ≥45 Years</button>
+        <button @click="calculateScore(0, 1)">>45 years</button>
+        <button @click="calculateScore(1, 1)">&lsaquo; ≥45 Years</button>
       </div>
       <div class="question2">
         <div>2. Gender?</div>
@@ -16,39 +16,41 @@
       </div>
       <div class="question3">
         <div>3. Albumin?</div>
-        <button @click="calculateScore(1, 3)">Normal</button>
-        <button @click="calculateScore(0, 3)"><40 g/L</button>
+        <button @click="calculateScore(0, 3)">Normal</button>
+        <button @click="calculateScore(1, 3)"><40 g/L</button>
       </div>
       <div class="question4">
         <div>4. Hemoglobin?</div>
-        <button @click="calculateScore(1, 4)">≥105 g/L</button>
-        <button @click="calculateScore(0, 4)"><105 g/L</button>
+        <button @click="calculateScore(0, 4)">≥105 g/L</button>
+        <button @click="calculateScore(1, 4)"><105 g/L</button>
       </div>
       <div class="question5">
         <div>5. Stage?</div>
-        <button @click="calculateScore(1, 5)">Stage III</button>
-        <button @click="calculateScore(0, 5)">Stage IV</button>
+        <button @click="calculateScore(0, 5)">Stage III</button>
+        <button @click="calculateScore(1, 5)">Stage IV</button>
       </div>
       <div class="question6">
         <div>6. Leukocytosis: WBC = 15,000mm³ or more?</div>
-        <button @click="calculateScore(1, 6)">No</button>
-        <button @click="calculateScore(0, 6)">Oui</button>
+        <button @click="calculateScore(0, 6)">No</button>
+        <button @click="calculateScore(1, 6)">Oui</button>
       </div>
       <div class="question7">
         <div>7. Lymphopenia: Lymphs <600/mm³ OR <8% of WBC count?</div>
-        <button @click="calculateScore(1, 7)">No</button>
-        <button @click="calculateScore(0, 7)">Oui</button>
+        <button @click="calculateScore(0, 7)">No</button>
+        <button @click="calculateScore(1, 7)">Oui</button>
       </div>
       <button @click="calculateResult()">View results</button>
       <div class="result" id="result">
-        <h3>Result</h3>
-        <div>Risk</div>
-        <div>{{ result }}</div>
+        <h3>Result</h3><br>
+     
+        <div>{{ result }}</div><br>
         <div>
-          <h3>Interpretation</h3>
-          <div>
-            AAAAAAAAA
-          </div>
+          <div>Hassenclever IPS Score <br>a</div><br>
+
+          <div>Predicted 5-year Rate of Freedom from Progression of Disease <br>d</div>
+          <div>---</div>
+          
+     
         </div>
       </div>
 
@@ -139,6 +141,7 @@ export default Vue.extend({
   data() {
     return {
       result: 0,
+
       question1: 0,
       question2: 0,
       question3: 0,
