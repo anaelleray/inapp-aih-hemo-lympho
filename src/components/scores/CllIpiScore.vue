@@ -1,53 +1,59 @@
   <template>
-    <div class="score-cll-ipi">
-        <h2>International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI)</h2>
-        <h4>Stratifies patients with chronic lymphocytic leukemia into four risk categories. </h4>
-
-        <div class="score-form">
-            <div class="row">
-                <div class="col1">
-                    <div class="title">Age</div>
-                </div>
-                <div class="col2">
-                    <button :class="changeClassIf('inputA', 'infEg65')" @click="changeInput({ inputA: 'infEg65' })"> ≤65 years</button>
-                    <button :class="changeClassIf('inputA', 'sup65')" @click="changeInput({ inputA: 'sup65' })">>65 years</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col1">Clinical stage</div>             
-                    <div class="col2">
-                    <button :class="changeClassIf('inputB', 'BinetA')" @click="changeInput({ inputB: 'BinetA'})">Binet A or Rai 0</button>
-                    <button :class="changeClassIf('inputB', 'BinetBC')" @click="changeInput({ inputB: 'BinetBC'})">Binet B-C or Rai I-IV </button>
+    <div class="score">
+        <div class="title-red">
+            International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI)
+        </div>
+        <div class="sous-title">
+            Stratifies patients with chronic lymphocytic leukemia into four risk categories. 
+        </div>
+        <hr style="background-color:#000;">
+        <div>
+            <div class="question">
+                <div class="question-title">Age</div>
+                <div class="response">
+                    <div :class="changeClassIf('inputA', 'infEg65')" @click="changeInput({ inputA: 'infEg65' })"> ≤65 years</div>
+                    <div :class="changeClassIf('inputA', 'sup65')" @click="changeInput({ inputA: 'sup65' })">>65 years</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col1">Serum β2 microglobulin, mg/L (or µg/mL)</div>             
-                    <div class="col2">
-                    <button :class="changeClassIf('inputC', 'infEg3.5')" @click="changeInput({ inputC: 'infEg3.5'})">≤3.5</button>
-                    <button :class="changeClassIf('inputC', 'sup3.5')" @click="changeInput({ inputC: 'sup3.5'})">>3.5</button>
+            <div class="question">
+                <div class="question-title">Clinical stage</div>             
+                <div class="response">
+                    <div :class="changeClassIf('inputB', 'BinetA')" @click="changeInput({ inputB: 'BinetA'})">Binet A or Rai 0</div>
+                    <div :class="changeClassIf('inputB', 'BinetBC')" @click="changeInput({ inputB: 'BinetBC'})">Binet B-C or Rai I-IV </div>
+                </div>
+            </div>
+            <div class="question">
+                <div class="question-title">Serum β2 microglobulin, mg/L (or µg/mL)</div>             
+                    <div class="response">
+                    <div :class="changeClassIf('inputC', 'infEg3.5')" @click="changeInput({ inputC: 'infEg3.5'})">≤3.5</div>
+                    <div :class="changeClassIf('inputC', 'sup3.5')" @click="changeInput({ inputC: 'sup3.5'})">>3.5</div>
                 </div>
             </div> 
-            <div class="row">
-                <div class="col1">IGHV mutational status</div>             
-                    <div class="col2">
-                    <button :class="changeClassIf('inputD', 'Mutated')" @click="changeInput({ inputD: 'Mutated'})">Mutated</button>
-                    <button :class="changeClassIf('inputD', 'Unmutated')" @click="changeInput({ inputD: 'Unmutated'})">Unmutated</button>
+            <div class="question">
+                <div class="question-title">IGHV mutational status</div>             
+                    <div class="response">
+                    <div :class="changeClassIf('inputD', 'Mutated')" @click="changeInput({ inputD: 'Mutated'})">Mutated</div>
+                    <div :class="changeClassIf('inputD', 'Unmutated')" @click="changeInput({ inputD: 'Unmutated'})">Unmutated</div>
                 </div>
             </div>              
-            <div class="row">
-                <div class="col1">TP53 status</div>             
-                    <div class="col2">
-                    <button :class="changeClassIf('inputE', 'Tp53No')" @click="changeInput({ inputE: 'Tp53No'})">No abnormalities</button>
-                    <button :class="changeClassIf('inputE', 'Tp53Del')" @click="changeInput({ inputE: 'Tp53Del'})">Deletion 17p (FISH) and/or TP53 mutation (sequencing)</button>
+            <div class="question">
+                <div class="question-title">TP53 status</div>             
+                    <div class="response">
+                    <div :class="changeClassIf('inputE', 'Tp53No')" @click="changeInput({ inputE: 'Tp53No'})">No abnormalities</div>
+                    <div :class="changeClassIf('inputE', 'Tp53Del')" @click="changeInput({ inputE: 'Tp53Del'})">Deletion 17p (FISH) and/or TP53 mutation (sequencing)</div>
                 </div>
             </div>  
-            <div class="score-result">  
-                <h3>Résultat</h3>           
-                <div class="r1">{{result.points}} points</div>
-                <div class="r2">{{result.risk}}</div>
-                <div class="r2">{{result.rate}}</div>
+            <div v-if="input.inputA != null && input.inputB != null && input.inputC != null && input.inputD != null && input.inputE != null" >
+                <div class="consequence">
+                    Prognosis
+                    <br><br>
+                    <div>
+                        <div class="r1">{{result.points}} points</div>
+                        <div class="r2">{{result.risk}}</div>
+                        <div class="r2">{{result.rate}}</div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -60,11 +66,11 @@ export default Vue.extend({
     {
         return {
             input: {
-                inputA: "infEg65",
-                inputB: "BinetA",
-                inputC: "infEg3.5",
-                inputD: "Mutated",
-                inputE: "Tp53No",
+                inputA: null,
+                inputB: null,
+                inputC: null,
+                inputD: null,
+                inputE: null,
             },
             reponse1:0,
             reponse2:0,
@@ -116,9 +122,9 @@ export default Vue.extend({
         }, 
         changeClassIf(whichInput: string, value: string) {
             if (value === this.input[whichInput]) {
-                return "on"
+                return "button button-selected"
             } else {
-                return "off"
+                return "button "
             }
         }       
     },

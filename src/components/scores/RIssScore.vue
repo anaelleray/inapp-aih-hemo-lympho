@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="score">
+      
         <div class="input1">
             <div>Serum β2 microglobulin</div>
             <div>
