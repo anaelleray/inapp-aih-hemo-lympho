@@ -114,11 +114,11 @@ export default Vue.extend({
                 this.survival = "10-year overall survival is approximately 35%"
             }
             if(this.points === 4) {
-                this.risk = "Low risk"
+                this.risk = "High Risk"
                 this.survival = "10-year overall survival is approximately 35%"
             }
             if(this.points === 5) {
-                this.risk = "Low risk"
+                this.risk = "High Risk"
                 this.survival = "10-year overall survival is approximately 35%"
             }
         }
