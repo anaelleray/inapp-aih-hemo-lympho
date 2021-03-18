@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div>
-            <a href="#"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a>
+        <a href="cmd://webview-close"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a>
         </div>
         <div>
             <img class="AIH-logo" src="../assets/AIH-logo.png"  alt="Association des Internes en Hématologie">
