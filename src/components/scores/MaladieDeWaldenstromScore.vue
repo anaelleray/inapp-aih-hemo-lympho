@@ -91,16 +91,16 @@
 
     methods: {
         select : function(value, input){
-            let holdSelec= document.getElementsByClassName( input+' selected-waldenstrom')
+            let holdSelec= document.getElementsByClassName( input+' button-selected')
             let newSelec = document.getElementById(input+'-'+value)
 
             if(holdSelec[0]){
                 if(holdSelec[0] != newSelec){
-                    holdSelec[0].classList.remove("selected-waldenstrom");
-                    newSelec.classList.add("selected-waldenstrom");
+                    holdSelec[0].classList.remove("button-selected");
+                    newSelec.classList.add("button-selected");
                 }
             }else{
-              newSelec.classList.add("selected-waldenstrom");
+              newSelec.classList.add("button-selected");
             }
 
             switch(input)
@@ -144,110 +144,5 @@
 </script>
 
 <style>
-  .selected-waldenstrom{
-    color:#fff  !important;
-    background-color: #ee3343 !important;
-  }
-
-  .title-red{
-    text-align: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
-    margin-bottom:  30px ;
-    font-size:25px;
-    color: #ee3343
-  }
-
-  .title-about{
-    
-    font-size:20px;
-    margin-bottom:  30px ;
-    color:#69669b;
-  }
-
-  .about{
-    margin: 20px;
-    font-size:10px;
-    text-align: left;
-    color:#8b8b8e;
-    background-color:#f4f4fd;
-    border-radius: 0px 0px 20px 20px;
-    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
-    padding:20px;    
-  }
-
-  .button-info{
-    color:#aaa2a2 !important; 
-    font-size:10px !important;
-  }
-
-  .consequence{ 
-    text-align: left;
-    color: #fff;
-    background-color:#ee3343;
-    margin:20px;
-    border-bottom: 0px solid #1C6EA4;
-    border-radius: 0px 0px 20px 20px;
-    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
-    padding:20px;    
-  }
-
-  .sous-title{
-    margin: 10px;
-    text-align: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
-    margin-bottom:  30px ;
-  }
-
-  .title-purple{
-    text-align: left;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 30px;
-    margin-bottom:  30px ;
-    font-size:20px;
-    color: #69669b
-  }
-
-  .question{
-    text-align: left;
-    margin:20px;
-    margin-top:40px;
-  }
   
-  .response{
-    display: flex;
-    flex-direction:column;
-    justify-content:center;
-    margin: 10px;
-  }
-
-  .button{
-    text-align: center;
-    color: #707070;
-    background-color:#f1f1f6;
-    margin:20px;
-    border-bottom: 0px solid #1C6EA4;
-    border-radius: 0px 0px 20px 20px;
-    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
-    padding:20px;    
-  }
-
-  .question-title{
-    font-size:15px;
-  }
-
-  .score{
-    font-weight: bold;
-    margin: 20px;
-  }
 </style>
