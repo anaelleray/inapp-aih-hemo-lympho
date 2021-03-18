@@ -83,37 +83,107 @@ export default Vue.extend({
         }
     },
     methods: {
-        counter:function(event, id){
-            // let ageN = document.getElementById('ageNo');
-            // let ageY = document.getElementById('ageY');
-            // let nodalN = document.getElementById('nodalNo');
-            // let nodalY = document.getElementById('nodalY');
-            // let ldhN = document.getElementById('ldhNo');
-            // let ldhY = document.getElementById('ldhY');
-            // let hemoN = document.getElementById('hemoNo');
-            // let hemoY = document.getElementById('hemoY');
-            // let stageN = document.getElementById('stageNo');
-            // let stageY = document.getElementById('stageY');
+        counter:function(event){
 
-            console.log(event.type, event.target.id)
-            
+            let ageN = document.getElementById('ageNo');
+            let ageY = document.getElementById('ageYes');
+            let nodalN = document.getElementById('nodalNo');
+            let nodalY = document.getElementById('nodalYes');
+            let ldhN = document.getElementById('ldhNo');
+            let ldhY = document.getElementById('ldhYes');
+            let hemoN = document.getElementById('hemoNo');
+            let hemoY = document.getElementById('hemoYes');
+            let stageN = document.getElementById('stageNo');
+            let stageY = document.getElementById('stageYes');
+
+            //Assignation d'une classe déterminante du clique 
+            if(event.type == "click" && event.target.id == "ageNo"){
+                ageN.classList.add("is-selected")
+                ageY.classList.remove("is-selected")
+            } else if(event.type == "click" && event.target.id == "ageYes"){
+                ageY.classList.add("is-selected")
+                ageN.classList.remove("is-selected")
+            }
+
+            if(event.type == "click" && event.target.id == "nodalNo"){
+                nodalN.classList.add("is-selected")
+                nodalY.classList.remove("is-selected")
+            } else if(event.type == "click" && event.target.id == "nodalYes"){
+                nodalY.classList.add("is-selected")
+                nodalN.classList.remove("is-selected")
+            }
+
+            if(event.type == "click" && event.target.id == "ldhNo"){
+                ldhN.classList.add("is-selected")
+                ldhY.classList.remove("is-selected")
+            } else if(event.type == "click" && event.target.id == "ldhYes"){
+                ldhY.classList.add("is-selected")
+                ldhN.classList.remove("is-selected")
+            }
+
+            if(event.type == "click" && event.target.id == "hemoNo"){
+                hemoN.classList.add("is-selected")
+                hemoY.classList.remove("is-selected")
+            } else if(event.type == "click" && event.target.id == "hemoYes"){
+                hemoY.classList.add("is-selected")
+                hemoN.classList.remove("is-selected")
+            }
+
+            if(event.type == "click" && event.target.id == "stageNo"){
+                stageN.classList.add("is-selected")
+                stageY.classList.remove("is-selected")
+            } else if(event.type == "click" && event.target.id == "stageYes"){
+                stageY.classList.add("is-selected")
+                stageN.classList.remove("is-selected")
+            }
+            ////////////////////////////////
+
             this.noSelect = document.getElementsByClassName('no-selected')
             this.yesSelect = document.getElementsByClassName('yes-selected')
- 
+
+            // Boucle de sélection de tous les boutons "Non" via la div parente
             for (var childNo in this.noSelect) {
                 if ( this.noSelect.hasOwnProperty(childNo) ) {
-                let children = this.noSelect[childNo].children
-                console.log('child ->', children)
+                    let children = this.noSelect[childNo].children
+                    let childId = children[0].id
+                    let childClass = children[0].className
+
+                    if(childId === event.target.id) {
+                        if(childClass !== "is-selected"){
+                            if(this.points != 0){
+                                this.points--
+                            } else {
+                                this.points = 0
+                            }
+                        } else {
+                            this.points = this.points
+                        }
+                    }
                 }
             }
+            ////////////////////////////////
+            // Boucle de sélection de tous les boutons "Oui" via la div parente
             for (var childYes in this.yesSelect) {
                 if ( this.yesSelect.hasOwnProperty(childYes) ) {
-                let children = this.yesSelect[childYes].children
-                console.log('child ->', children)
+                    let children = this.yesSelect[childYes].children
+                    let childId = children[0].id
+                    let childClass = children[0].className
+
+                    if(childId === event.target.id) {
+                        if(childClass !== "is-selected"){
+                            if(this.points != 5){
+                                this.points++
+                            } else {
+                                this.points = 5
+                            }
+                        } else {
+                            this.points = this.points
+                        }
+                    }
                 }
             }
-            
-
+            ////////////////////////////////
+            //Détermination des paramètres d'adaptation des données textuelles
             if(this.points === 1){
                 this.risk = "Low risk"
                 this.survival = "10-year overall survival is approximately 70%"
@@ -135,6 +205,7 @@ export default Vue.extend({
                 this.survival = "10-year overall survival is approximately 35%"
             }
         }
+        ////////////////////////////////
     },
     mounted()
     {
