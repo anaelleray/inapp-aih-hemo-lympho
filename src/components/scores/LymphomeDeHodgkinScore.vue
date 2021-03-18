@@ -39,18 +39,18 @@
         <button @click="calculateScore(1, 7)">Oui</button>
         <button @click="calculateScore(0, 7)">No</button>
       </div>
-      <button @click="calculateResult(), resultFinal()">View results</button>
+      <button @click="calculateResult()">View results</button>
       <div class="result" id="result">
         <h3>Result: {{ result }}</h3>
         <br />
 
         <div>
-          <div>Hassenclever IPS Score: {{ hassenclever }}</div>
+          <div>Hassenclever IPS Score: {{result}}</div>
           <br />
 
           <div>
             Predicted 5-year Rate of Freedom from Progression of Disease:
-            {{ predicted }}
+            {{predicted[resultPred]}} %
           </div>
           <div>---</div>
         </div>
@@ -133,7 +133,7 @@
         </tr>
       </table> -->
     </div>
-    <input type="text" :value="result" />
+    <!-- <input type="text" :value="result" /> -->
   </div>
 </template>
 
@@ -144,7 +144,7 @@ export default Vue.extend({
   data() {
     return {
       result: 0,
-      hassenclever: [0, 1, 2, 3, 4, 5],
+      resultPred: 0,
       predicted: [84, 77, 67, 60, 51, 42],
       question1: 0,
       question2: 0,
@@ -188,36 +188,41 @@ export default Vue.extend({
         this.question5 +
         this.question6 +
         this.question7;
+        if (this.result > 5) {
+          this.resultPred = 5
+        }else {
+          this.resultPred =  this.result
+        }
     },
     calculateResult() {
       var res = document.getElementById("result");
       res.style.display = "block";
-      if (this.result <= 1) this.result = "Low Risk";
-      if (this.result >= 2 && this.result <= 3)
-        this.result = "Intermediate Risk";
-      if (this.result == 4) this.result = "High Risk";
+      // if (this.result <= 1) this.result = "Low Risk";
+      // if (this.result >= 2 && this.result <= 3)
+      //   this.result = "Intermediate Risk";
+      // if (this.result == 4) this.result = "High Risk";
     },
 
-    resultFinal() {
-      if (this.result = 0) {
-        alert('0');
-      }
-      if (this.result = 1) {
-        alert('1');
-      }
-      if (this.result = 2) {
-        alert('2');
-      }
-      if (this.result = 3) {
-        alert('3');
-      }
-      if (this.result = 4) {
-        alert('4');
-      }
-      if (this.result >= 5) {
-        alert('5');
-      }
-    },
+    // resultFinal() {
+    //   if (this.result = 0) {
+    //     alert('0');
+    //   }
+    //   if (this.result = 1) {
+    //     alert('1');
+    //   }
+    //   if (this.result = 2) {
+    //     alert('2');
+    //   }
+    //   if (this.result = 3) {
+    //     alert('3');
+    //   }
+    //   if (this.result = 4) {
+    //     alert('4');
+    //   }
+    //   if (this.result >= 5) {
+    //     alert('5');
+    //   }
+    // },
   },
 });
 </script>
