@@ -1,5 +1,6 @@
-  <template>
-    <div class="score-binet-1">
+<template>
+    <div class="score-binet">
+
         <h2>Binet Staging System for Chronic Lymphocytic Leukemia (CLL)</h2>
 
         <div class="score-form">
@@ -46,7 +47,7 @@
 <script lang="ts">
 import Vue from "vue"
 export default Vue.extend({  
-   name: "BinetScore",
+    name: "BinetScore",
     components: {
 
     },
@@ -109,9 +110,3 @@ export default Vue.extend({
     },
 })
 </script>
-<style >
-button[class~="on"]{
-    background-color: green; 
-}
-
-</style>

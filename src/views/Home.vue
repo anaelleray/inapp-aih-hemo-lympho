@@ -1,5 +1,9 @@
 <template>
     <div class="home">
+         <div>
+             <h1>Score hémopathie lymphoïde</h1>
+             <div>List des principaux scores hémopathie lymphoïde</div>
+        </div>
         <div class="main-categories">
             <div v-for="item in categories" :key="item.id">
                 <div v-if="item.children.length > 0">
@@ -124,7 +128,8 @@
         justify-content: space-between;
         font-weight: bold;
         align-items: center;
-        font-size: 10px;
+        font-size: 15px;
+        text-align: left;
     }
 
     .sous-item{
@@ -149,5 +154,13 @@
         height: auto;
         max-height: 0px;
         transition: max-height 0.5s ease-in;
+    }
+
+    .main-categories{
+        overflow-y: scroll;
+        position: absolute;
+        height: 100%;
+        width: 100%; 
+        margin-bottom: 100px; 
     }
 </style>
