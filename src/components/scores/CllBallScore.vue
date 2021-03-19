@@ -1,6 +1,6 @@
 <template>
     <div class="score">
-        <div class="title-red">CLL BALL Score for Relapsed/Refractory CLL</div>
+        <div class="title-red">Score pronostique de survie globale pour LLC en rechute/réfractaire préalablement traitée par Ibrutinib/Venetoclax/Idelalisib</div>
         <hr style="background-color:#000;">
 
         <div class="question">
@@ -39,7 +39,7 @@
             <div class="consequence">
                 Prognosis
                 <br><br>
-                {{result}}
+                <div class="consequence-text">{{result}}</div>
             </div>
         </div>
 
@@ -104,9 +104,9 @@ export default Vue.extend({
     },
     
     calculateResult (){
-        if (this.score <= 1)  this.result ="Low Risk"
-        if (this.score >= 2 && this.score <=3 ) this.result = "Intermediate Risk"
-        if (this.score == 4) this.result = "High Risk"
+        if (this.score <= 1)  this.result ="Risque faible"
+        if (this.score >= 2 && this.score <=3 ) this.result = "Risque intermédiaire"
+        if (this.score == 4) this.result = "Risque élevé"
     }
   }
 })

@@ -1,7 +1,7 @@
   <template>
     <div class="score">
         <div class="title-red">
-            CLL immunophenotypic score (Matutes score)
+            Score immunophénotypique CLL (score de Matutes)
         </div>
         <hr style="background-color:#000;">
         <div class="question">
@@ -55,8 +55,10 @@
                 Prognosis
                 <br><br>
                 <div>
-                    <div class="r1"> {{score}}</div>
-                    <div class="r1"> {{info}}</div>
+                    <div class="consequence-text">Sum of score :</div>
+                    <div class="consequence-points">{{score}}</div>
+                    <div class="consequence-text">Diagnosis :</div>
+                    <div class="consequence-text">{{info}}</div>
                 </div>
             </div>
         </div>
