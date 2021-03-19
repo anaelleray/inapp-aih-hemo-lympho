@@ -1,30 +1,35 @@
 <template>
-    <div class="smoldForm">
-        <div class="smoldBlocText">
-            <h1 class="smoldTitle">Asymptomatic Myeloma Prognosis</h1>
-            <p class="smoldDescription">Predicts risk of progression of asymptomatic (smoldering) multiple myeloma to active myeloma or amyloidosis.</p>
+    <div class="score">
+        <div class="title-red">Asymptomatic Myeloma Prognosis</div>
+        <div class="sous-title">Predicts risk of progression of asymptomatic (smoldering) multiplemyeloma to     active myeloma or amyloidosis.</div>
+        <div class="question">
+            <div class="question-title">Bone marrow plasmacytosis
+            Average % from bone marrow aspirate and core biopsy</div>
+            <button class="btn" id="ie10" v-on:click="switchValue">&ge;10%</button>
+            <button class="btn" id="s10" v-on:click="switchValue">&lt;10%</button>
         </div>
-        <div class="smoldForm">
-            <div class="input1">
-                <p>Bone marrow plasmacytosis
-                Average % from bone marrow aspirate and core biopsy</p>
-                <button class="btn" id="ie10" v-on:click="switchValue">&ge;10%</button>
-                <button class="btn" id="s10" v-on:click="switchValue">&lt;10%</button>
-            </div>
-            <div class="input2">
-                <p>Serum monoclonal protein, g/dL
-                    On serum protein electrophoresis</p>
-                <button class="btn" id="ie3" v-on:click="switchValue">&ge;3</button>
-                <button class="btn" id="s3" v-on:click="switchValue">&lt;3</button>
-            </div>
-            <div class="smoldWindowResult">
-                <div id="start">{{this.result}}{{this.warning}}</div>
-                <div id="diagnostic">{{this.diagnostic}}</div>
-                <div id="pourcentage">{{this.pourcentage}}</div>
-                <div id="months">{{this.months}}</div>
-                <div id="singleView">{{this.singleView}}</div>
-            </div>
+        <div class="question">
+            <div class="question-title">Serum monoclonal protein, g/dL
+                On serum protein electrophoresis</div>
+            <button class="btn" id="ie3" v-on:click="switchValue">&ge;3</button>
+            <button class="btn" id="s3" v-on:click="switchValue">&lt;3</button>
         </div>
+        <div class="consequence">
+            <div id="start">{{this.result}}{{this.warning}}</div>
+            <div id="diagnostic">{{this.diagnostic}}</div>
+            <div id="pourcentage">{{this.pourcentage}}</div>
+            <div id="months">{{this.months}}</div>
+            <div id="singleView">{{this.singleView}}</div>
+        </div>
+        <!-- <div class="sous-title">
+            Litterature
+            ORIGINAL/PRIMARY REFERENCE
+            <a href="https://pubmed.ncbi.nlm.nih.gov/17582068/" target="_blank">Kyle RA, Remstein ED, Therneau TM, Dispenzieri A, Kurtin PJ, Hodnefield JM, Larson DR, Plevak MF, Jelinek DF, Fonseca R, Melton LJ 3rd, Rajkumar SV. Clinical course and prognosis of smoldering (asymptomatic) multiple myeloma. N Engl J Med. 2007 Jun 21;356(25):2582-90. PMID:17582068.</a>
+        </div>
+        <div class="sous-title">
+            VALIDATION
+            <a href="https://ashpublications.org/blood/article/126/23/4251/135691/Validation-of-the-Novel-Criteria-for-the" target="_blank">Kastritis E, Terpos E, et al. Validation of the Novel Criteria for the Definition of Symptomatic Myeloma: A Single Center Experience in 216 Patients with the Previous Diagnosis of Asymptomatic Disease. Blood 2015 126:4251</a>
+        </div> -->
     </div>
 </template>
 

@@ -64,17 +64,7 @@
             <div>{{this.risk}}</div>
             <div>{{this.survival}}</div>
         </div>
-        <div class="sous-title">
-        <!--METTRE EN COLONNE-->
-            Litterature
-            ORIGINAL/PRIMARY REFERENCE
-            <a href="https://pubmed.ncbi.nlm.nih.gov/15126323/" target="_blank">Solal-Celigny et al. Follicular Lymphoma InternationalPrognostic Index. Blood 104:1258-1265. (2004)</a>
-        </div>
-        <div class="sous-title">
-        <!--METTRE EN COLONNE-->
-            VALIDATION
-            <a href="https://www.journals.elsevier.com/annals-of-oncology" target="_blank">van de Schans SAM, et. al. Validation,revision and extension of the Follicular Lymphoma International Prognostic Index (FLIPI) in a population-based settingAnnOncol (2009) 20 (10): 1697-1702 first published online June 23, 2009 doi:10.1093/annonc/mdp053</a>
-        </div>
+        
     </div>  
 </template>
 

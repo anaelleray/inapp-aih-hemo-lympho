@@ -215,5 +215,44 @@ export default Vue.extend({
     margin-bottom: 100px;
   }
 
+  .link{
+    margin: 10px;
+    font-size:15px;
+    text-align: left;
+    color:#8b8b8e;
+    background-color:#f4f4fd;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
+    padding:20px;   
+  }
+  .link-title{
+    margin: 5px;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 40px ;
+    color:#69669b;
+    font-weight: bold;
+    font-size : 30px;
+  }
+  .link-subTitle{
+    margin: 5px;
+    text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px ;
+    color:#69669b;
+    font-size : 15px;
+  }
+  .linkUrl a {
+    color:#8b8b8e;
+    text-decoration: underline;
+    font-size: 15px
+  }
+
 </style>
 
