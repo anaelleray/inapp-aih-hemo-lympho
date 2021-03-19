@@ -62,7 +62,7 @@
                 ORIGINAL/PRIMARY REFERENCE
             </div>
             <div>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/890666" target="_blank">Binet JL, Leporrier M, Dighiero G, et al. A clinical staging system for chronic lymphocytic leukemia: prognostic significance. Cancer. 1977;40(2):855-64.</a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/890666" target="_blank">1. Binet JL, Leporrier M, Dighiero G, et al. A clinical staging system for chronic lymphocytic leukemia: prognostic significance. Cancer. 1977;40(2):855-64.</a>
             </div>
         </div>
         <div class="sous-title">
@@ -70,7 +70,7 @@
                 OTHER REFERENCES
             </div>
             <div>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/25461996/" target="_blank">Nabhan C, Rosen ST. Chronic lymphocytic leukemia: a clinical review. JAMA. 2014;312(21):2265-76.</a>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/25461996/" target="_blank">2. Nabhan C, Rosen ST. Chronic lymphocytic leukemia: a clinical review. JAMA. 2014;312(21):2265-76.</a>
             </div>
         </div>
     </div>
