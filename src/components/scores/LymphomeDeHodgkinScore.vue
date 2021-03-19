@@ -6,70 +6,88 @@
     <div class="sous-title">Estimate prognosis in Hodgkin's disease</div>
     <hr style="background-color: #000" />
 
-       <div class="question">
+      <div class="question">
         <div class="question-title">1. Age ?</div>
         <div class="response">
-          <div id="years-1" class="button years" @click="calculateScore(1, 1)">≥45 years</div>
-          <div id="years-0" class="button years" @click="calculateScore(0, 1)">>45 years</div>
+          <div id="question1-1" class="button question1" @click="calculateScore(1, 1)"> >= 45 years</div>
+          <div id="question1-0" class="button question1" @click="calculateScore(0, 1)"> 	&lt; 45 years</div>
         </div>
       </div>
-
-
-<!-- old but still need-->
+      <div class="question">
+        <div class="question-title">2. Gender?</div>
+        <div class="response">
+          <div id="question2-1" class="button question2" @click="calculateScore(1, 2)">Male</div>
+          <div id="question2-0" class="button question2" @click="calculateScore(0, 2)">Female</div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-title">3. Albumin?</div>
+        <div class="response">
+          <div id="question3-1" class="button question3" @click="calculateScore(1, 3)">&lsaquo;40 g/L</div>
+          <div id="question3-0" class="button question3" @click="calculateScore(0, 3)">Normal</div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-title">4. Hemoglobin?</div>
+        <div class="response">
+          <div id="question4-1" class="button question4" @click="calculateScore(1, 4)">&lsaquo;105 g/L</div>
+          <div id="question4-0" class="button question4" @click="calculateScore(0, 4)">≥105 g/L</div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-title">5. Stage?</div>
+        <div class="response">
+          <div id="question5-1" class="button question5" @click="calculateScore(1, 5)">Stage IV</div>
+          <div id="question5-0" class="button question5" @click="calculateScore(0, 5)">Stage III</div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-title">6. Leukocytosis: WBC = 15,000mm³ or more?</div>
+        <div class="response">
+          <div id="question6-1" class="button question6" @click="calculateScore(1, 6)">Oui</div>
+          <div id="question6-0" class="button question6" @click="calculateScore(0, 6)">No</div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-title">7. Lymphopenia: Lymphs &lsaquo;600/mm³ OR &lsaquo;8% of WBC count?</div>
+        <div class="response">
+          <div id="question7-1" class="button question7" @click="calculateScore(1, 7)">Oui</div>
+          <div id="question7-0" class="button question7" @click="calculateScore(0, 7)">No</div>
+        </div>
+      </div>
     <div>
-      <div class="question1">
-        <div>1. Age ?</div>
-        <button @click="calculateScore(1, 1)">≥45 Years</button>
-        <button @click="calculateScore(0, 1)">>45 years</button>
-      </div>
-
-      <div class="question2">
-        <div>2. Gender?</div>
-        <button @click="calculateScore(1, 2)">Male</button>
-        <button @click="calculateScore(0, 2)">Female</button>
-      </div>
-      <div class="question3">
-        <div>3. Albumin?</div>
-        <button @click="calculateScore(1, 3)">&lsaquo;40 g/L</button>
-        <button @click="calculateScore(0, 3)">Normal</button>
-      </div>
-      <div class="question4">
-        <div>4. Hemoglobin?</div>
-        <button @click="calculateScore(1, 4)">&lsaquo;105 g/L</button>
-        <button @click="calculateScore(0, 4)">≥105 g/L</button>
-      </div>
-      <div class="question5">
-        <div>5. Stage?</div>
-        <button @click="calculateScore(1, 5)">Stage IV</button>
-        <button @click="calculateScore(0, 5)">Stage III</button>
-      </div>
-      <div class="question6">
-        <div>6. Leukocytosis: WBC = 15,000mm³ or more?</div>
-        <button @click="calculateScore(1, 6)">Oui</button>
-        <button @click="calculateScore(0, 6)">No</button>
-      </div>
-      <div class="question7">
-        <div>
-          7. Lymphopenia: Lymphs &lsaquo;600/mm³ OR &lsaquo;8% of WBC count?
-        </div>
-        <button @click="calculateScore(1, 7)">Oui</button>
-        <button @click="calculateScore(0, 7)">No</button>
-      </div>
-      <button @click="calculateResult()">View results</button>
       <div class="result" id="result">
         <h3>Result: {{ result }}</h3>
         <br />
 
-        <div>
-          <div>Hassenclever IPS Score: {{ result }}</div>
+        <div class="consequence">
+          <div class="consequence-points">Hassenclever IPS Score: {{ result }}</div>
           <br />
-
-          <div>
+          <div class="consequence-points">
             Predicted 5-year Rate of Freedom from Progression of Disease:
             {{ predicted[resultPred] }} %
           </div>
-          <div>---</div>
+          <div class="consequence-points">Estimated Overall Survival Rate
+            {{ estimated[resultPred]  }} %
+          </div>
         </div>
+      </div>
+
+    </div>
+    <div class="link">
+      <div class="link-title">
+          Litterature
+      </div>
+      <div class="link-subTitle">
+        References
+      </div>
+      <div class="linkUrl">
+        Hasenclever D, Diehl V <br/>
+        <a href="https://read.qxmd.com/read/9819449/a-prognostic-score-for-advanced-hodgkin-s-disease-international-prognostic-factors-project-on-advanced-hodgkin-s-disease" target="_blank">A prognostic score for advanced Hodgkin's disease. International Prognostic Factors Project on Advanced Hodgkin's Disease.</a>
+        New England Journal of Medicine 1998 November 19, 339 (21): 1506-14
+      </div>
+      <div class="linkUrl">
+        <a href="https://qxmd.com/calculate/calculator_107/hodgkin-s-disease-prognosis" target="_blank">The Hodgkin's Disease | Prognosis calculator is created by QxMD.</a>
       </div>
     </div>
   </div>
@@ -84,17 +102,29 @@ export default Vue.extend({
       result: 0,
       resultPred: 0,
       predicted: [84, 77, 67, 60, 51, 42],
-      question1: 0,
-      question2: 0,
-      question3: 0,
-      question4: 0,
-      question5: 0,
-      question6: 0,
-      question7: 0,
+      estimated: [89, 90, 81, 78, 61, 56],
+      question1: null,
+      question2: null,
+      question3: null,
+      question4: null,
+      question5: null,
+      question6: null,
+      question7: null,
     };
   },
   methods: {
     calculateScore(value, question) {
+        let holdSelec= document.getElementsByClassName( 'question'+ question + ' button-selected')
+        let newSelec = document.getElementById('question' + question +  '-' + value)
+
+        if(holdSelec[0]){
+            if(holdSelec[0] != newSelec){
+                holdSelec[0].classList.remove("button-selected");
+                newSelec.classList.add("button-selected");
+            }
+        }else{
+            newSelec.classList.add("button-selected");
+        }
       switch (question) {
         case 1:
           this.question1 = value;
@@ -131,6 +161,7 @@ export default Vue.extend({
       } else {
         this.resultPred = this.result;
       }
+      this.calculateResult()
     },
     calculateResult() {
       var res = document.getElementById("result");
