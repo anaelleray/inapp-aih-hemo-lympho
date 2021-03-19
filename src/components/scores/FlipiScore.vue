@@ -60,11 +60,27 @@
             </div>
         </div>
         <div class="consequence">
-            <div>{{this.points}} points</div>
-            <div>{{this.risk}}</div>
-            <div>{{this.survival}}</div>
+            <div class="consequence-points">{{this.points}} points</div>
+            <div class="consequence-text">{{this.risk}}</div>
+            <div class="consequence-text">{{this.survival}}</div>
         </div>
-        
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/15126323/" target="_blank">Solal-Celigny et al. Follicular Lymphoma InternationalPrognostic Index. Blood 104:1258-1265. (2004)</a>
+            </div>
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.journals.elsevier.com/annals-of-oncology" target="_blank">van de Schans SAM, et. al. Validation,revision and extension of the Follicular Lymphoma International Prognostic Index (FLIPI) in a population-based settingAnnOncol (2009) 20 (10): 1697-1702 first published online June 23, 2009 doi:10.1093/annonc/mdp053</a>
+            </div>
+        </div>
     </div>  
 </template>
 
