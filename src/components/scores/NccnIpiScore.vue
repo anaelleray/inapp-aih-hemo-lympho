@@ -49,6 +49,20 @@
             <p id="progression"></p>
         </div>
     </section>
+
+    <div class="link">
+        <div class="link-title">
+            References
+        </div>
+        <div class="link-subTitle">
+            <div class="About__Reference-imz9p2-2 dRlGBU"><p>Shipp et al.</p>
+            <p><a href="https://www.qxmd.com/pubmed/8141877" target="_blank"> A predictive model for aggressive non-Hodgkin’s lymphoma.</a></p>
+            <p>New England Journal of Medicine 1993 September 30, 329 (14): 987-94</p></div><div class="About__Reference-imz9p2-2 dRlGBU"><p>Zhou et al.</p>
+            <p><a href="https://www.qxmd.com/pubmed/24264230" target="_blank">An enhanced International Prognostic Index (NCCN-IPI) for patients with diffuse large B-cell lymphoma treated in the rituximab era.</a></p><p>Blood 2014 February 6, 123 (6): 837-42</p></div><div class="About__Reference-imz9p2-2 dRlGBU"><p></p><p>The <a href="https://qxmd.com/calculate/calculator_311/diffuse-large-b-cell-lymphoma-prognosis-nccn-ipi" target="_blank">Diffuse Large B-cell Lymphoma Prognosis (NCCN-IPI)</a> calculator is created by QxMD.</p><p></p></div><div class="About__SpaceEater-imz9p2-4 iSdtLd"></div>
+        </div>
+
+    </div>
+
  </section>
 </template>
 
@@ -123,5 +137,7 @@ export default {
 </script>
 
 <style>
-    
+    a {
+        text-decoration: underline;
+    }
 </style>
