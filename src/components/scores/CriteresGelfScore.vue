@@ -109,16 +109,4 @@ export default Vue.extend({
         
     },
 })
-
 </script>
-<style>
-    .gelfBlocText {
-        border : blue solid 2px
-    }
-    .gelfForm {
-        border : red solid 2px
-    }
-    .gelfWindowResult {
-        background-color: #0FFF00
-    }
-</style>

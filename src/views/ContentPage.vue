@@ -26,6 +26,7 @@ import RIssScore from "@/components/scores/RIssScore.vue";
 import Ipi24Score from "@/components/scores/Ipi24Score.vue";
 import IssScore from "@/components/scores/IssScore.vue";
 import LymphomeDeHodgkinScore from "@/components/scores/LymphomeDeHodgkinScore.vue";
+import LymphomeDuMaltScore from "@/components/scores/LymphomeDuMaltScore.vue";
 
 export default Vue.extend({
   components: {
@@ -45,6 +46,7 @@ export default Vue.extend({
     Ipi24Score,
     IssScore,
     LymphomeDeHodgkinScore,
+    LymphomeDuMaltScore
   },
 
   data() {
