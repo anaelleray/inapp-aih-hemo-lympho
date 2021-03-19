@@ -41,7 +41,8 @@
               </div>
           </div>
         </div>
-        
+        <div class="footer">
+        </div>
     </div>
   </div>
 </template>
@@ -119,6 +120,10 @@ export default Vue.extend({
 
 .arrow-rotate {
   transform: rotate(90deg);
+}
+
+.footer{
+  padding-bottom: 100px;
 }
 
 .block-arrow {
