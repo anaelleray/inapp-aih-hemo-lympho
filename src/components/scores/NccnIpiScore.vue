@@ -1,40 +1,39 @@
 <template>
- <section> 
-
-    <div>
+ <section class="score"> 
+    <div class="question">
         <label for="age"> age: </label>
-        <button id="age1" value="0" cat="age" selected="false" @click="incrementOnClick($event)"> ≤40 Years </button>
-        <button id="age2" value="1" cat="age" selected="false" @click="incrementOnClick($event)"> 41-60 Years</button>
-        <button id="age3" value="2" cat="age" selected="false" @click="incrementOnClick($event)"> 61-75</button>
-        <button id="age4" value="3" cat="age" selected="false" @click="incrementOnClick($event)"> &lsaquo; 75</button>
+        <div class="button" id="age1" value="0" cat="age" selected="false" @click="incrementOnClick($event)"> ≤40 Years </div>
+        <div class="button" id="age2" value="1" cat="age" selected="false" @click="incrementOnClick($event)"> 41-60 Years</div>
+        <div class="button" id="age3" value="2" cat="age" selected="false" @click="incrementOnClick($event)"> 61-75</div>
+        <div class="button" id="age4" value="3" cat="age" selected="false" @click="incrementOnClick($event)"> &lsaquo; 75</div>
     </div>
 
-    <div>
+    <div class="question">
         <label for="ECOG">ECOG Performance Status</label>
-        <button id="ECOG1" value="0" cat="ECOG" selected="false"  @click="incrementOnClick($event)">ECOG 0-1</button>
-        <button id="ECOG2" value="1" cat="ECOG" selected="false"  @click="incrementOnClick($event)">ECOG 2-4</button>
+        <div class="button" id="ECOG1" value="0" cat="ECOG" selected="false"  @click="incrementOnClick($event)">ECOG 0-1</div>
+        <div class="button" id="ECOG2" value="1" cat="ECOG" selected="false"  @click="incrementOnClick($event)">ECOG 2-4</div>
     </div>
 
-    <div>
+    <div class="question">
         <label for="Stage"> Stage </label>
-        <button id="stage1" value="0" cat="stage" selected="false"  @click="incrementOnClick($event)"> Stage I/II </button>
-        <button id="stage2" value="1" cat="stage" selected="false"  @click="incrementOnClick($event)"> Stage III/IV </button>
+        <div class="button" id="stage1" value="0" cat="stage" selected="false"  @click="incrementOnClick($event)"> Stage I/II </div>
+        <div class="button" id="stage2" value="1" cat="stage" selected="false"  @click="incrementOnClick($event)"> Stage III/IV </div>
     </div>
 
-    <div>
+    <div class="question">
         <label for="LDHupper">LDH Upper Limit of Normal</label>
-        <button id="Hup1" value="0" cat="hup" selected="false"  @click="incrementOnClick($event)"> Normal</button>
-        <button id="Hup2" value="1" cat="hup" selected="false"  @click="incrementOnClick($event)"> Elevated, Up To 3x Upper Limit of Normal  </button>
-        <button id="Hup3" value="2" cat="hup" selected="false"  @click="incrementOnClick($event)"> >3x Upper Limit of Normal </button>
+        <div class="button" id="Hup1" value="0" cat="hup" selected="false"  @click="incrementOnClick($event)"> Normal</div>
+        <div class="button" id="Hup2" value="1" cat="hup" selected="false"  @click="incrementOnClick($event)"> Elevated, Up To 3x Upper Limit of Normal  </div>
+        <div class="button" id="Hup3" value="2" cat="hup" selected="false"  @click="incrementOnClick($event)"> >3x Upper Limit of Normal </div>
     </div>
 
-    <div>
+    <div class="question">
         <label for="Extra"> Extranodal Sites </label>
-        <button id="Extra1"  value="0" cat="Extra" selected="false"  @click="incrementOnClick($event)">No bone marrow, CNS, liver/GI tract, or lung involvement</button>
-        <button id="Extra2"  value="1" cat="Extra" selected="false"  @click="incrementOnClick($event)">Bone marrow, CNS, liver/GI tract, or lung involvement </button>
+        <div class="button" id="Extra1"  value="0" cat="Extra" selected="false"  @click="incrementOnClick($event)">No bone marrow, CNS, liver/GI tract, or lung involvement</div>
+        <div class="button" id="Extra2"  value="1" cat="Extra" selected="false"  @click="incrementOnClick($event)">Bone marrow, CNS, liver/GI tract, or lung involvement </div>
     </div>
 
-    <section>
+    <section class="consequence">
         <div>
             <label for="score"> Score </label>
             <p id="score">{{ this.counter }}</p>
@@ -67,16 +66,33 @@ export default {
 
             const triggerBtn = event.target;
             const cat = triggerBtn.getAttribute("cat");
-            const btnAll = document.querySelectorAll("button");
+            const btnAll = document.querySelectorAll(".button");
 
-            triggerBtn.style.backgroundColor  = "red";
+            triggerBtn.classList.add("button-selected");
             triggerBtn.setAttribute("selected", "true");
+            if( triggerBtn.getAttribute("triggered") === null ) triggerBtn.setAttribute("triggered", "1");
 
             btnAll.forEach( btn => {
-                if( btn.getAttribute("selected") === "true" && btn !== triggerBtn && btn.getAttribute("cat") === cat ) this.counter -= parseInt( btn.value ); 
-                if( btn.getAttribute("selected") === "true" && triggerBtn === btn ) this.counter += parseInt( btn.value );
-                if( triggerBtn !== btn && cat === btn.getAttribute("cat") ) btn.setAttribute("selected", "false");
-                if( btn.getAttribute("cat") === cat && btn.getAttribute("selected") === "false") btn.style.backgroundColor = "#e1e1e1"; 
+
+                const value = btn.getAttribute("value")
+
+                if( 
+                    btn.getAttribute("selected") === "true" && 
+                    btn !== triggerBtn && 
+                    btn.getAttribute("cat") === cat 
+                ) this.counter -= parseInt( value ); 
+                if(
+                     btn.getAttribute("selected") === "true" &&
+                    triggerBtn === btn &&
+                    btn.getAttribute("triggered") === "1" 
+                    ) { 
+                        this.counter += parseInt( value );
+                        btn.setAttribute("triggered", "0")
+                    }
+                if( btn !== triggerBtn ) btn.removeAttribute("triggered");
+                if( triggerBtn !== btn && cat === btn.getAttribute("cat")) btn.setAttribute("selected", "false");
+                if( btn.getAttribute("cat") === cat && btn.getAttribute("selected") === "false") btn.classList.remove("button-selected");
+
             });
 
             const prognosis = document.getElementById("prognosis");
@@ -107,5 +123,5 @@ export default {
 </script>
 
 <style>
-
+    
 </style>
