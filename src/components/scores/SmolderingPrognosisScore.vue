@@ -21,15 +21,23 @@
             <div id="months">{{this.months}}</div>
             <div id="singleView">{{this.singleView}}</div>
         </div>
-        <!-- <div class="sous-title">
-            Litterature
-            ORIGINAL/PRIMARY REFERENCE
-            <a href="https://pubmed.ncbi.nlm.nih.gov/17582068/" target="_blank">Kyle RA, Remstein ED, Therneau TM, Dispenzieri A, Kurtin PJ, Hodnefield JM, Larson DR, Plevak MF, Jelinek DF, Fonseca R, Melton LJ 3rd, Rajkumar SV. Clinical course and prognosis of smoldering (asymptomatic) multiple myeloma. N Engl J Med. 2007 Jun 21;356(25):2582-90. PMID:17582068.</a>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/17582068/" target="_blank">Kyle RA, Remstein ED, Therneau TM, Dispenzieri A, Kurtin PJ, Hodnefield JM, Larson DR, Plevak MF, Jelinek DF, Fonseca R, Melton LJ 3rd, Rajkumar SV. Clinical course and prognosis of smoldering (asymptomatic) multiple myeloma. N Engl J Med. 2007 Jun 21;356(25):2582-90. PMID:17582068.</a>
+            </div>
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                <a href="https://ashpublications.org/blood/article/126/23/4251/135691/Validation-of-the-Novel-Criteria-for-the" target="_blank">Kastritis E, Terpos E, et al. Validation of the Novel Criteria for the Definition of Symptomatic Myeloma: A Single Center Experience in 216 Patients with the Previous Diagnosis of Asymptomatic Disease. Blood 2015 126:4251</a>
+            </div>
         </div>
-        <div class="sous-title">
-            VALIDATION
-            <a href="https://ashpublications.org/blood/article/126/23/4251/135691/Validation-of-the-Novel-Criteria-for-the" target="_blank">Kastritis E, Terpos E, et al. Validation of the Novel Criteria for the Definition of Symptomatic Myeloma: A Single Center Experience in 216 Patients with the Previous Diagnosis of Asymptomatic Disease. Blood 2015 126:4251</a>
-        </div> -->
     </div>
 </template>
 
