@@ -1,67 +1,103 @@
 <template>
-    <div>
-        <h1>International Prognostic Index for Diffuse Large B-cell Lymphoma (IPI and R-IPI)</h1>
-
-        <section>
-            <label for="age"> Age </label>
-            <div>
-                <button id="ageOne" clicked="false" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </button>
-                <button id="ageTwo" clicked="false" @click="incrementOnClick($event, '+', 'ageOne')"> >60 years </button>
+    <div class="score">
+        <div class="title-red">
+            International Prognostic Index for Diffuse Large B-cell Lymphoma (IPI and R-IPI)
+        </div>
+        
+        <hr style="background-color:#000;">
+        
+        <section class="question">
+            <label class="question-title" for="age"> Age </label>
+            <div class="response">
+                <div class="button" id="ageOne" clicked="true" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </div>
+                <div class="button" id="ageTwo" clicked="false" @click="incrementOnClick($event, '+', 'ageOne')"> >60 years </div>
             </div>
         </section>
 
-        <section>
-            <label for="Arbor"> Ann Arbor stage III-IV </label>
+        <section class="question">
+            <label class="question-title" for="Arbor"> Ann Arbor stage III-IV </label>
             <p>III: Involvement on both sides of the diaphragm, IV: Involvement of extranodal sites</p>
-            <div>
-                <button id="AnnOne" clicked="false" @click="incrementOnClick($event, '-', 'AnnTwo')"> No 0 </button>
-                <button id="AnnTwo" clicked="false" @click="incrementOnClick($event, '+', 'AnnOne')"> yes +1 </button>
+            <div class="response">
+                <div class="button" id="AnnOne" clicked="false" @click="incrementOnClick($event, '-', 'AnnTwo')"> No 0 </div>
+                <div class="button" id="AnnTwo" clicked="false" @click="incrementOnClick($event, '+', 'AnnOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="ECOG"> <a href="#">ECOG performance status</a> ≥2 </label>
-            <div>
-                <button id="ECOGOne" clicked="false" @click="incrementOnClick($event, '-', 'ECOGTwo')"> No 0 </button>
-                <button id="ECOGTwo" clicked="false" @click="incrementOnClick($event, '+', 'ECOGOne')"> yes +1 </button>
+        <section class="question">
+            <label class="question-title" for="ECOG"> <a href="#">ECOG performance status</a> ≥2 </label>
+            <div class="response">
+                <div class="button" id="ECOGOne" clicked="false" @click="incrementOnClick($event, '-', 'ECOGTwo')"> No 0 </div>
+                <div class="button" id="ECOGTwo" clicked="false" @click="incrementOnClick($event, '+', 'ECOGOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="LDH"> Serum LDH level >1× normal </label>
-            <div>
-                <button id="LDHOne" clicked="false" @click="incrementOnClick($event, '-', 'LDHTwo')"> No 0 </button>
-                <button id="LDHTwo" clicked="false" @click="incrementOnClick($event, '+', 'LDHOne')"> yes +1 </button>
+        <section class="question">
+            <label class="question-title" for="LDH"> Serum LDH level >1× normal </label>
+            <div class="response">
+                <div class="button" id="LDHOne" clicked="false" @click="incrementOnClick($event, '-', 'LDHTwo')"> No 0 </div>
+                <div class="button" id="LDHTwo" clicked="false" @click="incrementOnClick($event, '+', 'LDHOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="extranodal">>1 extranodal site</label>
+        <section class="question">
+            <label class="question-title" for="LDH"> Serum LDH level >1× normal </label>
+            <label  for="extranodal">>1 extranodal site</label>
             <p>Bone marrow, GI tract, liver, lung, CNS, skin, testes, Waldeyer’s ring</p>
-            <div>
-                <button id="extraOne" clicked="false" @click="incrementOnClick($event, '-', 'extraTwo')"> No 0 </button>
-                <button id="extraTwo" clicked="false" @click="incrementOnClick($event, '+', 'extraOne')"> yes +1 </button>
+            <div class="response">
+                <div class="button" id="extraOne" clicked="false" @click="incrementOnClick($event, '-', 'extraTwo')"> No 0 </div>
+                <div class="button" id="extraTwo" clicked="false" @click="incrementOnClick($event, '+', 'extraOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
+        <section class="consequence">
+            Prognosis
+            <br><br>
             <div>
                 <p>{{ this.counter }} points</p>
                 <p id="rIpi"> Very good prognosis (R-IPI) </p>
                 <p id="ipi"> Low risk group (IPI) </p>
             </div>
+            <br>
             <div>
                 <p id="pourcentageRipi">94%</p>
                 <p id="overSurIpi"> Overall survival (R-IPI) </p>
                 <p id="overSurIpi2"> 82% overall survival (IPI) </p>
-                <button> Copy Results </button>
             </div>
+            <br>
             <div>
                 <p id="pourcentageIpi"> 94% </p>
                 <p id="progSurIpi">Progression-free survival (R-IPI)</p>
                 <p id="progSurIpi2">85% progression-free survival (IPI)</p>
-                <button> Next Steps </button>
             </div>
+        </section>
+
+        <h3> LITERATURE </h3>
+        <section>
+            <h4>ORIGINAL/PRIMARY REFERENCE</h4>
+            <section>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/8141877" class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">A predictive model for aggressive non-Hodgkin's lymphoma. The International Non-Hodgkin's Lymphoma Prognostic Factors Project. N Engl J Med. 1993;329(14):987-94.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/17105812 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Sehn LH, Berry B, Chhanabhai M, et al. The revised International Prognostic Index (R-IPI) is a better predictor of outcome than the standard IPI for patients with diffuse large B-cell lymphoma treated with R-CHOP. Blood. 2007;109(5):1857-61.</span></a>
+            </section>
+        </section>
+
+        <section>
+            <h4>VALIDATION</h4>
+            <section>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26260224 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">El-galaly TC, Villa D, Alzahrani M, et al. Outcome prediction by extranodal involvement, IPI, R-IPI, and NCCN-IPI in the PET/CT and rituximab era: A Danish-Canadian study of 443 patients with diffuse-large B-cell lymphoma. Am J Hematol. 2015;90(11):1041-6.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26054914 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Olszewski AJ, Winer ES, Castillo JJ. Validation of clinical prognostic indices for diffuse large B-cell lymphoma in the National Cancer Data Base. Cancer Causes Control. 2015;26(8):1163-72.</span></a>
+                <a href="https://academic.oup.com/annonc/article/21/7/1486/163863/Prognostic-models-for-diffuse-large-B-cell " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Bari A, Marcheselli L, Sacchi S, et al. Prognostic models for diffuse large B-cell lymphoma in the rituximab era: a never-ending story. Ann Oncol. 2010;21(7):1486-91.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9808548 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Blay J, Gomez F, Sebban C, et al. The International Prognostic Index correlates to survival in patients with aggressive lymphoma in relapse: analysis of the PARMA trial. Parma Group. Blood. 1998;92(10):3562-8.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9489649 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Fanin R, Silvestri F, Geromin A, et al. Autologous stem cell transplantation for aggressive non-Hodgkin's lymphomas in first complete or partial remission: a retrospective analysis of the outcome of 52 patients according to the age-adjusted International Prognostic Index. Bone Marrow Transplant. 1998;21(3):263-71.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9187429 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Foussard C, Desablens B, Sensebe L, et al. Is the International Prognostic Index for aggressive lymphomas useful for low-grade lymphoma patients? Applicability to stage III-IV patients. The GOELAMS Group, France. Ann Oncol. 1997;8 Suppl 1:49-52.</span></a>
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/7632953 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Hermans J, Krol AD, Van groningen K, et al. International Prognostic Index for aggressive non-Hodgkin's lymphoma is valid for all malignancy grades. Blood. 1995;86(4):1460-3.</span></a>
+            </section>
+        </section>
+
+        <section>
+            <h4>OTHER REFERENCES</h4>
+            <section>
+                <span class="resource__text">Armitage JO. Staging non-Hodgkin lymphoma. CA Cancer J Clin. 2005;55(6):368-76.</span>
+            </section>
         </section>
     </div>
 </template>
@@ -82,8 +118,8 @@ export default {
 
             const triggerBtn = event.target;
             const otherBtn = document.getElementById(id);
-            triggerBtn.style.backgroundColor  = "red";
-            otherBtn.style.backgroundColor = "#e1e1e1";
+            triggerBtn.classList.add("button-selected");
+            otherBtn.classList.remove("button-selected");
             let clickedState = triggerBtn.getAttribute("clicked");
 
             if( clickedState === "false" ) { 

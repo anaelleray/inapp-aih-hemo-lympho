@@ -1,59 +1,74 @@
   <template>
-    <div class="score-matutes-rmh">
-        <h2>CLL immunophenotypic score (Matutes score) </h2>
-      
-        <div class="score-form">
-            <div class="row">
-                <div class="col1">
-                    <div>CD79b (or CD22)</div>
-                </div>
-                <div class="col2">                    
-                    <button :class="changeClassIf('inputA', 'Strong')" @click="changeInput({ inputA: 'Strong' })">Strong</button>
-                    <button :class="changeClassIf('inputA', 'Weak')" @click="changeInput({ inputA: 'Weak' })">Weak</button>
+    <div class="score">
+        <div class="title-red">
+            CLL immunophenotypic score (Matutes score)
+        </div>
+        <hr style="background-color:#000;">
+        <div class="question">
+            <div class="question-title">
+                <div>CD79b (or CD22)</div>
+            </div>
+            <div class="response">                    
+                <div :class="changeClassIf('inputA', 'Strong')" @click="changeInput({ inputA: 'Strong' })">Strong</div>
+                <div :class="changeClassIf('inputA', 'Weak')" @click="changeInput({ inputA: 'Weak' })">Weak</div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-title">
+                <div>CD23</div>
+            </div>
+            <div class="response">                    
+                <div :class="changeClassIf('inputB', 'Negative')" @click="changeInput({ inputB: 'Negative' })">Negative</div>
+                <div :class="changeClassIf('inputB', 'Positive')" @click="changeInput({ inputB: 'Positive' })">Positive</div>
+            </div>
+        </div>  
+        <div class="question">
+            <div class="question-title">
+                <div>CD5</div>
+            </div>
+            <div class="response">                    
+                <div :class="changeClassIf('inputC', 'Negative')" @click="changeInput({ inputC: 'Negative' })">Negative</div>
+                <div :class="changeClassIf('inputC', 'Positive')" @click="changeInput({ inputC: 'Positive' })">Positive</div>
+            </div>
+        </div> 
+        <div class="question">
+            <div class="question-title">
+                <div>FMC7 </div>
+            </div>
+            <div class="response">                    
+                <div :class="changeClassIf('inputD', 'Negative')" @click="changeInput({ inputD: 'Negative' })">Negative</div>
+                <div :class="changeClassIf('inputD', 'Positive')" @click="changeInput({ inputD: 'Positive' })">Positive</div>
+            </div>
+        </div>  
+        <div class="question">
+            <div class="question-title">
+                <div>SmIg </div>
+            </div>
+            <div class="response">                    
+                <div :class="changeClassIf('inputE', 'Strong')" @click="changeInput({ inputE: 'Strong' })">Strong</div>
+                <div :class="changeClassIf('inputE', 'Weak')" @click="changeInput({ inputE: 'Weak' })">Weak</div>
+            </div>
+        </div>  
+
+        <div v-if="input.inputA != null && input.inputB != null && input.inputC != null && input.inputD != null && input.inputE != null " >
+            <div class="consequence">
+                Prognosis
+                <br><br>
+                <div>
+                    <div class="r1"> {{score}}</div>
+                    <div class="r1"> {{info}}</div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col1">
-                    <div>CD23</div>
-                </div>
-                <div class="col2">                    
-                    <button :class="changeClassIf('inputB', 'Negative')" @click="changeInput({ inputB: 'Negative' })">Negative</button>
-                    <button :class="changeClassIf('inputB', 'Positive')" @click="changeInput({ inputB: 'Positive' })">Positive</button>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col1">
-                    <div>CD5</div>
-                </div>
-                <div class="col2">                    
-                    <button :class="changeClassIf('inputC', 'Negative')" @click="changeInput({ inputC: 'Negative' })">Negative</button>
-                    <button :class="changeClassIf('inputC', 'Positive')" @click="changeInput({ inputC: 'Positive' })">Positive</button>
-                </div>
-            </div> 
-            <div class="row">
-                <div class="col1">
-                    <div>FMC7 </div>
-                </div>
-                <div class="col2">                    
-                    <button :class="changeClassIf('inputD', 'Negative')" @click="changeInput({ inputD: 'Negative' })">Negative</button>
-                    <button :class="changeClassIf('inputD', 'Positive')" @click="changeInput({ inputD: 'Positive' })">Positive</button>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col1">
-                    <div>SmIg </div>
-                </div>
-                <div class="col2">                    
-                    <button :class="changeClassIf('inputE', 'Strong')" @click="changeInput({ inputE: 'Strong' })">Strong</button>
-                    <button :class="changeClassIf('inputE', 'Weak')" @click="changeInput({ inputE: 'Weak' })">Weak</button>
-                </div>
-            </div>   
-
-            <div class="score-result">
-                <div class="info">Un score > ou = 4 indique une LLC. Un score 	&lt; ou = 3 doit inciter à envisager un diagnostic alternatif </div>
-                <h3>Sum of Diagnosis</h3>
-                <div class="r1"> {{score}}</div>
-                <div class="r1"> {{info}}</div>
+        </div>
+        <div class="sous-title">
+            <div>
+                REFERENCES
+            </div>
+            <div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/7523797/" target="_blank">1. Matutes E, Owusu-Ankomah K, Morilla R, Garcia Marco J, Houlihan A, Que TH et al. The immunological profile of B-cell disorders and proposal of a scoring system for the diagnosis of CLL. Leukemia 1994; 8: 1640-5.</a>
+            </div>
+            <div>
+                <a href="https://pubmed.ncbi.nlm.nih.gov/9322589/" target="_blank">2. Moreau EJ, Matutes E, A’Hern RP, Morilla AM, Morilla RM, Owusu-Ankomah KA et al. Improvement of the chronic lymphocytic leukemia scoring system with the monoclonal antibody SN8 (CD79b). Am J Clin Pathol 1997; 108: 378-382.</a>
             </div>
         </div>
     </div>
@@ -67,11 +82,11 @@ export default Vue.extend({
     {
         return {
             input: {
-                inputA: "",
-                inputB: "",
-                inputC: "",
-                inputD: "",
-                inputE: "",
+                inputA: null,
+                inputB: null,
+                inputC: null,
+                inputD: null,
+                inputE: null,
             },
             reponse1:0,
             reponse2:0,
@@ -106,9 +121,9 @@ export default Vue.extend({
         },
         changeClassIf(whichInput: string, value: string) {
             if (value === this.input[whichInput]) {
-                return "on"
+                return "button button-selected"
             } else {
-                return "off"
+                return "button "
             }
         }       
         

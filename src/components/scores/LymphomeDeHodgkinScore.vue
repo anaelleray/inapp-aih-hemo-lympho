@@ -1,14 +1,28 @@
 <template>
-  <div class="score-2">
-    <h2>Hodgkin's Disease | Prognosis</h2>
-    <h3>Estimate prognosis in Hodgkin's disease.</h3>
-    <br />
+
+  <div class="score">
+
+    <div class="title-red">Hodgkin's Disease | Prognosis</div>
+    <div class="sous-title">Estimate prognosis in Hodgkin's disease</div>
+    <hr style="background-color: #000" />
+
+       <div class="question">
+        <div class="question-title">1. Age ?</div>
+        <div class="response">
+          <div id="years-1" class="button years" @click="calculateScore(1, 1)">≥45 years</div>
+          <div id="years-0" class="button years" @click="calculateScore(0, 1)">>45 years</div>
+        </div>
+      </div>
+
+
+<!-- old but still need-->
     <div>
       <div class="question1">
         <div>1. Age ?</div>
         <button @click="calculateScore(1, 1)">≥45 Years</button>
         <button @click="calculateScore(0, 1)">>45 years</button>
       </div>
+
       <div class="question2">
         <div>2. Gender?</div>
         <button @click="calculateScore(1, 2)">Male</button>
@@ -35,7 +49,9 @@
         <button @click="calculateScore(0, 6)">No</button>
       </div>
       <div class="question7">
-        <div>7. Lymphopenia: Lymphs &lsaquo;600/mm³ OR &lsaquo;8% of WBC count?</div>
+        <div>
+          7. Lymphopenia: Lymphs &lsaquo;600/mm³ OR &lsaquo;8% of WBC count?
+        </div>
         <button @click="calculateScore(1, 7)">Oui</button>
         <button @click="calculateScore(0, 7)">No</button>
       </div>
@@ -45,18 +61,17 @@
         <br />
 
         <div>
-          <div>Hassenclever IPS Score: {{result}}</div>
+          <div>Hassenclever IPS Score: {{ result }}</div>
           <br />
 
           <div>
-            Predicted 5-year Rate of Freedom from Progression of Disease: {{predicted[resultPred]}} %
+            Predicted 5-year Rate of Freedom from Progression of Disease:
+            {{ predicted[resultPred] }} %
           </div>
           <div>---</div>
         </div>
       </div>
-
     </div>
- 
   </div>
 </template>
 
@@ -111,18 +126,16 @@ export default Vue.extend({
         this.question5 +
         this.question6 +
         this.question7;
-        if (this.result > 5) {
-          this.resultPred = 5
-        }else {
-          this.resultPred =  this.result
-        }
+      if (this.result > 5) {
+        this.resultPred = 5;
+      } else {
+        this.resultPred = this.result;
+      }
     },
     calculateResult() {
       var res = document.getElementById("result");
       res.style.display = "block";
     },
-
-    
   },
 });
 </script>
