@@ -41,6 +41,7 @@
         <div>{{score}}</div>
         <div >Prognosis : {{result}}</div>
         <div>Prognosis depends on 3 independent predictors: Age, Stage, and LDH</div>
+        <div>Ref : Catherine Thieblemont, Luciano Cascione, Annarita Conconi, Barbara Kiesewetter, Markus Raderer, Gianluca Gaidano, Maurizio Martelli, Daniele Laszlo, Bertrand Coiffier, Armando Lopez Guillermo, Valter Torri, Franco Cavalli, Peter W Johnson, Emanuele Zucca. A MALT lymphoma prognostic index. Blood 2017 September 21, 130 (12): 1409-1417</div>
       </div>
 
     </div>
