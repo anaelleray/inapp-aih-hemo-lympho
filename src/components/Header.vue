@@ -1,8 +1,8 @@
 <template>
     <div class="header">
         <div>
-            <a v-if="testIcon(false)" href="cmd://webview-close"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a>
-            <a v-if="testIcon(true)" href=""><font-awsome-icon class="close" :icon="['fas','chevron-left']"/></a>
+            <a v-if="!this.url" href="cmd://webview-close"><font-awsome-icon class="close" :icon="['far','times-circle']"/></a> 
+            <a v-if="this.url" href=""><font-awsome-icon class="close" :icon="['fas','chevron-left']"/></a>
         </div>
         <div>
             <img class="AIH-logo" src="../assets/AIH-logo.png"  alt="Association des Internes en Hématologie">
@@ -16,18 +16,23 @@ import Vue from "vue"
 export default Vue.extend({
 
     data: () => ({
-        url: window.location.href
+        url: Boolean,
     }),
 
     methods:{
-        testIcon(test){
-            return String(this.url).includes('score') === test;
+    },
+
+    watch: {
+        '$route'(to, from){
+            to.path.includes("score") ? this.url = true: this.url = false;
         }
     },
 
     mounted()
     {
+        !window.location.href.includes('score') ? this.url = true : false;
 
+        console.log(!window.location.href.includes('score'));
     }
 })
 

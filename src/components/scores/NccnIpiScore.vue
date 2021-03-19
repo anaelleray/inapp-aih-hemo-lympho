@@ -79,8 +79,6 @@ export default {
                 if( btn.getAttribute("cat") === cat && btn.getAttribute("selected") === "false") btn.style.backgroundColor = "#e1e1e1"; 
             });
 
-            console.log(this.counter);
-
             const prognosis = document.getElementById("prognosis");
             const progression = document.getElementById("progression");
 

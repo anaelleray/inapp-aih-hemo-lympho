@@ -92,7 +92,6 @@ export default Vue.extend({
             this.reponse5 = value.inputE ==="Weak" ? 1 : 0;        
     
             this.score = this.reponse1 + this.reponse2 + this.reponse3 + this.reponse4 + this.reponse5
-            console.log(this.score)
 
             if(this.score >= 4){
                 this.info = "CLL"
