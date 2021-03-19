@@ -94,6 +94,7 @@ export default {
 
             triggerBtn.style.backgroundColor  = "red";
             triggerBtn.setAttribute("selected", "true");
+            if( triggerBtn.getAttribute("triggered") === null ) triggerBtn.setAttribute("triggered", "1");
 
             btnAll.forEach( btn => {
                 if( btn.getAttribute("selected") === "true" && btn !== triggerBtn && btn.getAttribute("cat") === cat ) this.counter -= parseInt( btn.value ); 
@@ -103,8 +104,12 @@ export default {
 
             btnAll.forEach( btn => {
 
-                if(btn.getAttribute("selected") === "true"){
+                if(
+                    btn.getAttribute("selected") === "true" &&
+                    triggerBtn.getAttribute("triggered") === "1" 
+                    ){
                     this.counter += parseInt( btn.value );
+                    btn.setAttribute("triggered", "0");
                 }
             });
 
