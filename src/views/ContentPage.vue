@@ -49,7 +49,8 @@ export default Vue.extend({
 
   data() {
     return {
-      currentComponent: null,
+        notFound: false,
+        currentComponent: null,
     };
   },
 
