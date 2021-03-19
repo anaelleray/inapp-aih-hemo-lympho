@@ -15,6 +15,8 @@
         </div>
         
         <div>
+
+
             <div class="question">
                 <div >
                     <div class="question-title">Areas of lymphadenopathy</div>
@@ -25,6 +27,10 @@
                     <div :class="changeClassIf('inputA', 'supEgal3')" @click="changeInput({ inputA: 'supEgal3' })">≥ 3</div>
                 </div>
             </div>
+
+
+
+            
             <div class="question">
                 <div class="question-title">
                     Anemia Hgb &lsaquo;10 g/dL
@@ -56,6 +62,9 @@
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </template>
 

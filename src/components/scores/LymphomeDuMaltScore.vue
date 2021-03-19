@@ -1,59 +1,53 @@
-
-
-
 <template>
-  <div class="lymphome-du-malt">
-    <h2>MALT Lymphoma prognosis (MALT-IPI)</h2>
-    <h3>Estimate prognosis in MALT lymphoma</h3>
-    <br />
 
+  <div class="score lymphome-du-malt">
+    <div class="title-red">MALT Lymphoma prognosis (MALT-IPI)</div>
+    <div class="sous-title">Estimate prognosis in MALT lymphoma</div>
+    <hr style="background-color: #000" />
+
+    <div class="question question1">
+      <div class="question-title">1. Age ?</div>
+      <div class="response">
+        <div class="button" @click="calculateScore(1, 1)">≥70 years</div>
+        <div class="button" @click="calculateScore(0, 1)">&lt;70 years</div>
+      </div>
+    </div>
+
+    <div class="question question2">
+      <div class="question-title">2. LDH ?</div>
+      <div class="response">
+        <div class="button" @click="calculateScore(1, 2)">Elevated</div>
+        <div class="button" @click="calculateScore(0, 2)">Normal</div>
+      </div>
+    </div>
+
+    <div class="question question3">
+      <div class="question-title">3. Age ?</div>
+      <div class="response">
+        <div class="button" @click="calculateScore(1, 3)">Stage III/IV</div>
+        <div class="button" @click="calculateScore(0, 3)">Stage I/II</div>
+      </div>
+    </div>
+ 
     <div>
-      <table>
-        <tr>
-          <td>1. Age?</td>
-          <td>
-            <button @click="calculateScore(0, 1)" style="background: #c2f0c2">
-              &lt;70 years
-            </button>
-          </td>
-          <td>
-            <button @click="calculateScore(1, 1)" style="background: #c2f0c2">
-              ≥70 years
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>2. LDH?</td>
-          <td>
-            <button @click="calculateScore(0, 2)" style="background: #c2f0c2">
-              Normal
-            </button>
-          </td>
-          <td>
-            <button @click="calculateScore(1, 2)" style="background: #c2f0c2">
-              Elevated
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>3. Stage?</td>
-          <td>
-            <button @click="calculateScore(0, 3)" style="background: #c2f0c2">
-              Stage I/II
-            </button>
-          </td>
-          <td>
-            <button @click="calculateScore(1, 3)" style="background: #c2f0c2">
-              Stage III/IV
-            </button>
-          </td>
-        </tr>
-      </table>
       <div>
-        <h3>MALT-IPI score</h3>
-        <div>{{ score }}</div>
-        <div>Prognosis : {{ result }}</div>
+
+       <button @click="calculateResult()">View results</button>
+
+        <div class="result" id="result">
+          <div>
+            <div>MALT-IPI score : {{ score }}</div>
+            <br />
+            <div>Prognosis : {{ result }}</div>
+            <br />
+
+          </div>
+        </div>
+      </div>
+
+      <div>
         <div>
+          <br> <br>
           Prognosis depends on 3 independent predictors: Age, Stage, and LDH
         </div>
         <div>
@@ -88,8 +82,15 @@
         >
         calculator is created by QxMD.
       </div>
+    
+    
     </div>
+    
+
+
+
   </div>
+
 </template>
 
 <script lang="ts">
@@ -128,10 +129,17 @@ export default Vue.extend({
       if (this.score >= 2)
         this.result = "Risque élevé (2–3) : OS à 5 ans 64%, EFS à 5 ans 29%";
     },
+
+    calculateResult() {
+      var res = document.getElementById("result");
+      res.style.display = "block";
+    },
   },
-  mounted() {},
 });
 </script>
 
 <style>
+.result {
+  display: none;
+}
 </style>
