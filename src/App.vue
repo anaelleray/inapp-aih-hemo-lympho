@@ -14,6 +14,8 @@ export default Vue.extend({
     components: { Header },
     data() {
         return {
+            name: null,
+            categories: [],
         }
     },
     methods: {
