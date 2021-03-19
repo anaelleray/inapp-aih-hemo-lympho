@@ -4,22 +4,24 @@
         <div class="sous-title">Predicts risk of progression of asymptomatic (smoldering) multiplemyeloma to     active myeloma or amyloidosis.</div>
         <div class="question">
             <div class="question-title">Bone marrow plasmacytosis
-            Average % from bone marrow aspirate and core biopsy</div>
-            <button class="btn" id="ie10" v-on:click="switchValue">&ge;10%</button>
-            <button class="btn" id="s10" v-on:click="switchValue">&lt;10%</button>
+                Average % from bone marrow aspirate and core biopsy
+                <div class="button" id="ie10" v-on:click="switchValue">&ge;10%</div>
+                <div class="button" id="s10" v-on:click="switchValue">&lt;10%</div>
+            </div>
         </div>
         <div class="question">
             <div class="question-title">Serum monoclonal protein, g/dL
-                On serum protein electrophoresis</div>
-            <button class="btn" id="ie3" v-on:click="switchValue">&ge;3</button>
-            <button class="btn" id="s3" v-on:click="switchValue">&lt;3</button>
+                On serum protein electrophoresis
+                <div class="button" id="ie3" v-on:click="switchValue">&ge;3</div>
+                <div class="button" id="s3" v-on:click="switchValue">&lt;3</div>
+            </div>
         </div>
         <div class="consequence">
-            <div id="start">{{this.result}}{{this.warning}}</div>
-            <div id="diagnostic">{{this.diagnostic}}</div>
-            <div id="pourcentage">{{this.pourcentage}}</div>
-            <div id="months">{{this.months}}</div>
-            <div id="singleView">{{this.singleView}}</div>
+            <div class="consequence-risk" id="start">{{this.result}} {{this.warning}}</div>
+            <div class="consequence-risk" id="diagnostic">{{this.diagnostic}}</div>
+            <div class="consequence-text" id="pourcentage">{{this.pourcentage}}</div>
+            <div class="consequence-text" id="months">{{this.months}}</div>
+            <div class="consequence-risk" id="singleView">{{this.singleView}}</div>
         </div>
         <div class="link">
             <div class="link-title">
@@ -48,7 +50,7 @@ export default Vue.extend({
     name: "Smoldering Prognosis",
     data(){
         return {
-            result: "result:",
+            result: "Result :",
             warning: "Please fill out required fields.",
             diagnostic : "",
             pourcentage: "",
@@ -74,16 +76,24 @@ export default Vue.extend({
             if(event.type == "click" && event.target.id == "ie10"){
                 ie10.classList.add("is-selected")
                 s10.classList.remove("is-selected")
+                ie10.classList.add("button-selected")
+                s10.classList.remove("button-selected")
             } else if(event.type == "click" && event.target.id == "s10"){
                 s10.classList.add("is-selected")
                 ie10.classList.remove("is-selected")
+                s10.classList.add("button-selected")
+                ie10.classList.remove("button-selected")
 
             } else if(event.type == "click" && event.target.id == "ie3"){
                 ie3.classList.add("is-selected")
                 s3.classList.remove("is-selected")
+                ie3.classList.add("button-selected")
+                s3.classList.remove("button-selected")
             } else if(event.type == "click" && event.target.id == "s3"){
                 s3.classList.add("is-selected")
                 ie3.classList.remove("is-selected")
+                s3.classList.add("button-selected")
+                ie3.classList.remove("button-selected")
             }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 

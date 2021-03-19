@@ -1,5 +1,4 @@
 <template>
-
   <div class="score">
 
     <div class="title-red">Hodgkin's Disease | Prognosis</div>
