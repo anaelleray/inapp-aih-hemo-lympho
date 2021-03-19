@@ -267,6 +267,9 @@ export default Vue.extend({
     text-decoration: underline;
     font-size: 15px
   }
+  .linkUrl  {
+    margin-bottom: 10px;
+  }
 
 </style>
 

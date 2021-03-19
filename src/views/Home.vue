@@ -18,7 +18,7 @@
           <div v-if="item.children.length > 0">
               <div :id="item.id" class="item" v-on:click="select(item.id)">
                   <div class="title-item">
-                      <div>{{item.name}}</div> 
+                      <div class="title">{{item.name}}</div> 
                       <div :id="'arrow-'+item.id" class="block-arrow">
                           <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
                       </div>
@@ -33,7 +33,7 @@
           <div v-else>
               <div :id="item.id" class="item">
                   <router-link class="title-item" :to="'/score/'+item.slug">
-                      <div>{{item.name}}</div> 
+                      <div  class="title">{{item.name}}</div> 
                       <div :id="'arrow-'+item.id" class="block-arrow">
                           <font-awsome-icon class="arrow" :icon="['fas','chevron-right']"/>
                       </div>
@@ -172,5 +172,8 @@ export default Vue.extend({
         height: 100%;
         width: 100%; 
         margin-bottom: 200px; 
+    }
+    .title{
+      width:80%;
     }
 </style>
