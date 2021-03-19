@@ -72,6 +72,24 @@
         <p>Risk of Event in First 24 Months</p>
         <p> {{ this.pourcentage }} </p>
     </div>
+
+    <div class="link">
+        <div class="link-title">
+            References
+        </div>
+
+        <div class="linkUrl">
+            Maurer MJ, Ghesqui&#232;res H, Jais J-P, et al. <a href="https://www.qxmd.com/r/24550425" target="_blank">Event-Free Survival at 24 Months Is a Robust End Point for Disease-Related Outcome in Diffuse Large B-Cell Lymphoma Treated With Immunochemotherapy.</a>Journal of Clinical Oncology: Official Journal of the American Society of Clinical Oncology 2014 April 1, 32 (10): 1066-73
+        </div>
+
+        <div class="linkUrl">
+            Maurer MJ et al. <a href="https://www.qxmd.com/r/26492520" target="_blank">Personalized Risk Prediction for Event-free Survival at 24 months in Patients with Diffuse Large B-Cell Lymphoma.</a> American Journal of Hematology 2016, 91 (2): 179-84
+        </div>
+
+        <div class="linkUrl">
+            The <a href="https://qxmd.com/calculate/calculator_293/diffuse-large-b-cell-lymphoma-prognosis-ipi24" target="_blank">Diffuse Large B-cell Lymphoma Prognosis (IPI24) </a>calculator is created by QxMD.
+        </div>
+    </div>
  </section>
 </template>
 
