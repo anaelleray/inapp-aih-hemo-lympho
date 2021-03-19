@@ -28,7 +28,7 @@ export default Vue.extend({
                 this.name = DataService.$data.appData.name
                 this.categories = DataService.$data.tree
             }).catch(e => {
-                .log(e)
+                console.log(e)
             })
     },
 })
