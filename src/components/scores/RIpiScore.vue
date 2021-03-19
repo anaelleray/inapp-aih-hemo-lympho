@@ -70,35 +70,51 @@
                 <p id="progSurIpi2">85% progression-free survival (IPI)</p>
             </div>
         </section>
-
-        <h3> LITERATURE </h3>
-        <section>
-            <h4>ORIGINAL/PRIMARY REFERENCE</h4>
-            <section>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/8141877" class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">A predictive model for aggressive non-Hodgkin's lymphoma. The International Non-Hodgkin's Lymphoma Prognostic Factors Project. N Engl J Med. 1993;329(14):987-94.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/17105812 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Sehn LH, Berry B, Chhanabhai M, et al. The revised International Prognostic Index (R-IPI) is a better predictor of outcome than the standard IPI for patients with diffuse large B-cell lymphoma treated with R-CHOP. Blood. 2007;109(5):1857-61.</span></a>
-            </section>
-        </section>
-
-        <section>
-            <h4>VALIDATION</h4>
-            <section>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26260224 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">El-galaly TC, Villa D, Alzahrani M, et al. Outcome prediction by extranodal involvement, IPI, R-IPI, and NCCN-IPI in the PET/CT and rituximab era: A Danish-Canadian study of 443 patients with diffuse-large B-cell lymphoma. Am J Hematol. 2015;90(11):1041-6.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26054914 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Olszewski AJ, Winer ES, Castillo JJ. Validation of clinical prognostic indices for diffuse large B-cell lymphoma in the National Cancer Data Base. Cancer Causes Control. 2015;26(8):1163-72.</span></a>
-                <a href="https://academic.oup.com/annonc/article/21/7/1486/163863/Prognostic-models-for-diffuse-large-B-cell " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Bari A, Marcheselli L, Sacchi S, et al. Prognostic models for diffuse large B-cell lymphoma in the rituximab era: a never-ending story. Ann Oncol. 2010;21(7):1486-91.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9808548 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Blay J, Gomez F, Sebban C, et al. The International Prognostic Index correlates to survival in patients with aggressive lymphoma in relapse: analysis of the PARMA trial. Parma Group. Blood. 1998;92(10):3562-8.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9489649 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Fanin R, Silvestri F, Geromin A, et al. Autologous stem cell transplantation for aggressive non-Hodgkin's lymphomas in first complete or partial remission: a retrospective analysis of the outcome of 52 patients according to the age-adjusted International Prognostic Index. Bone Marrow Transplant. 1998;21(3):263-71.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9187429 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Foussard C, Desablens B, Sensebe L, et al. Is the International Prognostic Index for aggressive lymphomas useful for low-grade lymphoma patients? Applicability to stage III-IV patients. The GOELAMS Group, France. Ann Oncol. 1997;8 Suppl 1:49-52.</span></a>
-                <a href="https://www.ncbi.nlm.nih.gov/pubmed/7632953 " class="resource" target="_blank"><span class="resource__img-wrapper"><img src="https://cdn-web-img.mdcalc.com/icons/resource-pubmed.png" alt="Research Paper"></span><span class="resource__text">Hermans J, Krol AD, Van groningen K, et al. International Prognostic Index for aggressive non-Hodgkin's lymphoma is valid for all malignancy grades. Blood. 1995;86(4):1460-3.</span></a>
-            </section>
-        </section>
-
-        <section>
-            <h4>OTHER REFERENCES</h4>
-            <section>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/8141877" class="resource" target="_blank"><span class="resource__text">A predictive model for aggressive non-Hodgkin's lymphoma. The International Non-Hodgkin's Lymphoma Prognostic Factors Project. N Engl J Med. 1993;329(14):987-94.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/17105812 " class="resource" target="_blank"><span class="resource__text">Sehn LH, Berry B, Chhanabhai M, et al. The revised International Prognostic Index (R-IPI) is a better predictor of outcome than the standard IPI for patients with diffuse large B-cell lymphoma treated with R-CHOP. Blood. 2007;109(5):1857-61.</span></a>
+            </div>
+            
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26260224 " class="resource" target="_blank"><span class="resource__text">El-galaly TC, Villa D, Alzahrani M, et al. Outcome prediction by extranodal involvement, IPI, R-IPI, and NCCN-IPI in the PET/CT and rituximab era: A Danish-Canadian study of 443 patients with diffuse-large B-cell lymphoma. Am J Hematol. 2015;90(11):1041-6.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/26054914 " class="resource" target="_blank"><span class="resource__text">Olszewski AJ, Winer ES, Castillo JJ. Validation of clinical prognostic indices for diffuse large B-cell lymphoma in the National Cancer Data Base. Cancer Causes Control. 2015;26(8):1163-72.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://academic.oup.com/annonc/article/21/7/1486/163863/Prognostic-models-for-diffuse-large-B-cell " class="resource" target="_blank"><span class="resource__text">Bari A, Marcheselli L, Sacchi S, et al. Prognostic models for diffuse large B-cell lymphoma in the rituximab era: a never-ending story. Ann Oncol. 2010;21(7):1486-91.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9808548 " class="resource" target="_blank"><span class="resource__text">Blay J, Gomez F, Sebban C, et al. The International Prognostic Index correlates to survival in patients with aggressive lymphoma in relapse: analysis of the PARMA trial. Parma Group. Blood. 1998;92(10):3562-8.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9489649 " class="resource" target="_blank"><span class="resource__text">Fanin R, Silvestri F, Geromin A, et al. Autologous stem cell transplantation for aggressive non-Hodgkin's lymphomas in first complete or partial remission: a retrospective analysis of the outcome of 52 patients according to the age-adjusted International Prognostic Index. Bone Marrow Transplant. 1998;21(3):263-71.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/9187429 " class="resource" target="_blank"><span class="resource__text">Foussard C, Desablens B, Sensebe L, et al. Is the International Prognostic Index for aggressive lymphomas useful for low-grade lymphoma patients? Applicability to stage III-IV patients. The GOELAMS Group, France. Ann Oncol. 1997;8 Suppl 1:49-52.</span></a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/7632953 " class="resource" target="_blank"><span class="resource__text">Hermans J, Krol AD, Van groningen K, et al. International Prognostic Index for aggressive non-Hodgkin's lymphoma is valid for all malignancy grades. Blood. 1995;86(4):1460-3.</span></a>
+            </div>
+            <div class="link-subTitle">
+                Other References
+            </div>
+            <div class="linkUrl">
                 <span class="resource__text">Armitage JO. Staging non-Hodgkin lymphoma. CA Cancer J Clin. 2005;55(6):368-76.</span>
-            </section>
-        </section>
+            </div>
+        </div>
     </div>
 </template>
 
