@@ -8,55 +8,64 @@
         </div>
         <hr style="background-color:#000;">
         <div class="question">
-            <div class="question-title">Age &gt;60 years</div>
-            <div class="no-selected response">
-                <div id="ageNo" clicked="false" @click="counter($event, '-', 'ageYes')">No 0</div>
-            </div>
-            <div class="yes-selected response">
-                <div id="ageYes" clicked="false" @click="counter($event, '+', 'ageNo')">Yes +1</div>
+            <div class="question-title">Age &gt;60 years
+                <div class="no-selected response">
+                    <div class="button" id="ageNo" clicked="false" @click="counter($event, '-', 'ageYes')">No 0</div>
+                </div>
+                <div class="yes-selected response">
+                    <div class="button" id="ageYes" clicked="false" @click="counter($event, '+', 'ageNo')">Yes +1</div>
+                </div>
             </div>
         </div>
         <div class="question">
             <div class="question-title">&gt;4 nodal sites
-                See Evidence for nodal diagram.</div>
+                See Evidence for nodal diagram.
                 <div class="no-selected response">
-                <div id="nodalNo" clicked="false" @click="counter($event, '-', 'nodalYes')">No 0</div>
-            </div>
-            <div class="yes-selected response">
-                <div id="nodalYes" clicked="false" @click="counter($event, '+', 'nodalNo')">Yes +1</div>
-            </div>
-        </div>
-        <div class="question">
-            <div class="question-title">LDH elevated</div>
-            <div class="no-selected response">
-                <div id="ldhNo" clicked="false" @click="counter($event, '-', 'ldhYes')">No 0</div>
-            </div>
-            <div class="yes-selected response">
-                <div id="ldhYes" clicked="false"  @click="counter($event, '+', 'ldhNo')">Yes +1</div>
+                    <div class="button" id="nodalNo" clicked="false" @click="counter($event, '-', 'nodalYes')">No 0</div>
+                </div>
+                <div class="yes-selected response">
+                    <div class="button" id="nodalYes" clicked="false" @click="counter($event, '+', 'nodalNo')">Yes +1</div>
+                </div>
             </div>
         </div>
         <div class="question">
-            <div class="question-title">Hemoglobin &lt;120 g/L or 12 g/dL</div>
-            <div class="no-selected response">
-                <div id="hemoNo" clicked="false" @click="counter($event, '-', 'hemoYes')">No 0</div>
-            </div>
-            <div class="yes-selected response">
-                <div id="hemoYes" clicked="false" @click="counter($event, '+', 'hemoNo')">Yes +1</div>
+            <div class="question-title">LDH elevated
+                <div class="no-selected response">
+                    <div class="button" id="ldhNo" clicked="false" @click="counter($event, '-', 'ldhYes')">No 0</div>
+                </div>
+                <div class="yes-selected response">
+                    <div class="button" id="ldhYes" clicked="false"  @click="counter($event, '+', 'ldhNo')">Yes +1</div>
+                </div>
             </div>
         </div>
         <div class="question">
-            <div class="question-title">Stage III-IV
+            <div class="question-title">Hemoglobin &lt;120 g/L or 12 g/dL
+                <div class="no-selected response">
+                    <div class="button" id="hemoNo" clicked="false" @click="counter($event, '-', 'hemoYes')">No 0</div>
+                </div>
+                <div class="yes-selected response">
+                    <div class="button" id="hemoYes" clicked="false" @click="counter($event, '+', 'hemoNo')">Yes +1</div>
+                </div>
+            </div>
+        </div>
+        <div class="question">
+            <div class="question-title">
+                Stage III-IV
+                <br/>
                 Stage I: disease is located in a single region, usually one lymph node and the surrounding area.
+                <br/>
                 Stage II: disease is located in two separate regions, an affected lymph node or organ and a second affected area. Both affected areas are confined to one side of the diaphragm. 
+                <br/>
                 Stage III: disease involves both sides of the diaphragm, including one organ or area near the lymph nodes or the spleen.
+                <br/>
                 Stage IV: diffuse or disseminated involvement of one or more extranodal organs, with or without associated lymph node involvement.
-                See Evidence for stage diagram.
-            </div>
-            <div class="no-selected response">
-                <div id="stageNo" clicked="false" @click="counter($event, '-', 'stageYes')">No 0</div>
-            </div>
-            <div class="yes-selected response">
-                <div id="stageYes" clicked="false" @click="counter($event, '+', 'stageNo')">Yes +1</div>
+                <br/>
+                <div class="no-selected response">
+                    <div class="button" id="stageNo" clicked="false" @click="counter($event, '-', 'stageYes')">No 0</div>
+                </div>
+                <div class="yes-selected response">
+                    <div class="button" id="stageYes" clicked="false" @click="counter($event, '+', 'stageNo')">Yes  +1</div>
+                </div>
             </div>
         </div>
         <div class="consequence">
@@ -106,6 +115,8 @@ export default Vue.extend({
             triggerBtn.style.backgroundColor  = "red";
             otherBtn.style.backgroundColor = "#e1e1e1";
             let clickedState = triggerBtn.getAttribute("clicked");
+            triggerBtn.classList.add("button-selected");
+            otherBtn.classList.remove("button-selected");
 
             if( clickedState === "false" ) { 
                 if (inc === "+"){ 

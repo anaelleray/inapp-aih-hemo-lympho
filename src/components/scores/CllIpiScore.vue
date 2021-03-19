@@ -109,15 +109,15 @@ export default Vue.extend({
         } as any
     },
     methods: {
-       calculateResult(value) {
-        this.reponse1 = value.inputA ==="sup65" ? 1 : 0;  
-        this.reponse2 = value.inputB ==="BinetBC" ? 1 : 0 ;  
-        this.reponse3 = value.inputC ==="sup3.5" ? 2 : 0;  
-        this.reponse4 = value.inputD ==="Unmutated" ? 2 : 0;  
-        this.reponse5 = value.inputE ==="Tp53Del" ? 4 : 0;        
-  
-        this.score = this.reponse1 + this.reponse2 + this.reponse3 + this.reponse4 + this.reponse5
-        this.displayResult()
+        calculateResult(value) {
+            this.reponse1 = value.inputA ==="sup65" ? 1 : 0;  
+            this.reponse2 = value.inputB ==="BinetBC" ? 1 : 0 ;  
+            this.reponse3 = value.inputC ==="sup3.5" ? 2 : 0;  
+            this.reponse4 = value.inputD ==="Unmutated" ? 2 : 0;  
+            this.reponse5 = value.inputE ==="Tp53Del" ? 4 : 0;        
+    
+            this.score = this.reponse1 + this.reponse2 + this.reponse3 + this.reponse4 + this.reponse5
+            this.displayResult()
         },
         changeInput(value: any) {
             this.input = {...this.input, ...value}

@@ -110,6 +110,19 @@ export default Vue.extend({
     background-color: #ee3343 !important;
   }
 
+  .buttonOld{
+    text-align: center;
+    color: #707070;
+    background-color:#f1f1f6;
+    margin:20px;
+    border-bottom: 0px solid #1C6EA4;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 6px 13px -1px rgba(0,0,0,0.75);
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
+    padding:20px;  
+  }
+
   .title-red{
     text-align: left;
     margin-left: 10px;
@@ -169,6 +182,14 @@ export default Vue.extend({
     margin-bottom: 5px;
     margin-left: 5px;
     margin-right: 5px;
+  }
+  .consequence-risk{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .sous-title{
