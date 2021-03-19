@@ -12,8 +12,6 @@
         <hr style="background-color:#000;">
 
         <div class ="title-purple">
-            INSTRUCTIONS
-            <br><br>
             Use only in patients recently diagnosed with multiple myeloma. Do not use in patients with relapsed myeloma, smoldering myeloma or MGUS.
         </div>
 
@@ -57,6 +55,28 @@
                 <div>{{mounth[result-1]}} months median progression-free survival</div>
             </div>
         </div>
+
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="http://jco.ascopubs.org/content/33/26/2863" target="_blank">Palumbo A, et. al. Revised International Staging System for Multiple Myeloma: a Report From International Myeloma Working Group. JCO 2015; 33: 2863-2869.</a>
+            </div>
+            <div class="linkUrl">
+                <a href="http://www.ncbi.nlm.nih.gov/pubmed/15809451" target="_blank">Greipp PR, et. al. International Staging System for Multiple Myeloma. JCO 2005; 23:3412-3420.</a>
+            </div>
+            
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                 <a href="https://www.myeloma.org/publications" target="_blank">International Myeloma Foundation. International Staging System. April 2002.</a>
+            </div>
+        </div>
   </div>
 </template>
 
@@ -84,12 +104,11 @@ export default Vue.extend({
         select : function(value, input){
             let holdSelec= document.getElementsByClassName( input +' button-selected')
             let newSelec = document.getElementById(input+'-'+value)
-            if(holdSelec){
+            if(holdSelec.length > 0){
                 if(holdSelec[0] != newSelec){
                     holdSelec[0].classList.remove("button-selected");
                     newSelec.classList.add("button-selected");
-                }else{
-                newSelec.classList.add("button-selected");}
+                }
             }else{
                 newSelec.classList.add("button-selected");
             }
@@ -147,7 +166,4 @@ export default Vue.extend({
 </script>
 
 <style>
-    .selected-riss{
-        background-color: red;
-    }
 </style>

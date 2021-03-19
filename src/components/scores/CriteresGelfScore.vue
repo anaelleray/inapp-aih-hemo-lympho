@@ -1,57 +1,75 @@
 <template>
-    <div class="gelfRoot">
-        <div class="gelfBlocText">
-            <h1 class="gelfTitle">Groupe d'Etude des Lymphomes Folliculaires (GELF) Criteria</h1>
-            <p class="gelfDescription">Determines if immediate therapy for follicular lymphoma is required.</p>
+    <div class="score">
+        <div class="title-red">
+            Groupe d'Etude des Lymphomes Folliculaires (GELF) Criteria
         </div>
-        <div class="gelfForm">
-            <div class="gelfInput1">
-                <p>Any nodal or extranodal tumor mass &gt;7 cm diameter</p>
-                <button id="gelfNo1" clicked="false" @click="counter($event, '-', 'gelfYes1')">No</button>
-                <button id="gelfYes1" clicked="false" @click="counter($event, '+', 'gelfNo1')">Yes</button>
-            </div>
-            <div class="gelfInput2">
-                <p>Involvement of at least 3 nodal sites, each with diameter &gt;3 cm
-                    View more nodal site information in the More Info section.</p>
-                <button id="gelfNo2" clicked="false" @click="counter($event, '-', 'gelfYes2')">No</button>
-                <button id="gelfYes2" clicked="false" @click="counter($event, '+', 'gelfNo2')">Yes</button>
-            </div>
-            <div class="gelfInput3">
-                <p>Presence of any systemic or B symptoms</p>
-                <button id="gelfNo3" clicked="false" @click="counter($event, '-', 'gelfYes3')">No</button>
-                <button id="gelfYes3" clicked="false" @click="counter($event, '+', 'gelfNo3')">Yes</button>
-            </div>
-            <div class="gelfInput4">
-                <p>Splenic enlargement with inferior margin below the umbilical line</p>
-                <button id="gelfNo4" clicked="false" @click="counter($event, '-', 'gelfYes4')">No</button>
-                <button id="gelfYes4" clicked="false" @click="counter($event, '+', 'gelfNo4')">Yes</button>
-            </div>
-            <div class="gelfInput5">
-                <p>Compression syndrome (ureteral, orbital, gastrointestinal)</p>
-                <button id="gelfNo5" clicked="false" @click="counter($event, '-', 'gelfYes5')">No</button>
-                <button id="gelfYes5" clicked="false" @click="counter($event, '+', 'gelfNo5')">Yes</button>
-            </div>
-            <div class="gelfInput6">
-                <p>Pleural or peritoneal serous effusion (irrespective of cell content)</p>
-                <button id="gelfNo6" clicked="false" @click="counter($event, '-', 'gelfYes6')">No</button>
-                <button id="gelfYes6" clicked="false" @click="counter($event, '+', 'gelfNo6')">Yes</button>
-            </div>
-            <div class="gelfInput7">
-                <p>Leukemic phase (&gt;5.0 x10⁹/L circulating malignant cells)</p>
-                <button id="gelfNo7" clicked="false" @click="counter($event, '-', 'gelfYes7')">No</button>
-                <button id="gelfYes7" clicked="false" @click="counter($event, '+', 'gelfNo7')">Yes</button>
-            </div>
-            <div class="gelfInput8">
-                <p>Cytopenia (granulocyte count &lt; 1.0x10⁹/L and/or platelets &lt; 100x10⁹/L)</p>
-                <button id="gelfNo8" clicked="false" @click="counter($event, '-', 'gelfYes8')">No</button>
-                <button id="gelfYes8" clicked="false" @click="counter($event, '+', 'gelfNo8')">Yes</button>
-            </div>
+        <div class="sous-title">
+            Determines if immediate therapy for follicular lymphoma is required.
         </div>
-        <div class="gelfWindowResult">
-            <div>{{this.criteria}} Criteria</div>
-            <div>{{this.prognosis}}</div>
-            <div>{{this.result}}</div>
-            <div>{{this.notes}}</div>
+        <hr style="background-color:#000;">
+        <div class="question">
+            <p>Any nodal or extranodal tumor mass &gt;7 cm diameter</p>
+            <button id="gelfNo1" clicked="false" @click="counter($event, '-', 'gelfYes1')">No</button>
+            <button id="gelfYes1" clicked="false" @click="counter($event, '+', 'gelfNo1')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Involvement of at least 3 nodal sites, each with diameter &gt;3 cm
+                View more nodal site information in the More Info section.</div>
+            <button id="gelfNo2" clicked="false" @click="counter($event, '-', 'gelfYes2')">No</button>
+            <button id="gelfYes2" clicked="false" @click="counter($event, '+', 'gelfNo2')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Presence of any systemic or B symptoms</div>
+            <button id="gelfNo3" clicked="false" @click="counter($event, '-', 'gelfYes3')">No</button>
+            <button id="gelfYes3" clicked="false" @click="counter($event, '+', 'gelfNo3')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Splenic enlargement with inferior margin below the umbilical line</div>
+            <button id="gelfNo4" clicked="false" @click="counter($event, '-', 'gelfYes4')">No</button>
+            <button id="gelfYes4" clicked="false" @click="counter($event, '+', 'gelfNo4')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Compression syndrome (ureteral, orbital, gastrointestinal)</div>
+            <button id="gelfNo5" clicked="false" @click="counter($event, '-', 'gelfYes5')">No</button>
+            <button id="gelfYes5" clicked="false" @click="counter($event, '+', 'gelfNo5')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Pleural or peritoneal serous effusion (irrespective of cell content)</div>
+            <button id="gelfNo6" clicked="false" @click="counter($event, '-', 'gelfYes6')">No</button>
+            <button id="gelfYes6" clicked="false" @click="counter($event, '+', 'gelfNo6')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Leukemic phase (&gt;5.0 x10⁹/L circulating malignant cells)</div>
+            <button id="gelfNo7" clicked="false" @click="counter($event, '-', 'gelfYes7')">No</button>
+            <button id="gelfYes7" clicked="false" @click="counter($event, '+', 'gelfNo7')">Yes</button>
+        </div>
+        <div class="question">
+            <div class="question-title">Cytopenia (granulocyte count &lt; 1.0x10⁹/L and/or platelets &lt; 100x10⁹/L)</div>
+            <button id="gelfNo8" clicked="false" @click="counter($event, '-', 'gelfYes8')">No</button>
+            <button id="gelfYes8" clicked="false" @click="counter($event, '+', 'gelfNo8')">Yes</button>
+        </div>
+        <div class="consequence">
+            <div class="consequence-points">{{this.criteria}} Criteria</div>
+            <div class="consequence-text">{{this.prognosis}}</div>
+            <div class="consequence-text">{{this.result}}</div>
+            <div class="consequence-text">{{this.notes}}</div>
+        </div>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/9060552/" target="_blank">Brice P, Bastion Y,Lepage E, et al. Comparison in low-tumor-burden follicular lymphomas between an initialno-treatment policy, prednimustine, or interferon alfa: a randomized study from the Grouped'Etude des Lymphomes Folliculaires. J Clin Oncol. 1997. 15:1110-7.</a>
+            </div>
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/9667247/" target="_blank">Solal-Céligny P, LepageE,   Brousse N, Tendler CL, Brice P, Haïoun C, Gabarre J, Pignon B, Tertian G,Bouabdallah R,Rossi JF,     Doyen C, Coiffier B. DOXOrubicin-containing regimen with or without interferonalfa-2b for advanced     follicular lymphomas: final analysis of survival and toxicity inthe Groupe d'Etude des Lymphomes   Folliculaires 86 Trial. J Clin Oncol. 1998 Jul;16(7:2332-8.</a>
+            </div>
         </div>
     </div>
 </template>

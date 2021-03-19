@@ -1,7 +1,7 @@
   <template>
     <div class="score">
         <div class="title-red">
-            CLL immunophenotypic score (Matutes score)
+            Score immunophénotypique CLL (score de Matutes)
         </div>
         <hr style="background-color:#000;">
         <div class="question">
@@ -55,11 +55,30 @@
                 Prognosis
                 <br><br>
                 <div>
-                    <div class="r1"> {{score}}</div>
-                    <div class="r1"> {{info}}</div>
+                    <div class="consequence-text">Sum of score :</div>
+                    <div class="consequence-points">{{score}}</div>
+                    <div class="consequence-text">Diagnosis :</div>
+                    <div class="consequence-text">{{info}}</div>
                 </div>
             </div>
         </div>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                References
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/7523797/" target="_blank">1. Matutes E, Owusu-Ankomah K, Morilla R, Garcia Marco J, Houlihan A, Que TH et al. The immunological profile of B-cell disorders and proposal of a scoring system for the diagnosis of CLL. Leukemia 1994; 8: 1640-5.</a>
+            </div>
+            <div class="linkUrl">
+                 <a href="https://pubmed.ncbi.nlm.nih.gov/9322589/" target="_blank">2. Moreau EJ, Matutes E, A’Hern RP, Morilla AM, Morilla RM, Owusu-Ankomah KA et al. Improvement of the chronic lymphocytic leukemia scoring system with the monoclonal antibody SN8 (CD79b). Am J Clin Pathol 1997; 108: 378-382.</a>
+            </div>
+        </div>     
+
+
+
     </div>
 </template>
 

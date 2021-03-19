@@ -1,10 +1,10 @@
   <template>
     <div class="score">
         <div class="title-red">
-            International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI)
+            Indice pronostique international de la leucémie lymphoïde chronique (CLL-IPI)
         </div>
         <div class="sous-title">
-            Stratifies patients with chronic lymphocytic leukemia into four risk categories. 
+            Stratifie les patients atteints de leucémie lymphoïde chronique en quatre catégories de risque. 
         </div>
         <hr style="background-color:#000;">
         <div>
@@ -48,11 +48,34 @@
                     Prognosis
                     <br><br>
                     <div>
-                        <div class="r1">{{result.points}} points</div>
-                        <div class="r2">{{result.risk}}</div>
-                        <div class="r2">{{result.rate}}</div>
+                        <div class="consequence-points">{{result.points}} points</div>
+                        <div class="consequence-text">{{result.risk}}</div>
+                        <div class="consequence-text">{{result.rate}}</div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27185642/" target="_blank">An international prognostic index for patients with chronic lymphocytic leukaemia (CLL-IPI): a meta-analysis of individual patient data. Lancet Oncol. 2016;17(6):779-90.</a>
+            </div>
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27549308/" target="_blank">1. Gentile M, Shanafelt TD, Rossi D, et al. Validation of the CLL-IPI and comparison with the MDACC prognostic index in newly diagnosed patients. Blood. 2016;128(16):2093-2095.</a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://pubmed.ncbi.nlm.nih.gov/27465919/" target="_blank">2. Molica S, Shanafelt TD, Giannarelli D, et al. The chronic lymphocytic leukemia international prognostic index predicts time to first treatment in early CLL: Independent validation in a prospective cohort of early stage patients. Am J Hematol. 2016;91(11):1090-1095.</a>
+            </div>
+            <div class="linkUrl">
+                 <a href="https://pubmed.ncbi.nlm.nih.gov/27605511/" target="_blank">3. Da Cunha-Bang C, Christiansen I, Niemann CU. The CLL-IPI applied in a population-based cohort. Blood. 2016;128(17):2181-2183.</a>
             </div>
         </div>
     </div>

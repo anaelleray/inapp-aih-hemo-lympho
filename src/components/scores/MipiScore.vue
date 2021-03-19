@@ -73,7 +73,37 @@
                 <div>Result:{{result}}</div>
             </div>
         </div>
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                Original / Primary reference
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/17962512" target="_blank">Hoster E, Dreyling M, Klapper W, et al. A new prognostic index (MIPI) for patients with advanced-stage mantle cell lymphoma. Blood. 2008;111(2):558-65.</a>
+            </div>
+            
+            <div class="link-subTitle">
+                Validation
+            </div>
+            <div class="linkUrl">
+                 <a href="https://www.ncbi.nlm.nih.gov/pubmed/24687837" target="_blank">Hoster E, Klapper W, Hermine O, et al. Confirmation of the mantle-cell lymphoma International Prognostic Index in randomized trials of the European Mantle-Cell Lymphoma Network. J Clin Oncol. 2014;32(13):1338-46.</a>
+            </div>
+             <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pubmed/20032504" target="_blank">Geisler CH, Kolstad A, Laurell A, et al. The Mantle Cell Lymphoma International Prognostic Index (MIPI) is superior to the International Prognostic Index (IPI) in predicting survival following intensive first-line immunochemotherapy and autologous stem cell transplantation (ASCT). Blood. 2010;115(8):1530-3.</a>
+            </div>
 
+            <div class="link-subTitle">
+                Other References
+            </div>
+            <div class="linkUrl">
+                 <a href="https://www.ncbi.nlm.nih.gov/pubmed/26926679" target="_blank">Hoster E, Rosenwald A, Berger F, et al. Prognostic Value of Ki-67 Index, Cytology, and Growth Pattern in Mantle-Cell Lymphoma: Results From Randomized Trials of the European Mantle Cell Lymphoma Network. J Clin Oncol. 2016;34(12):1386-94.</a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3436357/" target="_blank">Lim SY, Horsman JM, Hancock BW. The Mantle Cell Lymphoma International Prognostic Index: Does it work in routine practice?. Oncol Lett. 2010;1(1):187-188.</a>
+            </div>
+        </div>
     </div>
 </template>
 

@@ -55,15 +55,31 @@
                     Prognosis
                     <br><br>
                     <div>
-                        <div class="r1">Binet Stage : {{result.stage}}</div>
-                        <div class="r2">Risk : {{result.risk}}</div>
-                        <div class="r2">Overall survival : {{result.survival}}</div>
+                        <div class="consequence-text">Binet Stage : {{result.stage}}</div>
+                        <div class="consequence-text">Risk : {{result.risk}}</div>
+                        <div class="consequence-text">Overall survival : {{result.survival}}</div>
                     </div>
                 </div>
             </div>
         </div>
 
-
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
+                    ORIGINAL/PRIMARY REFERENCE
+                <div class="linkUrl">
+                    <a href="https://www.ncbi.nlm.nih.gov/pubmed/890666" target="_blank">1. Binet JL, Leporrier M, Dighiero G, et al. A clinical staging system for chronic lymphocytic leukemia: prognostic significance. Cancer. 1977;40(2):855-64.</a>
+                </div>
+            </div>
+            <div class="link-subTitle">
+                    OTHER REFERENCES
+                <div class="linkUrl">
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/25461996/" target="_blank">2. Nabhan C, Rosen ST. Chronic lymphocytic leukemia: a clinical review. JAMA. 2014;312(21):2265-76.</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 </template>
@@ -72,9 +88,6 @@
 import Vue from "vue"
 export default Vue.extend({  
     name: "BinetScore",
-    components: {
-
-    },
     data()
     {
         return {
@@ -95,22 +108,22 @@ export default Vue.extend({
             if(this.input.inputA == "inf3" && this.input.inputB=="No" && this.input.inputC=="No"){
                 this.result = {
                     stage: "Stage A",
-                    risk: "Low",
-                    survival: "12 years"
+                    risk: "Faible",
+                    survival: "12 ans"
                 }
             }
             if(this.input.inputA=="supEgal3" && this.input.inputB=="No" && this.input.inputC=="No"){
                 this.result = {
                     stage: "Stage B",
-                    risk: "Intermediate",
-                    survival: "7 years"
+                    risk: "Intermédiaire",
+                    survival: "7 ans"
                 }
             }
             if(this.input.inputC=="Yes" || this.input.inputB=="Yes"){
                 this.result = {
-                    stage: "Stage C",
-                    risk: "High",
-                    survival: "2-4 years"
+                    stage: "Stage C",
+                    risk: "Haute",
+                    survival: "2-4 ans"
                 }
             }
         },
@@ -125,10 +138,6 @@ export default Vue.extend({
                 return "button "
             }
         }       
-        
-    },
-    mounted()
-    {
         
     },
 })
