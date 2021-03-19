@@ -47,14 +47,18 @@
             <div class="title-about">EVIDENCE APPRAISAL</div>
             <div>The Relapsed CLL BALL Score identifies three prognostic groups with significantly different overall survival. Application of this risk model to patients with relapsed/refractory CLL reliably identifies patients at increased risk of death, and is validated for patients treated with all currently approved targeted therapies: ibrutinib, idelalisib, and venetoclax. By applying the Relapsed CLL BALL Score to individual patients, treating physicians can identify patients at increased risk of death despite targeted therapies. We propose that high and intermediate risk patients should be evaluated for consideration in clinical trials, as their expected survival with modern targeted therapies remains suboptimal. Investigators can address this unmet need by designing prospective trials targeting these higher risk patients.</div>
         </div>
-        <div class="sous-title">
-            <div>
+
+        <div class="link">
+            <div class="link-title">
+                Litterature
+            </div>
+            <div class="link-subTitle">
                 REFERENCES
             </div>
-            <div>
-                Soumerai JD, Ni A, Darif M, et al.<br>
-                <a href="https://read.qxmd.com/read/31109827/prognostic-risk-score-for-patients-with-relapsed-or-refractory-chronic-lymphocytic-leukaemia-treated-with-targeted-therapies-or-chemoimmunotherapy-a-retrospective-pooled-cohort-study-with-external-validations" target="_blank">Prognostic risk score for patients with relapsed or refractory chronic lymphocytic leukaemia treated with targeted therapies or chemoimmunotherapy: a retrospective, pooled cohort study with external validations.</a><br>
-                Lancet Haematology 2019, 6 (7): e366-e374 
+            <div class="linkUrl">
+                <div>Soumerai JD, Ni A, Darif M, et al.</div>
+                <a href="https://read.qxmd.com/read/31109827/prognostic-risk-score-for-patients-with-relapsed-or-refractory-chronic-lymphocytic-leukaemia-treated-with-targeted-therapies-or-chemoimmunotherapy-a-retrospective-pooled-cohort-study-with-external-validations" target="_blank">Prognostic risk score for patients with relapsed or refractory chronic lymphocytic leukaemia treated with targeted therapies or chemoimmunotherapy: a retrospective, pooled cohort study with external validations.</a><br/>
+                <div>Lancet Haematology 2019, 6 (7): e366-e374</div>
             </div>
         </div>
     </div>

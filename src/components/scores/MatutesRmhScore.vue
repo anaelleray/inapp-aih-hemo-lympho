@@ -60,17 +60,23 @@
                 </div>
             </div>
         </div>
-        <div class="sous-title">
-            <div>
-                REFERENCES
+        <div class="link">
+            <div class="link-title">
+                Litterature
             </div>
-            <div>
+            <div class="link-subTitle">
+                References
+            </div>
+            <div class="linkUrl">
                 <a href="https://pubmed.ncbi.nlm.nih.gov/7523797/" target="_blank">1. Matutes E, Owusu-Ankomah K, Morilla R, Garcia Marco J, Houlihan A, Que TH et al. The immunological profile of B-cell disorders and proposal of a scoring system for the diagnosis of CLL. Leukemia 1994; 8: 1640-5.</a>
             </div>
-            <div>
-                <a href="https://pubmed.ncbi.nlm.nih.gov/9322589/" target="_blank">2. Moreau EJ, Matutes E, A’Hern RP, Morilla AM, Morilla RM, Owusu-Ankomah KA et al. Improvement of the chronic lymphocytic leukemia scoring system with the monoclonal antibody SN8 (CD79b). Am J Clin Pathol 1997; 108: 378-382.</a>
+            <div class="linkUrl">
+                 <a href="https://pubmed.ncbi.nlm.nih.gov/9322589/" target="_blank">2. Moreau EJ, Matutes E, A’Hern RP, Morilla AM, Morilla RM, Owusu-Ankomah KA et al. Improvement of the chronic lymphocytic leukemia scoring system with the monoclonal antibody SN8 (CD79b). Am J Clin Pathol 1997; 108: 378-382.</a>
             </div>
-        </div>
+        </div>     
+
+
+
     </div>
 </template>
 
