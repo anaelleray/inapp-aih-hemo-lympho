@@ -4,13 +4,16 @@
         <div class="title-red">
             Binet Staging System for Chronic Lymphocytic Leukemia (CLL)
         </div>
+        
         <div class ="sous-title">
             Système de stadification Binet pour la leucémie lymphoïde chronique
         </div>
         <hr style="background-color:#000;">
+
         <div class ="title-purple">
             Stades de la leucémie lymphoïde chronique, similaire au système de stadification Rai .
         </div>
+        
         <div>
             <div class="question">
                 <div >
