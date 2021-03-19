@@ -67,12 +67,24 @@
 
         <div v-if="years != null && serumLDH != null && upperLimitLDH != null && wbc != null " >
             <div class="consequence">
-                Prognosis
-                <br><br>
-                
-                <div>Result:{{result}}</div>
+                <div class="consequence-points">{{result}} points</div>
+                <div class="consequence-text">
+                    <div v-if="resultMounth == 1">
+                        Faible
+                    </div>
+                    <div v-else-if="resultMounth == 2">
+                        Intermédiaire
+                    </div>
+                    <div v-else>
+                        Haut
+                    </div>
+                </div>
+                <div class="consequence-text">
+                    {{mounth[resultMounth-1]}}
+                </div>
             </div>
         </div>
+
         <div class="link">
             <div class="link-title">
                 Litterature
@@ -114,6 +126,18 @@ export default Vue.extend({
     data()
     {
         return {
+            mounthMIPI:[
+                "Non atteint (survie à 5 ans 60%)",
+                "51 mois",
+                "29 mois",
+            ],
+            mounthMIPIb:[
+                "Non atteint",
+                "58 mois",
+                "37 mois"
+            ],
+            mounth:[],
+            resultMounth: null,
             result: null,
             years: null,
             ecog: 1,
@@ -156,6 +180,16 @@ export default Vue.extend({
             if(this.ecog > 1){
                 this.result += ( 1.367 * Math.log10( this.serumLDH / this.upperLimitLDH - Math.log10(9) ) + 0.9393 * Math.log10(this.wbc) )
             }
+            if(this.result < 5.7){
+                this.resultMounth=1
+            }else{
+                if(this.result < 6.2){
+                    this.resultMounth=2
+                }else{
+                    this.resultMounth=3
+                }
+            }
+            this.mounth= this.mounthMIPI
         },
 
         formulKi : function (){
@@ -163,7 +197,17 @@ export default Vue.extend({
             if(this.ecog > 1){
                 this.result += ( 1.367 * Math.log10( this.serumLDH / this.upperLimitLDH ) + 0.9393 * Math.log10(this.wbc) )
             }
-            
+
+            if(this.result < 5.7){
+                this.resultMounth=1
+            }else{
+                if(this.result < 6.5){
+                    this.resultMounth=2
+                }else{
+                    this.resultMounth=3
+                }
+            }
+            this.mounth= this.mounthMIPIb
         },
    }
 })
