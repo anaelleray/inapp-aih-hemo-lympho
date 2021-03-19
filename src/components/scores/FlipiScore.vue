@@ -121,6 +121,8 @@ export default Vue.extend({
                 this.risk = "High Risk"
                 this.survival = "10-year overall survival is approximately 35%"
             }
+
+            console.log(this.points);
         }
     },
     mounted()
