@@ -71,7 +71,7 @@
             </div>
             
             <div class="link-subTitle">
-                Other References
+                Validation
             </div>
             <div class="linkUrl">
                  <a href="https://www.myeloma.org/publications" target="_blank">International Myeloma Foundation. International Staging System. April 2002.</a>
