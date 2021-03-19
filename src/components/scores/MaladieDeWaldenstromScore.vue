@@ -1,14 +1,14 @@
 <template>
+
   <div class="score">
-    <div class="title-red">
-      Maladie de Waldenstrom
-    </div>
-    <div class="sous-title">
-      International Prognostic Scoring System for Waldenstrom Macroglobulinemia
-    </div>
+
+    <div class="title-red">Maladie de Waldenstrom</div>
+    <div class="sous-title">International Prognostic Scoring System for Waldenstrom Macroglobulinemia</div>
     <hr style="background-color:#000;">
     <div class="title-purple">Estimate prognosis with the IPPSWM</div>
+    
     <div>
+    
       <div class="question">
         <div class="question-title">Age</div>
         <div class="response">
@@ -16,6 +16,7 @@
           <div id="years-1" class="button years " @click="select(1,'years')">>65 years</div>
         </div>
       </div>
+    
       <div class="question">
         <div class="question-title">
           Hemoglobin
