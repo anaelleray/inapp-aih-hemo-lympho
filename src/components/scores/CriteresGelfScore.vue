@@ -49,10 +49,10 @@
             <button id="gelfYes8" clicked="false" @click="counter($event, '+', 'gelfNo8')">Yes</button>
         </div>
         <div class="consequence">
-            <div>{{this.criteria}} Criteria</div>
-            <div>{{this.prognosis}}</div>
-            <div>{{this.result}}</div>
-            <div>{{this.notes}}</div>
+            <div class="consequence-points">{{this.criteria}} Criteria</div>
+            <div class="consequence-text">{{this.prognosis}}</div>
+            <div class="consequence-text">{{this.result}}</div>
+            <div class="consequence-text">{{this.notes}}</div>
         </div>
         <div class="link">
             <div class="link-title">

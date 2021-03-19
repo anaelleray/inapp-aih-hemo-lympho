@@ -60,9 +60,9 @@
             </div>
         </div>
         <div class="consequence">
-            <div>{{this.points}} points</div>
-            <div>{{this.risk}}</div>
-            <div>{{this.survival}}</div>
+            <div class="consequence-points">{{this.points}} points</div>
+            <div class="consequence-text">{{this.risk}}</div>
+            <div class="consequence-text">{{this.survival}}</div>
         </div>
         <div class="link">
             <div class="link-title">
