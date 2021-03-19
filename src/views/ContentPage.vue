@@ -151,6 +151,10 @@ export default Vue.extend({
     box-shadow: 0px 6px 15px -12px rgba(0,0,0,0.75);  
     padding:20px;    
   }
+  .about-text{
+    color:#8b8b8e;
+    font-size: 15px
+  }
 
   .button-info{
     color:#aaa2a2 !important; 

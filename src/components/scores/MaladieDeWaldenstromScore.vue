@@ -108,7 +108,7 @@
     </div>
     <div class="about">
       <div class="title-about">EVIDENCE APPRAISAL</div>
-      <div>
+      <div class="about-text">
         The IPSSWM was derived after merging a cohort of patients with WM from 7
         international co-operative groups. The IPSSWM speicifcially focuse on
         symptomatic patinets requiring therapy, and the majority were treated
@@ -116,40 +116,20 @@
         rituximab.
       </div>
     </div>
-
     <div class="link">
-      <div class="link-title">Litterature</div>
-      <div class="link-subTitle">
-        REFERENCE
-        <div class="linkUrl">
-          Morel P, Duhamel A, Gobbi P, Dimopoulos MA, Dhodapkar MV, McCoy J,<br />
-          Crowley J, Ocio EM, Garcia-Sanz R, Treon SP, Leblond V, Kyle RA,
-          Barlogie B, Merlini G. <br />
-
-          <a href="https://read.qxmd.com/read/19196866/international-prognostic-scoring-system-for-waldenstrom-macroglobulinemia"
-            target="_blank">International prognostic scoring system for Waldenstrom
-            macroglobulinemia. </a>
-
-          Blood. 2009 Apr 30;113(18):4163-70. doi: 10.1182/blood-2008-08-174961.
-          Epub 2009 Feb 5.
+            <div class="link-title">
+                References
+            </div>
+            <div class="link-subTitle">
+                Morel P, Duhamel A, Gobbi P, Dimopoulos MA, Dhodapkar MV, McCoy J, Crowley J, Ocio EM, Garcia-Sanz R, Treon SP, Leblond V, Kyle RA, Barlogie B, Merlini G.
+            </div>
+            <div class="linkUrl">
+                <a href="https://read.qxmd.com/read/19196866/international-prognostic-scoring-system-for-waldenstrom-macroglobulinemia" target="_blank">International prognostic scoring system for Waldenstrom macroglobulinemia. Blood. 2009 Apr 30;113(18):4163-70. doi: 10.1182/blood-2008-08-174961. Epub 2009 Feb 5.</a>
+            </div>
+            <div class="linkUrl">
+                <a href="https://qxmd.com/calculate/calculator_610/international-prognostic-scoring-system-for-waldenstrom-macroglobulinemia" target="_blank">The International Prognostic Scoring System for Waldenstrom Macroglobulinemia calculator is created by QxMD.</a>
+            </div>
         </div>
-      </div>
-
-      <div class="link-subTitle">
-        OTHER REFERENCES
-        <div class="linkUrl">
-          The
-          <a
-            href="https://qxmd.com/calculate/calculator_610/international-prognostic-scoring-system-for-waldenstrom-macroglobulinemia"
-            target="_blank"
-          >
-            International Prognostic Scoring System for Waldenstrom
-            Macroglobulinemia</a
-          >
-          calculator is created by QxMD.
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
