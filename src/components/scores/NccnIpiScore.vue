@@ -33,7 +33,7 @@
         <div class="button" id="Extra2"  value="1" cat="Extra" selected="false"  @click="incrementOnClick($event)">Bone marrow, CNS, liver/GI tract, or lung involvement </div>
     </div>
 
-    <section>
+    <section class="consequence">
         <div>
             <label for="score"> Score </label>
             <p id="score">{{ this.counter }}</p>
