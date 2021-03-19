@@ -1,66 +1,73 @@
 <template>
-    <div>
-        <h1>International Prognostic Index for Diffuse Large B-cell Lymphoma (IPI and R-IPI)</h1>
-
-        <section>
-            <label for="age"> Age </label>
-            <div>
-                <button id="ageOne" clicked="false" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </button>
-                <button id="ageTwo" clicked="false" @click="incrementOnClick($event, '+', 'ageOne')"> >60 years </button>
+    <div class="score">
+        <div class="title-red">
+            International Prognostic Index for Diffuse Large B-cell Lymphoma (IPI and R-IPI)
+        </div>
+        
+        <hr style="background-color:#000;">
+        
+        <section class="question">
+            <label class="question-title" for="age"> Age </label>
+            <div class="response">
+                <div class="button" id="ageOne" clicked="true" @click="incrementOnClick($event, '-', 'ageTwo')"> ≤60 years </div>
+                <div class="button" id="ageTwo" clicked="false" @click="incrementOnClick($event, '+', 'ageOne')"> >60 years </div>
             </div>
         </section>
 
-        <section>
-            <label for="Arbor"> Ann Arbor stage III-IV </label>
+        <section class="question">
+            <label class="question-title" for="Arbor"> Ann Arbor stage III-IV </label>
             <p>III: Involvement on both sides of the diaphragm, IV: Involvement of extranodal sites</p>
-            <div>
-                <button id="AnnOne" clicked="false" @click="incrementOnClick($event, '-', 'AnnTwo')"> No 0 </button>
-                <button id="AnnTwo" clicked="false" @click="incrementOnClick($event, '+', 'AnnOne')"> yes +1 </button>
+            <div class="response">
+                <div class="button" id="AnnOne" clicked="false" @click="incrementOnClick($event, '-', 'AnnTwo')"> No 0 </div>
+                <div class="button" id="AnnTwo" clicked="false" @click="incrementOnClick($event, '+', 'AnnOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="ECOG"> <a href="#">ECOG performance status</a> ≥2 </label>
-            <div>
-                <button id="ECOGOne" clicked="false" @click="incrementOnClick($event, '-', 'ECOGTwo')"> No 0 </button>
-                <button id="ECOGTwo" clicked="false" @click="incrementOnClick($event, '+', 'ECOGOne')"> yes +1 </button>
+        <section class="question">
+            <label class="question-title" for="ECOG"> <a href="#">ECOG performance status</a> ≥2 </label>
+            <div class="response">
+                <div class="button" id="ECOGOne" clicked="false" @click="incrementOnClick($event, '-', 'ECOGTwo')"> No 0 </div>
+                <div class="button" id="ECOGTwo" clicked="false" @click="incrementOnClick($event, '+', 'ECOGOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="LDH"> Serum LDH level >1× normal </label>
-            <div>
-                <button id="LDHOne" clicked="false" @click="incrementOnClick($event, '-', 'LDHTwo')"> No 0 </button>
-                <button id="LDHTwo" clicked="false" @click="incrementOnClick($event, '+', 'LDHOne')"> yes +1 </button>
+        <section class="question">
+            <label class="question-title" for="LDH"> Serum LDH level >1× normal </label>
+            <div class="response">
+                <div class="button" id="LDHOne" clicked="false" @click="incrementOnClick($event, '-', 'LDHTwo')"> No 0 </div>
+                <div class="button" id="LDHTwo" clicked="false" @click="incrementOnClick($event, '+', 'LDHOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
-            <label for="extranodal">>1 extranodal site</label>
+        <section class="question">
+            <label class="question-title" for="LDH"> Serum LDH level >1× normal </label>
+            <label  for="extranodal">>1 extranodal site</label>
             <p>Bone marrow, GI tract, liver, lung, CNS, skin, testes, Waldeyer’s ring</p>
-            <div>
-                <button id="extraOne" clicked="false" @click="incrementOnClick($event, '-', 'extraTwo')"> No 0 </button>
-                <button id="extraTwo" clicked="false" @click="incrementOnClick($event, '+', 'extraOne')"> yes +1 </button>
+            <div class="response">
+                <div class="button" id="extraOne" clicked="false" @click="incrementOnClick($event, '-', 'extraTwo')"> No 0 </div>
+                <div class="button" id="extraTwo" clicked="false" @click="incrementOnClick($event, '+', 'extraOne')"> yes +1 </div>
             </div>
         </section>
 
-        <section>
+        <section class="consequence">
+            Prognosis
+            <br><br>
             <div>
                 <p>{{ this.counter }} points</p>
                 <p id="rIpi"> Very good prognosis (R-IPI) </p>
                 <p id="ipi"> Low risk group (IPI) </p>
             </div>
+            <br>
             <div>
                 <p id="pourcentageRipi">94%</p>
                 <p id="overSurIpi"> Overall survival (R-IPI) </p>
                 <p id="overSurIpi2"> 82% overall survival (IPI) </p>
-                <button> Copy Results </button>
             </div>
+            <br>
             <div>
                 <p id="pourcentageIpi"> 94% </p>
                 <p id="progSurIpi">Progression-free survival (R-IPI)</p>
                 <p id="progSurIpi2">85% progression-free survival (IPI)</p>
-                <button> Next Steps </button>
             </div>
         </section>
     </div>
@@ -82,8 +89,8 @@ export default {
 
             const triggerBtn = event.target;
             const otherBtn = document.getElementById(id);
-            triggerBtn.style.backgroundColor  = "red";
-            otherBtn.style.backgroundColor = "#e1e1e1";
+            triggerBtn.classList.add("button-selected");
+            otherBtn.classList.remove("button-selected");
             let clickedState = triggerBtn.getAttribute("clicked");
 
             if( clickedState === "false" ) { 
