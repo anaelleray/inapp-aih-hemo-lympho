@@ -49,9 +49,9 @@
                     Prognosis
                     <br><br>
                     <div>
-                        <div class="r1">Binet Stage : {{result.stage}}</div>
-                        <div class="r2">Risk : {{result.risk}}</div>
-                        <div class="r2">Overall survival : {{result.survival}}</div>
+                        <div class="consequence-text">Binet Stage : {{result.stage}}</div>
+                        <div class="consequence-text">Risk : {{result.risk}}</div>
+                        <div class="consequence-text">Overall survival : {{result.survival}}</div>
                     </div>
                 </div>
             </div>
@@ -100,22 +100,22 @@ export default Vue.extend({
             if(this.input.inputA == "inf3" && this.input.inputB=="No" && this.input.inputC=="No"){
                 this.result = {
                     stage: "Stage A",
-                    risk: "Low",
-                    survival: "12 years"
+                    risk: "Faible",
+                    survival: "12 ans"
                 }
             }
             if(this.input.inputA=="supEgal3" && this.input.inputB=="No" && this.input.inputC=="No"){
                 this.result = {
                     stage: "Stage B",
-                    risk: "Intermediate",
-                    survival: "7 years"
+                    risk: "Intermédiaire",
+                    survival: "7 ans"
                 }
             }
             if(this.input.inputC=="Yes" || this.input.inputB=="Yes"){
                 this.result = {
-                    stage: "Stage C",
-                    risk: "High",
-                    survival: "2-4 years"
+                    stage: "Stage C",
+                    risk: "Haute",
+                    survival: "2-4 ans"
                 }
             }
         },

@@ -1,10 +1,10 @@
   <template>
     <div class="score">
         <div class="title-red">
-            International Prognostic Index for Chronic Lymphocytic Leukemia (CLL-IPI)
+            Indice pronostique international de la leucémie lymphoïde chronique (CLL-IPI)
         </div>
         <div class="sous-title">
-            Stratifies patients with chronic lymphocytic leukemia into four risk categories. 
+            Stratifie les patients atteints de leucémie lymphoïde chronique en quatre catégories de risque. 
         </div>
         <hr style="background-color:#000;">
         <div>
@@ -48,9 +48,9 @@
                     Prognosis
                     <br><br>
                     <div>
-                        <div class="r1">{{result.points}} points</div>
-                        <div class="r2">{{result.risk}}</div>
-                        <div class="r2">{{result.rate}}</div>
+                        <div class="consequence-points">{{result.points}} points</div>
+                        <div class="consequence-text">{{result.risk}}</div>
+                        <div class="consequence-text">{{result.rate}}</div>
                     </div>
                 </div>
             </div>
