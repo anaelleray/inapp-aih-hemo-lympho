@@ -59,7 +59,7 @@ export default Vue.extend({
   },
 
   methods: {
-    select: function (id) {
+    select: function (id: any) {
       let b = document.getElementsByClassName(
         "selected"
       ) as HTMLCollectionOf<HTMLElement>;

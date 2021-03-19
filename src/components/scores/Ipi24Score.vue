@@ -108,14 +108,11 @@ export default {
                 }
             });
 
-            console.log(this.counter);
-
             if(  this.counter <= 25 ){
                 this.pourcentage = "15%";
             }
             if(  this.counter > 25 && this.counter <= 50 ){
 
-                console.log("xouxou");
                 this.pourcentage = "15-25%";
             }
             if(  this.counter > 50 && this.counter <= 75 ){

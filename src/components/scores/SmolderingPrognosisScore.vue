@@ -46,7 +46,6 @@ export default Vue.extend({
 
     methods: {
         switchValue:function(event){
-            console.log(event.type, event.target.id)
 
             let ie10 = document.getElementById("ie10");
             let s10 = document.getElementById("s10");
