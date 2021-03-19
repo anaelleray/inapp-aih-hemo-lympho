@@ -16,7 +16,7 @@ import Vue from "vue"
 export default Vue.extend({
 
     data: () => ({
-        url: Boolean,
+        url: Boolean ,
     }),
 
     methods:{
