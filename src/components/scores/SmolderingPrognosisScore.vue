@@ -130,11 +130,3 @@ export default Vue.extend({
     },
 })
 </script>
-<style>
-.smoldWindowResult{
-    background-color: #0FFF00
-}
-#singleView{
-    display:none;
-}
-</style>
